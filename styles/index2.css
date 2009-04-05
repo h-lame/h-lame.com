@@ -1,0 +1,71 @@
+body {
+  background: url('/images/bg-nun.png') #669999 no-repeat 10px 20px;
+  color: #664D33;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  margin: 0px;
+  margin-left: 180px;
+}
+
+#holding_pattern {
+  width: 650px;
+}
+
+.chunk {
+  background-color: #CCB399;
+  padding: 10px;
+  border: solid #664D33 1px;
+  background-color: #CCB399;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+h1 {
+  background: url('/images/h-lame.com-v2.png') transparent no-repeat 10px 10px;
+  min-width: 302px;
+  min-height: 104px;
+  color: transparent;
+}
+
+h2 {
+  position: absolute;
+  display: inline-block;
+  left: 4px;
+  top: 422px;
+}
+
+.things li {
+  list-style: none;
+}
+.things li:before {
+  content: "\2026 \0020";
+}
+
+.things {
+  line-height: 22px;
+}
+
+.spare {
+  line-height: 16px;
+  font-size: 10px;
+  position: absolute;
+  width: 300px;
+  top: 18px;
+  left: 508px;
+}
+.chunk h3 {
+  margin-top: 0px;
+}
+.chunk p {
+  margin-top: 0px;
+}
+.chunk p:last-child {
+  margin-bottom: 0px;
+}
+
+a:link, a:visited, a:active {
+  text-decoration: none;
+  color: #66334C;
+  font-weight: bold;
+}
+
