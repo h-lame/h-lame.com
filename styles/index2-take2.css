@@ -1,0 +1,98 @@
+body {
+  background-color: white;
+  background-image: url('/images/take2-background.png');
+  background-position: top center; 
+  background-repeat: no-repeat;
+  color: #664D33;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 0px;
+}
+
+#intro {
+  /* 450 */
+  width: 405px;
+  padding-left: 21px;
+  padding-right: 33px;
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 36px;
+  height: 256px;
+  text-align: justify;
+  background-image: url('/images/speech_balloon_intro.png');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+#intro * {
+  display: inline;
+}
+#intro a {
+  white-space: nowrap;
+}
+
+#content {
+  width: 605px;
+  padding-left: 21px;
+  padding-right: 33px;
+  padding-bottom: 30px;
+  padding-top: 64px;
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  background-image: url('/images/speech_balloon_content.png');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+#content ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+#content ul li {
+  display: inline;
+  list-style: none;
+  margin: 0;
+  padding: 2px;
+  line-height: 2;
+  border: 1px transparent;
+  white-space: nowrap;
+}
+#content ul li a {
+  text-decoration: none;
+  border-bottom: 1px solid #475D74;
+}
+#content ul li a img {
+  border: none;
+  margin-right: 5px;
+  vertical-align: text-bottom;
+}
+
+#outro {
+  font-size: 9px;
+  line-height: 12px;
+  width: 540px;
+  padding-left: 21px;
+  padding-right: 33px;
+  padding-bottom: 30px;
+  padding-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  background-image: url('/images/speech_balloon_outro.png');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  margin-top: -30px;
+}
+#outro * {
+  display: inline;
+}
+a {
+  color: #475D74;
+  font-weight: bold;
+}
