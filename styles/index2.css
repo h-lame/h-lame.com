@@ -1,18 +1,21 @@
 body {
-  background: url('/images/bg-nun.png') #669999 no-repeat 10px 20px;
+  background:  #669999 no-repeat;
   color: #664D33;
   font-family: Verdana, Arial, Helvetica, sans-serif;
+  background-image: url('/images/main-bg-2.jpg');
   font-size: 12px;
   margin: 0px;
-  margin-left: 180px;
 }
 
 #holding_pattern {
   width: 650px;
+  background: url('/images/hlame-nun.png') transparent no-repeat 10px 20px;
+  padding-left: 160px;
 }
 
 .chunk {
   background-color: #CCB399;
+  background-image: url('/images/chunk-bg.jpg');
   padding: 10px;
   border: solid #664D33 1px;
   background-color: #CCB399;
@@ -20,10 +23,14 @@ body {
   -webkit-border-radius: 10px;
 }
 
+.things.chunk {
+  background-position: -161px -179px;
+}
+
 h1 {
-  background: url('/images/h-lame.com-v2.png') transparent no-repeat 10px 10px;
-  min-width: 302px;
-  min-height: 104px;
+  background: url('/images/h-lame.com-sticker.png') transparent no-repeat;
+  min-width: 316px;
+  min-height: 146px;
   color: transparent;
 }
 
