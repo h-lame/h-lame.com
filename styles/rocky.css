@@ -5,21 +5,33 @@ body {
   background-repeat: no-repeat;
   color: #664D33;
   font-family: Verdana, Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  line-height: 1.4;
+  font-size: 100%;
   margin: 0px;
 }
+#holding_pattern {
+  font-size: 0.75em;
+  line-height: 1.66667em;
+}
 
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.16667em;
+}
 #intro {
-  /* 450 */
   width: 405px;
   padding-left: 21px;
   padding-right: 33px;
   padding-top: 10px;
+  padding-bottom: 153px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 36px;
-  height: 256px;
+  height: 103px;
   text-align: justify;
   background-image: url('/images/speech_balloon_intro.png');
   background-position: top left;
@@ -29,7 +41,7 @@ body {
 #intro * {
   display: inline;
 }
-#intro a {
+#intro h1, #intro h2 {
   white-space: nowrap;
 }
 
@@ -39,6 +51,7 @@ body {
   padding-right: 33px;
   padding-bottom: 30px;
   padding-top: 64px;
+  height: 204px;
   margin-top: 70px;
   margin-left: auto;
   margin-right: auto;
@@ -55,26 +68,23 @@ body {
 }
 #content ul li {
   display: inline;
-  list-style: none;
   margin: 0;
   padding: 2px;
-  line-height: 2;
   border: 1px transparent;
-  white-space: nowrap;
 }
 #content ul li a {
   text-decoration: none;
   border-bottom: 1px solid #475D74;
+  white-space: nowrap;
 }
 #content ul li a img {
   border: none;
   margin-right: 5px;
   vertical-align: text-bottom;
 }
-
 #outro {
-  font-size: 9px;
-  line-height: 12px;
+  font-size: 0.75em;
+  line-height: 1.33333em;
   width: 540px;
   padding-left: 21px;
   padding-right: 33px;
@@ -88,6 +98,7 @@ body {
   background-repeat: no-repeat;
   background-color: transparent;
   margin-top: -30px;
+  height: 12px;
 }
 #outro * {
   display: inline;
