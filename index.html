@@ -46,12 +46,9 @@
     <p>Everything is &copy; now to me, except that which I have stolen, which isn't.</p>
   </div>
 </div>
-<script src="http://www.google.com/jsapi"></script>
+<script   src="http://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 <script>
-  // Load jQuery
-  google.load("jquery", "1.3.2");
-
-  google.setOnLoadCallback(function() {
+  $(document).ready(function() {
     $('#content li a').each(function() {
       var md = this.href.match(/^(http:\/\/(.*?)\/)/);
       $(this).prepend('<img src="' + md[1] + 'favicon.ico" width="16" height="16" alt="Favicon for ' + + md[2] +'" title="Favicon for '+ md[2] +'">');
