@@ -1,6 +1,6 @@
 body {
   background-color: white;
-  background-image: url('/images/rocky-background.png');
+  background-image: url('http://assets.h-lame.com/images/rocky-background.png');
   background-position: top center;
   background-repeat: no-repeat;
   color: #664D33;
@@ -33,7 +33,7 @@ h3 {
   margin-top: 36px;
   height: 103px;
   text-align: justify;
-  background-image: url('/images/speech_balloon_intro.png');
+  background-image: url('http://assets.h-lame.com/images/speech_balloon_intro.png');
   background-position: top left;
   background-repeat: no-repeat;
   background-color: transparent;
@@ -56,7 +56,7 @@ h3 {
   margin-left: auto;
   margin-right: auto;
   text-align: justify;
-  background-image: url('/images/speech_balloon_content.png');
+  background-image: url('http://assets.h-lame.com/images/speech_balloon_content.png');
   background-position: top left;
   background-repeat: no-repeat;
   background-color: transparent;
@@ -93,7 +93,7 @@ h3 {
   margin-left: auto;
   margin-right: auto;
   text-align: justify;
-  background-image: url('/images/speech_balloon_outro.png');
+  background-image: url('http://assets.h-lame.com/images/speech_balloon_outro.png');
   background-position: top right;
   background-repeat: no-repeat;
   background-color: transparent;
