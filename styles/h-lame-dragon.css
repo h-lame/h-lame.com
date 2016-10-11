@@ -1,0 +1,221 @@
+#hegemony {
+}
+
+#navigate {
+}
+
+#navigate form {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+#sidebarContent {
+  background-color: #ffffff;
+  float: right;
+  padding: 5px;
+  width: 170px;
+  border-left: dashed #000000 1px;
+  margin-left: 5px;
+}
+
+#sidebarContent div {
+  margin-bottom: 5px;
+  margin-left: 3px;
+}
+
+#sidebarContent h3 {
+  font-size: 10pt;
+  font-weight: bold;
+  margin-bottom: 1px;
+  margin-top: 0px;
+  border-bottom: dashed #000000 1px;
+}
+
+#linkMenu {
+}
+
+#linkMenu div {
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+#linkChoices {
+  border-top: dashed #000000 1px;
+  margin: 5px;
+}
+
+#users {
+}
+
+#amazon {
+}
+
+#amazon form {
+  text-align: center;
+}
+
+#amazon input {
+  background-color: #ffffff;
+}
+
+#google {
+}
+
+#google form {
+  text-align: center;
+}
+
+#muzNow {
+}
+
+#copyright {
+}
+
+#vanillaKudos {
+}
+
+#alphabetcount {
+  background-color: #FF3333;
+  border: solid #660000 1px;
+  font-size: 9pt;
+}
+
+#alphabetcount td {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+}
+
+#alphabetsnip {
+
+}
+
+#pageContent {
+  margin-left: 150px;
+  padding: .5em;
+  border-left: solid #000000 1px;
+  border-bottom: solid #000000 1px;
+  background-color: #ffffff;
+}
+
+#snipTitle {
+  padding: 0px;
+  margin: 0px;
+  border-bottom: dashed #000000 1px;
+}
+
+#content {
+  line-height: 1.6em;
+}
+
+.snipContent {
+  margin-left: 13px;
+  line-height: 1.6em;
+}
+
+.dateTitle {
+  padding: 0px;
+  margin: 0px;
+  border-bottom: dashed #000000 1px;
+  margin-left: 8px;
+}
+
+
+.commentInfo {
+  float: right;
+  background-color: #FF3333;
+  border: solid #660000 1px;
+  padding: .5em;
+  margin-top: 0px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  margin-right: 0px;
+  width: 12em;
+  line-height: 1em;
+}
+
+.comment {
+  margin-bottom: 2em;
+}
+
+.sideBox {
+  float: right;
+  background-color: #FF3333;
+  border: solid #660000 1px;
+  padding: .5em;
+  margin-top: 0px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  margin-right: 0px;
+  width: 12em;
+  line-height: 1em;
+}
+
+body {
+    background: url('http://www.h-lame.com/images/bg-dragon.gif') #009933 no-repeat fixed;
+    scrollbar-face-color: #FF3333;
+    scrollbar-shadow-color: #FF3333;
+    scrollbar-highlight-color: #FF3333;
+    scrollbar-3dlight-color: #660000;
+    scrollbar-darkshadow-color: #660000;
+    scrollbar-track-color: #ffffff;
+    scrollbar-arrow-color: #660000;
+    color: #000000;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    margin: 0px;
+}
+
+body td {
+    font-size: 9pt;
+    line-height: 1.6em;
+}
+
+small {
+    font-size: 7pt;
+}
+
+h1 {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 14pt;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h3 {
+    font-size: 12pt;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+    color: #3399FF;
+}
+
+.floating {
+    visibility:  hidden;
+    position: absolute;
+    width:200;
+    height:120;
+    z-index:1;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    border: 1px solid black;
+    background: #FF3333;
+    color: black;
+    margin: 0px;
+}
+
+input {
+  border: solid #660000 1px;
+  background-color: #FF3333;
+}
+
+textarea {
+  border: solid #660000 1px;
+  background-color: #FF3333;
+}

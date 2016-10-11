@@ -1,0 +1,196 @@
+.sideBox {
+  background-color: #ff8800;
+  border-color: #4466AA;
+  border-style: solid;
+  border-width: 4px;
+  float: right;
+  padding: .5em;
+  margin-top: 0px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  margin-right: 0px;
+  width: 12em;
+}
+
+.content {
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  margin-right: 0px;
+}
+
+body {
+    scrollbar-face-color: white;
+    scrollbar-shadow-color: black;
+    scrollbar-highlight-color: black;
+    scrollbar-3dlight-color: black;
+    scrollbar-darkshadow-color: black;
+    scrollbar-track-color: white;
+    scrollbar-arrow-color: black;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+}
+
+td, p, li, ul, ol, span, div {
+    color: black;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    color: #000000;
+}
+
+.bighdr-sidebar {
+    color: #000000;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.hdr-sidebar {
+    color: #000000;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.sidebar {
+    color: #000000;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    background-color: #4466AA;
+}
+
+.bighdr {
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.hdr {
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.small {
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 7pt;
+}
+
+.small-sidebar {
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 7pt;
+    color: #000000;
+}
+
+.small-colorBlock1 {
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 7pt;
+    color: #ff8800;
+    font-weight: bold;
+}
+
+.small-colorBlock2 {
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 7pt;
+    color: #000000;
+    font-weight: bold;
+}
+
+.colorBlock1 {
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #ff8800;
+    background-color: #000000;
+    font-weight: bold;
+}
+
+.colorBlock2 {
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #000000;
+    background-color: #ff8800;
+    font-weight: bold;
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #4466AA;
+    font-weight: bold;
+}
+
+a.bighdr-sidebar:link, a.bighdr-sidebar:visited, a.bighdr-sidebar:active {
+    text-decoration: none;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #FF8800;
+    font-size: 14pt;
+}
+
+a.sidebar:link, a.sidebar:visited, a.sidebar:active {
+    text-decoration: none;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #FF8800;
+    font-weight: bold;
+}
+
+a.hdr:link, a.hdr:visited, a.hdr:active {
+    text-decoration: none;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #555555;
+    font-size: 11pt;
+}
+
+a.small:link, a.small:visited, a.small:active {
+    text-decoration: none;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #555555;
+    font-weight: bold;
+    font-size: 7pt;
+}
+
+a.small-sidebar:link, a.small-sidebar:visited, a.small-sidebar:active {
+    text-decoration: none;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #FF8800;
+    font-weight: bold;
+    font-size: 7pt;
+}
+
+table.bar {
+    background-color: brown;
+    color: black;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+}
+
+.date	{
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    color: black;
+    font-size:10pt;
+    font-weight:bold;
+    margin:10px;
+}
+
+.posts  {
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    margin:10px;
+}
+
+.byline {
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 7pt;
+}
+.floating {
+    visibility:  hidden;
+    position: absolute;
+    width:200;
+    height:120;
+    z-index:1;
+    font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+    border: 1px solid black;
+    background: brown;
+    color: black;
+}

@@ -1,0 +1,261 @@
+#header {
+  background-color: #ffffff;
+  padding: 2px;
+  border-bottom: solid #000000 1px;
+}
+
+#header h1, #header h1 a {
+  text-decoration: none;
+  font-size: 14pt;
+  margin: 0px;
+  padding: 0px;
+}
+
+#header small a {
+  font-size: 7pt;
+}
+
+#headerControls {
+  float: right;
+  font-size: 9pt;
+  maring:0px;
+  padding:0px;
+}
+
+#headerControls form {
+  margin: 0px;
+  padding: 0px;
+}
+
+#sidebarContent {
+  float: right;
+  background-color: transparent;
+  padding: 3px;
+  width: 200px;
+}
+
+#sidebarContent div {
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+#sidebarContent h3 {
+  font-size: 10pt;
+  font-weight: bold;
+  margin-bottom: 1px;
+  margin-top: 0px;
+  border-bottom: dashed #000000 1px;
+}
+
+#myFace {
+  background-color: #ffffff;
+  border: solid #000000 1px;
+}
+
+#myFace div{
+  margin: 2px;
+  padding: 0px;
+}
+
+#linkMenu {
+  background-color: #ffffff;
+  border: solid #000000 1px;
+}
+
+#linkMenu div {
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+#linkChoices {
+  border-top: dashed #000000 1px;
+  margin: 5px;
+}
+
+#users {
+  background-color: #ffffff;
+  border: solid #000000 1px;
+}
+
+#amazon {
+  background-color: #ffffff;
+  border: solid #000000 1px;
+}
+
+#amazon form {
+  text-align: center;
+}
+
+#amazon input {
+  background-color: #ffffff;
+}
+
+#google {
+  background-color: #ffffff;
+  border: solid #000000 1px;
+}
+
+#google form {
+  text-align: center;
+}
+
+#muzNow {
+  background-color: #ffffff;
+  border: solid #000000 1px;
+}
+
+#copyright {
+  background-color: #ffffff;
+  border: solid #000000 1px;
+}
+
+#vanillaKudos {
+  background-color: #ffffff;
+  border: solid #000000 1px;
+}
+
+#alphabetcount {
+  background-color: #CCCC99;
+  border: solid #000000 1px;
+  font-size: 9pt;
+}
+
+#alphabetcount td {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+}
+
+#alphabetsnip {
+
+}
+
+#sideBox {
+  float: right;
+  background-color: #CCCC99;
+  border: solid #000000 1px;
+  padding: .5em;
+  margin-top: 0px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  margin-right: 0px;
+  width: 12em;
+  line-height: 1em;
+}
+
+#pageContent {
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: .5em;
+  border: solid #000000 1px;
+  border-top: none;
+  background-color: #ffffff;
+}
+
+#dateTitle {
+  padding: 0px;
+  margin: 0px;
+  border-bottom: dashed #000000 1px;
+  margin-left: 8px;
+}
+
+#snipTitle {
+  padding: 0px;
+  margin: 0px;
+  border-bottom: dashed #000000 1px;
+}
+
+#content {
+  line-height: 1.6em;
+  border-color: solid #000000 1px;
+}
+
+#snipContent {
+  margin-left: 13px;
+  line-height: 1.6em;
+}
+
+#commentInfo {
+  float: right;
+  background-color: #CCCC99;
+  border: solid #000000 1px;
+  padding: .5em;
+  margin-top: 0px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  margin-right: 0px;
+  width: 12em;
+  line-height: 1em;
+}
+
+#comment {
+  margin-bottom: 2em;
+}
+
+body {
+    scrollbar-face-color: #CCCC99;
+    scrollbar-shadow-color: #CCCC99;
+    scrollbar-highlight-color: #CCCC99;
+    scrollbar-3dlight-color: #000000;
+    scrollbar-darkshadow-color: #000000;
+    scrollbar-track-color: #CCCC99;
+    scrollbar-arrow-color: #000000;
+    background-color: #CCCC99;
+    color: #000000;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    margin: 0px;
+}
+
+body td {
+    font-size: 9pt;
+    line-height: 1.6em;
+}
+
+small {
+    font-size: 7pt;
+}
+
+h1 {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 14pt;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h3 {
+    font-size: 12pt;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+    color: #CC3300;
+}
+
+.floating {
+    visibility:  hidden;
+    position: absolute;
+    width:200;
+    height:120;
+    z-index:1;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    border: 1px solid black;
+    background: #CCCC99;
+    color: black;
+    margin: 0px;
+}
+
+input {
+  border: solid #000000 1px;
+  background-color: #CCCC99;
+}
+
+textarea {
+  border: solid #000000 1px;
+  background-color: #CCCC99;
+}

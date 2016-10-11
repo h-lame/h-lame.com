@@ -1,0 +1,67 @@
+==================================================================
+https://keybase.io/hlame
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://h-lame.com
+  * I am hlame (https://keybase.io/hlame) on keybase.
+  * I have a public key with fingerprint 39B4 6B57 2042 0DED F0F4  8D1C 770E BCE3 52EA C8EA
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "39b46b5720420dedf0f48d1c770ebce352eac8ea",
+            "host": "keybase.io",
+            "key_id": "770ebce352eac8ea",
+            "kid": "010111b715fb5aca2fa067ee188dd4d8ea3a73debe6e3686acaaec15ea547d87c2c90a",
+            "uid": "2324772745d3d036fa366dd573b19000",
+            "username": "hlame"
+        },
+        "service": {
+            "hostname": "h-lame.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1428411161,
+    "expire_in": 157680000,
+    "prev": "5922ade138b420b011a750ec2e92621cf5c3b24b5d1e0ffc40c9a119b313a92b",
+    "seqno": 14,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.8
+Comment: https://keybase.io/crypto
+
+yMIVAnicbVJbSBVRFL3aC42orD4KIRrTSq4y58zz3hSkUkuNIrI+zK7nNTo+Zm5z
+r5qYRWqZhVHYAxKkt1QkEZYUVlYWmT2owI9AwRclZD8WRSB1Ruqvr81Ze62199qc
+nnkzPNERmVll0tw6JxzR9zil3JMb92FptYBtWiX4q4USNl0M0ypkTtAxrbDgFyQf
+llWsaFCUoUgZNURD1ikgmiYyTJikQIaIzpDgFYrskKvgNhiFWLJpc4w/Aibl6H/4
+JdMNEYgAAKwBxcAKIggaSFQ1xoCuUypTTpWQJlGGmcokVVc5BTECFIYUWaO6RiDx
+ia5d+bQdlKCsaVCTFSpRUVINJKkqpYomYeATRdElhphjoTLG2UWlbq3xChyqMAlz
+87sx/rWT3H4yscu4LOjYYZvYpS4eDgf9rixcFXR5lQwH/joEsGlRfkEuqGBOyLQt
+wQ84k4RN1xLIUJd5XhV4BbY3aDosYLoMRVN1vp3ojmEV3FLxQYgoA5KO+eExvxHS
+FJERyHxQhYAYCpEwlLFCARMNg8gi8SEAfFgCEvJBLLiZ9li2O5LviQq5Z8gstFC4
+3OGJn3TvmumJiPbMnhXpfgJPdNSCf19jpHvO7w0tuRmZjQOx420Rj9jCyMkHL7zD
+8+89vBPTueltf8mxhszsenAkJn3LQH93q1W77HLj1Qt5E92r6od25xwsuf2tsosN
+Hm7q7ehaDbPH2l8Vj0zt2NFXm3Xj+3Bt7YmEDy9mD0XlB5pfZu8Tolc8nUosHBtP
+pzEXb53ybFy3ZL838Gzv5rR7VuOBtuf9vT+GG572vk6NOlvwq/rTxMpDi8/1Jibc
+Pb8oKn6gtKu1pnnkRtHy7SfJRGxo/WBLempKT335udPHx4h/yWR7dcF95UvS+464
+r83++LVD1zK2rfnYlPez7vP1rQ3OztG5z+w+qacgt7P4+9Gc5OybaU9G3wRennmX
+f+XSHydLKxQ=
+=Wgtn
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/hlame
+
+==================================================================

@@ -1,0 +1,280 @@
+#hegemony {
+}
+
+#navigate {
+}
+
+#navigate form {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+#sidebarContent {
+  background-color: #CCB399;
+  float: right;
+  padding: 5px;
+  width: 170px;
+  border-left: dashed #664D33 1px;
+  margin-left: 5px;
+}
+
+#sidebarContent div {
+  margin-bottom: 5px;
+  margin-left: 3px;
+}
+
+#sidebarContent h3 {
+  font-size: 10pt;
+  font-weight: bold;
+  margin-bottom: 1px;
+  margin-top: 0px;
+  border-bottom: dashed #664D33 1px;
+}
+
+#linkMenu {
+}
+
+#linkMenu div {
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+#linkMenu ul.linkMenu
+{
+margin: 0;
+padding: 0;
+}
+
+#linkMenu ul.linkMenu:before
+{
+content: ": "
+}
+
+#linkMenu ul.linkMenu li
+{
+display: inline;
+list-style-type: none;
+}
+
+#linkMenu ul.linkMenu li:after
+{
+content: " :"
+}
+
+#linkChoices {
+  border-top: dashed #664D33 1px;
+  margin: 5px;
+}
+#linkChoices ul
+{
+margin: 0;
+padding: 0;
+}
+
+#linkChoices ul:before
+{
+content: ": "
+}
+
+#linkChoices ul li
+{
+display: inline;
+list-style-type: none;
+}
+
+#linkChoices ul li:after
+{
+content: " :"
+}
+
+#linkChoices ul li:first-child
+{
+display: none;
+}
+
+#users {
+}
+
+#amazon {
+}
+
+#amazon form {
+  text-align: center;
+}
+
+#amazon input {
+  background-color: #CCB399;
+}
+
+#google {
+}
+
+#google form {
+  text-align: center;
+}
+
+#muzNow {
+}
+
+#copyright {
+}
+
+#vanillaKudos {
+}
+
+#alphabetcount {
+  background-color: #669999;
+  border: solid #664D33 1px;
+  font-size: 9pt;
+}
+
+#alphabetcount td {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+}
+
+#alphabetsnip {
+
+}
+
+#pageContent {
+  margin-left: 150px;
+  padding: .5em;
+  border-left: solid #664D33 1px;
+  border-bottom: solid #664D33 1px;
+  background-color: #CCB399;
+}
+
+#snipTitle {
+  padding: 0px;
+  margin: 0px;
+  border-bottom: dashed #664D33 1px;
+}
+
+#content {
+  line-height: 1.6em;
+}
+
+.snipContent {
+  margin-left: 13px;
+  line-height: 1.6em;
+}
+
+.dateTitle {
+  padding: 0px;
+  margin: 0px;
+  border-bottom: dashed #664D33 1px;
+  margin-left: 8px;
+}
+
+
+.commentInfo {
+  float: right;
+  background-color: #669999;
+  border: solid #336566 1px;
+  padding: .5em;
+  margin-top: 0px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  margin-right: 0px;
+  width: 12em;
+  line-height: 1em;
+}
+
+.comment {
+  margin-bottom: 2em;
+}
+
+.sideBox {
+  float: right;
+  background-color: #669999;
+  border: solid #336566 1px;
+  padding: .5em;
+  margin-top: 0px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  margin-right: 0px;
+  width: 12em;
+  line-height: 1em;
+}
+
+body {
+    background: url('http://www.h-lame.com/images/bg-nun.gif') #669999 no-repeat fixed;
+    scrollbar-face-color: #669999;
+    scrollbar-shadow-color: #669999;
+    scrollbar-highlight-color: #669999;
+    scrollbar-3dlight-color: #336566;
+    scrollbar-darkshadow-color: #336566;
+    scrollbar-track-color: #CCB399;
+    scrollbar-arrow-color: #336566;
+    color: #664D33;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    margin: 0px;
+}
+
+body td {
+    font-size: 9pt;
+    line-height: 1.6em;
+}
+
+small {
+    font-size: 7pt;
+}
+
+h1 {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 14pt;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h3 {
+    font-size: 12pt;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+    color: #66334C;
+    font-weight: bold;
+}
+
+.floating {
+    visibility:  hidden;
+    position: absolute;
+    width:200;
+    height:120;
+    z-index:1;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    border: 1px solid black;
+    background: #669999;
+    color: black;
+    margin: 0px;
+}
+
+input {
+  border: solid #336566 1px;
+  background-color: #669999;
+}
+
+textarea {
+  border: solid #336566 1px;
+  background-color: #669999;
+}
+table#alpha-table {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #664D33 !important;
+}
+table#alpha-table td {
+  background-color: #669999;
+  text-align: left;
+}

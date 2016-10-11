@@ -1,0 +1,135 @@
+.date	{
+        font-family: Verdana, Arial, sans-serif;
+        color: black;
+        font-size:10pt;
+        font-weight:bold;
+        margin:10px;
+}
+.posts  {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        color: black;
+        margin:10px;
+        /*line-height: 120%;*/
+}
+.comments  {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        color: black;
+        margin:5px;
+        /*line-height: 120%;*/
+}
+.commentbyline {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 8pt;
+        color: black;
+        /*background-color: #eedd88;*/
+        /*line-height: 120%;*/
+}
+.byline {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 8pt;
+        color: black;
+        /*line-height: 120%;*/
+}
+p	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: black;
+	/*line-height: 120%;*/
+}
+ul, ol, li      {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: black;
+	/*line-height: 120%;*/
+}
+body	{
+	scrollbar-face-color: #cccc99;
+	scrollbar-shadow-color: #cccc99;
+	scrollbar-highlight-color: #cccc99;
+	scrollbar-3dlight-color: black;
+	scrollbar-darkshadow-color: black;
+	scrollbar-track-color: #cccc99;
+	scrollbar-arrow-color: #black;
+	background-color: #cccc99;
+	color: black;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+table.hdr {
+        background-color: #ff8800;
+        color: black;
+        text-align: center;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 12pt;
+        font-weight: bold;
+}
+table.bar {
+        background-color: #ff8800;
+        color: black;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+}
+table.border {
+        background-color: black;
+}
+table.body {
+        background-color: #ffffcc;
+        color: black;
+        font-size: 10pt;
+        /*line-height: 120%;*/
+}
+.hdr	{
+      color: black;
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+      font-size: 12pt;
+      font-weight: bold;
+      /*line-height: 120%;*/
+}
+div.hdr	{
+        cursor: hand;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 12pt;
+        color: black;
+}
+.small {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 8pt;
+        color: black;
+}
+a:hover {
+        text-decortion: none;
+}
+a:link, a:visited, a:active	{
+        text-decoration: none;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        color: #ff6600;
+        font-weight: bold;
+}
+a.hdr:link, a.hdr:visited, a.hdr:active	{
+        text-decoration: none;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        color: black;
+        font-size: 12pt;
+}
+a.small:link, a.small:visited, a.small:active	{
+        text-decoration: none;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        color: #ff6600;
+        font-weight: bold;
+}td.body { background-color: #ffffcc; color: black; font-size: 10pt; }
+td.hdr { background-color: #ff8800; color: black; text-align: center; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12pt; font-weight: bold; }
+td.border { background-color: black; }
+.floating {
+    visibility:  hidden;
+    position: absolute;
+    width:200;
+    height:120;
+    z-index:1;
+    font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+    border: 1px solid black;
+    background: brown;
+    color: black;
+}
+

@@ -1,0 +1,316 @@
+/****************** ID DEFINITIONS *********************/
+/*
+   this is the sidebar div.  it contains all the little bits of guff
+   that I add to the sidebar
+   linkage, navigation, userinfo etc...
+   Any sub-selectors #sidebarContent div, etc.. arent' probably
+   neccessary for your style, but could be useful.  Also you
+   might want to add your own based on what html you see inside the
+   generated html.
+*/
+#sidebarContent {
+  float: right;
+  padding: 5px;
+  width: 170px;
+  margin-left: 5px;
+  background-color: #cccccc;
+  border-left: solid #888888 1px;
+}
+
+#sidebarContent div {
+  margin-bottom: 5px;
+  margin-left: 3px;
+}
+
+#sidebarContent h3 {
+  border-bottom: solid #888888 1px;
+}
+
+/*
+  these are the divs inside the sidebar.
+  each section has it's own id.
+  normally they are the same tho, but they don't have to be
+*/
+#hegemony {
+}
+
+#navigate {
+}
+
+#navigate form {
+  text-align: center;
+}
+
+#linkMenu {
+}
+
+#linkMenu div {
+}
+
+#linkMenu ul.linkMenu
+{
+margin: 0;
+padding: 0;
+}
+
+#linkMenu ul.linkMenu:before
+{
+content: ": "
+}
+
+#linkMenu ul.linkMenu li
+{
+display: inline;
+list-style-type: none;
+}
+
+#linkMenu ul.linkMenu li:after
+{
+content: " :"
+}
+
+#linkChoices {
+  border-top: solid #888888 1px;
+  margin: 5px;
+}
+
+#linkChoices ul
+{
+margin: 0;
+padding: 0;
+}
+
+#linkChoices ul:before
+{
+content: ": "
+}
+
+#linkChoices ul li
+{
+display: inline;
+list-style-type: none;
+}
+
+#linkChoices ul li:after
+{
+content: " :"
+}
+
+#linkChoices ul li:first-child
+{
+display: none;
+}
+#users {
+}
+
+#amazon {
+}
+
+#amazon form {
+  text-align: center;
+}
+
+#amazon input {
+}
+
+#google {
+}
+
+#google form {
+}
+
+#muzNow {
+}
+
+#copyright {
+}
+
+#vanillaKudos {
+}
+
+/*
+  this is the main content div.  It contains all the content
+  and the sidebar.
+*/
+#pageContent {
+  margin-left: 150px;
+  padding: .5em;
+}
+
+/*
+   The title of the viewed snip.
+*/
+#snipTitle {
+  padding: 0px;
+  margin: 0px;
+  border-bottom: solid #888888 1px;
+}
+
+/*
+   The actual content of the snip.
+   Where most of the text in the site goes.
+   NOTE:  On the 'start' page there are several sub-content
+   bits (see below)
+*/
+#content {
+  line-height: 1.6em;
+}
+
+/*
+  On the index page I have a table with the alphabet on it
+  these are the styles for that.
+*/
+#alphabetcount {
+}
+
+#alphabetcount td {
+}
+
+/*
+  Once you select a alphabet character the results of the index
+  are displayed in a table.  This is thestyl for that should
+  you want to do anthing with it.
+*/
+#alphabetsnip {
+}
+
+/****************** CLASS DEFINITIONS *********************/
+/*
+  When viewing the 'start' page there are several sub-contents
+  this is the selector for the actual blog entry
+*/
+.snipContent {
+  margin-left: 13px;
+  line-height: 1.6em;
+}
+
+/*
+  When viewing the 'start' page there are several sub-contents
+  this is the selector for the actual blog date title
+*/
+.dateTitle {
+  padding: 0px;
+  margin: 0px;
+  border-bottom: solid #888888 1px;
+  margin-left: 8px;
+}
+
+/*
+  When viewing the 'start' page there are several sub-contents
+  this is the selector for the actual comment info about the blog entry
+*/
+.commentInfo {
+  float: right;
+  border: solid #888888 1px;
+  padding: .5em;
+  margin-top: 0px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  margin-right: 0px;
+  width: 12em;
+  line-height: 1em;
+}
+
+/*
+  When viewing a blog entry in comment mode, there are (maybe) several
+  comments.  This is the selector for each comment
+*/
+.comment {
+
+}
+
+/*
+  I use this for the backlink info about a given snip.
+  It's basically the same as the commentInfo, but at one
+  point in the past I think these two bits were different.
+  Either way, this is the selector for those little
+  boxy bits next to the title of each page
+*/
+.sideBox {
+  float: right;
+  border: solid #888888 1px;
+  padding: .5em;
+  margin-top: 0px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  margin-right: 0px;
+  width: 12em;
+  line-height: 1em;
+}
+
+/*
+  I have a interactive map of my flat in aberdeen.
+  When you mouse over the image you get pop-up info about
+  each room.  This is the selector for the pop-up
+*/
+.floating {
+    visibility: hidden;
+    position: absolute;
+    width:200;
+    height:120;
+    z-index:1;
+    border: 1px solid black;
+    color: black;
+    margin: 0px;
+}
+
+/****************** TAG DEFINITIONS *********************/
+/*
+  The main body selector
+*/
+body {
+    background: url('http://www.h-lame.com/images/bg-retro.gif') #cccccc no-repeat fixed;
+    color: #000000;
+    font-family: Times, serif;
+    font-size: 10pt;
+    margin: 0px;
+}
+
+/*
+  tables always ignore font size etc... Dunno why but they do
+*/
+body td {
+    font-size: 10pt;
+    line-height: 1.6em;
+}
+
+small {
+    font-size: 8pt;
+}
+
+h1 {
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 16pt;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h3 {
+    font-size: 14pt;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+a:link a:visited, a:active {
+}
+
+input {
+}
+
+textarea {
+}
+table#alpha-table {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #888888 !important;
+}
+table#alpha-table td {
+  background-color: #cccccc;
+  text-align: left;
+}
+

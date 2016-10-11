@@ -1,0 +1,227 @@
+#header {
+  background-color: #4466AA;
+  padding: 2px;
+}
+
+#header a {
+  text-decoration: none;
+  color: #FF8800;
+  font-size: 14pt;
+}
+
+#header h1 {
+  font-size: 14pt;
+  margin: 0px;
+  padding: 0px;
+}
+
+#headerControls {
+  float: right;
+  font-size: 8pt;
+  maring:0px;
+  padding:0px;
+}
+
+#headerControls a {
+  text-decoration: none;
+  color: #FF8800;
+  font-size: 8pt;
+}
+
+#headerControls form, input {
+  margin: 0px;
+  padding: 0px;
+  font-size: 8pt;
+}
+
+#separator {
+  background-color: #4466AA;
+  padding: 2px;
+}
+
+#sideBox {
+  background-color: #ff8800;
+  border-color: #4466AA;
+  border-style: solid;
+  border-width: 4px;
+  float: right;
+  padding: .5em;
+  margin-top: 0px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  margin-right: 0px;
+  width: 12em;
+}
+
+#pageContent {
+  margin-left: 156px;
+  padding: .5em;
+  background-color: #ffffff;
+}
+
+#sidebarContent {
+  float: left;
+  background-color: #4466AA;
+  padding: 3px;
+  width: 154px;
+  font-weight: bold;
+}
+
+#sidebarContent a {
+  text-decoration: none;
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+  color: #FF8800;
+  font-weight: bold;
+}
+
+#sidebarContent p, td {
+  font-size: 9pt;
+  font-weight: bold;
+}
+
+#sidebarContent small {
+  font-size: 7pt;
+}
+
+#colorBlock1 {
+    color: #ff8800;
+    background-color: #000000;
+    font-weight: bold;
+    text-align: center;
+    padding: 2px;
+}
+
+#colorBlock2 {
+    color: #000000;
+    background-color: #ff8800;
+    font-weight: bold;
+    text-align: center;
+    padding: 2px;
+}
+
+
+#dateTitle {
+  padding: 0px;
+  margin: 0px;
+  border-bottom: solid #4466AA 1px;
+  margin-left: 8px;
+}
+
+#snipTitle {
+  padding: 0px;
+  margin: 0px;
+  border-bottom: solid #4466AA 1px;
+}
+
+#myFace {
+  text-align: center;
+}
+
+#users {
+  text-align: center;
+}
+
+#amazon {
+  text-align: center;
+}
+
+#muzNow {
+  text-align: center;
+}
+
+#copyright {
+  text-align: center;
+}
+
+#content {
+  line-height: 1.6em;
+}
+
+#snipContent {
+  margin-left: 13px;
+  line-height: 1.6em;
+}
+
+#commentInfo {
+  float: right;
+  background-color: #ff8800;
+  border-color: #4466AA;
+  border-style: solid;
+  border-width: 4px;
+  padding: .5em;
+  margin-top: 0px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  margin-right: 0px;
+  width: 12em;
+  line-height: 1em;
+}
+
+#vanillaKudos {
+  text-align: right;
+}
+
+#alphabetcount {
+  background-color: #ff8800;
+  border-color: #4466AA;
+  border-style: solid;
+  border-width: 4px;
+}
+
+#alphabetsnip {
+
+}
+
+body {
+    scrollbar-face-color: #ff8800;
+    scrollbar-shadow-color: #4466AA;
+    scrollbar-highlight-color: #4466AA;
+    scrollbar-3dlight-color: #4466AA;
+    scrollbar-darkshadow-color: #4466AA;
+    scrollbar-track-color: #4466AA;
+    scrollbar-arrow-color: #4466AA;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+}
+
+small {
+    font-size: 7pt;
+}
+
+h1 {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 14pt;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h3 {
+    font-size: 12pt;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #4466AA;
+    font-weight: bold;
+}
+
+.floating {
+    visibility:  hidden;
+    position: absolute;
+    width:200;
+    height:120;
+    z-index:1;
+    font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+    border: 1px solid black;
+    background: brown;
+    color: black;
+}
