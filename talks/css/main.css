@@ -73,6 +73,7 @@ code {
   display: block;
 }
 
+img.video-poster,
 img.slide {
   display: block;
   vertical-align: middle;
