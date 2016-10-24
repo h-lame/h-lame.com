@@ -19,6 +19,24 @@ body {
   font: Helvetica, Helvetica Neue, Arial;
 }
 
+.numberer {
+  counter-reset: numberer-counter;
+}
+.numberer .numbered {
+  position: relative;
+}
+.numberer .numbered:before {
+  content: counter(numberer-counter);
+  counter-increment: numberer-counter;
+  position: absolute;
+  top: 0;
+  right: -1em;
+  width: 1em;
+  line-height: 1em;
+  font-size: 4em;
+  color: #ccc;
+}
+
 .wrapper {
   width: 90%;
   margin: 0 5%;
