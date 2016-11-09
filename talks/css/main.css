@@ -19,6 +19,10 @@ body {
   font: Helvetica, Helvetica Neue, Arial;
 }
 
+article {
+  padding: 0 1em;
+}
+
 .numberer {
   counter-reset: numberer-counter;
 }
@@ -30,11 +34,12 @@ body {
   counter-increment: numberer-counter;
   position: absolute;
   top: 0;
-  right: -1em;
-  width: 1em;
+  left: -1em;
+  min-width: 1.2em;
   line-height: 1em;
-  font-size: 4em;
+  font-size: 2em;
   color: #ccc;
+  text-align: center;
 }
 
 .wrapper {
@@ -89,13 +94,15 @@ main section {
 }
 
 @media only screen and (min-width: 480px) {
-
   .oldie nav a {
     margin: 0 0.7%;
   }
 }
 
 @media only screen and (min-width: 768px) {
+  .numberer .numbered:before {
+    font-size: 4em;
+  }
 
   .header-container,
   .main aside {
