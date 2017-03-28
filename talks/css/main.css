@@ -19,10 +19,6 @@ body {
   font: Helvetica, Helvetica Neue, Arial;
 }
 
-article {
-  padding: 0 1em;
-}
-
 .numberer {
   counter-reset: numberer-counter;
 }
@@ -34,12 +30,12 @@ article {
   counter-increment: numberer-counter;
   position: absolute;
   top: 0;
-  left: -1em;
+  left: -1.5em;
   min-width: 1.2em;
   line-height: 1em;
   font-size: 2em;
   color: #ccc;
-  text-align: center;
+  text-align: right;
 }
 
 .wrapper {
@@ -111,12 +107,12 @@ main section {
 
   .main article {
     float: left;
-    width: 57%;
+    width: 50%;
   }
 
   .main aside {
     float: right;
-    width: 28%;
+    width: 30%;
   }
 }
 
