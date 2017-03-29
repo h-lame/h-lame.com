@@ -14,51 +14,55 @@
     <link rel="stylesheet" href="/talks/css/main.css">
   </head>
   <body>
-    <div class="header-container">
-      <header class="wrapper clearfix">
-        <h1 class="title">Talks Iʼve given</h1>
-      </header>
-    </div>
+    <header class="wrapper">
+      <h1 class="title">Talks Iʼve given</h1>
+    </header>
 
-    <div class="main-container">
-      <main class="main wrapper clearfix">
+    <aside id="menu" class="wrapper">
+      <nav>
+        <div class="revealer">
+          <h1 class="reveal-name">Talk list</h1>
+          <ol class="revealee">
+            <li><a href="#rubygems-contribution-story">A rubygems contribution story</a></li>
+            <li><a href="#rough-fibrous-material">Some rough fibrous material</a></li>
+          </ol>
+        </div>
+      </nav>
+    </aside>
 
-        <article class="numberer">
-          <section>
-            <p>Sometimes I give talks and this is where I collect them all together.</p>
-          </section>
+    <main class="wrapper">
 
-          <section class="numbered" id="rubygems-contribution-story">
+      <article class="numberer">
+        <section>
+          <p>Sometimes I give talks and this is where I collect them all together.</p>
+        </section>
+
+        <section class="talk-section numbered" id="rubygems-contribution-story">
+          <div class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/rubygems-contribution/slides/001.png" title="A rubygems contribution story" alt="A rubygems contribution story">
+          </div>
+          <div class="transcript">
             <h2><a href="/talks/rubygems-contribution/">A rubygems contribution story</a></h2>
             <p>A short talk I gave about a rubygems contribution I made.</p>
             <p>Presented at: <strong><a href="http://lrug.org/">LRUG</a></strong></p>
             <p>On: <strong><a href="http://lrug.org/meetings/2016/october/">Monday, 10th October, 2016</a></strong></p>
-          </section>
+          </div>
+        </section>
 
-          <section class="numbered" id="rough-fibrous-material">
+        <section class="talk-section numbered" id="rough-fibrous-material">
+          <div class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/rough-fibrous-material/slides/001.png" title="Some rough fibrous material" alt="Some rough fibrous material">
+          </div>
+          <div class="transcript">
             <h2><a href="/talks/rough-fibrous-material/">Some rough fibrous material</a></h2>
             <p>A short talk I gave about the <code>Fiber</code> library added to ruby 1.9.</p>
             <p>Presented at: <strong><a href="http://lrug.org/">LRUG</a></strong></p>
             <p>On: <strong><a href="http://lrug.org/meetings/2010/february/">Monday, 10th February, 2010</a></strong></p>
-          </section>
+          </div>
+        </section>
 
-        </article>
-
-        <aside id="menu">
-          <nav>
-            <div class="revealer">
-              <h1 class="reveal-name">Talk menu</h1>
-              <ul class="revealee">
-                <li><a href="#rubygems-contribution-story">A rubygems contribution story</a></li>
-                <li><a href="#rough-fibrous-material">Some rough fibrous material</a></li>
-              </ul>
-            </div>
-          </nav>
-        </aside>
-      </main>
-    </div>
+      </article>
+    </main>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
