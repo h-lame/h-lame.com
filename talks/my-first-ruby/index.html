@@ -185,6 +185,7 @@
         <section class="talk-section numbered" id="slide-011">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/011.png" title="Slide 11: My first ruby" alt="The diff of my first ever ruby commit, itʼs a small change; diff: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-11-my-first-ruby-diff">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-11-my-first-ruby-diff">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>So.  Here’s the first code I committed to the project.</p>
@@ -196,6 +197,7 @@
         <section class="talk-section numbered" id="slide-012">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/012.png" title="Slide 12: Java vs. Ruby" alt="The Java logo with a speech bubble and the Ruby logo with a speech bubble.  The contents of the speech bubbles contain the same object constructor code in each language for comparison; Java code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-12-a-constructor-java, Ruby code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-12-b-initializer-rb">
+            <figcaption>Gists for <a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-12-a-constructor-java">Java code</a> and <a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-12-b-initializer-rb">Ruby code</a> in slide</figcaption>
           </figure>
           <div class="transcript">
             <p>To compare what this felt like to me in 2003 it’d help to compare the final code to how I’d do the same thing in Java.</p>
@@ -243,6 +245,7 @@
         <section class="talk-section numbered" id="slide-016">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/016.png" title="Slide 16: handleMessage" alt="A snippet of code that shows the handleMessage method; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-16-handlemessage-rb">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-16-handlemessage-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>This is the main method from the mail processing script and it describes the route that the mail takes through the system.</p>
@@ -271,6 +274,7 @@
         <section class="talk-section numbered" id="slide-018">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/018.png" title="Slide 18: processSubject" alt="A snipped of code that shows the processSubject method; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-18-processsubject-rb">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-18-processsubject-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>This code is pretty bad.  I’m massaging a string, I should be using regexp here.  I don’t necessarily agree with using regexp for everything but doing all this string manipulation here would be much better done with regexp.  It wasn’t until a few months into doing ruby professionally (2005-ish I think) that <a href="http://snowblink.co.uk/">Jon Lim</a> (who I was working with at the time) asked my why I kept using <code>.slice</code> and <code>[]</code> all the time instead of <code>.gsub</code> with a simple regexp.  I think this was a hangover from my Java days where regular expressions were percieved as slow and crappy, and strings were immutable so you did everything with <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuffer.html"><code>StringBuffer</code>s</a>.</p>
@@ -280,6 +284,7 @@
         <section class="talk-section numbered" id="slide-019">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/019.png" title="Slide 19: processSubject (refactored)" alt="A snippet of code that shows a refactored version of the processSubject method; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-19-processsubject-refactored-rb">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-19-processsubject-refactored-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>I’m pretty sure, that even despite using regexps, this is easier to read and understand what’s going on.</p>
@@ -289,6 +294,7 @@
         <section class="talk-section numbered" id="slide-020">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/020.png" title="Slide 20: Extending from Hash" alt="A snippet of code showing a class, ListConfiguration, that extends from Hash with a comment suggesting this is for convenience; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-20-listconfiguration-rb; text: this is a loosely extended Hash with some little things to make itʼs use more convenient">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-20-listconfiguration-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>The next thing we do is add list headers.  We store those as part of the system config and have this object <code>ListConfiguration</code>, “an extended Hash with some little things to make it’s use more convenient”.</p>
@@ -299,6 +305,7 @@
         <section class="talk-section numbered" id="slide-021">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/021.png" title="Slide 21: listHeaders convenience method" alt="A snippet of code showing one of the convenience methods from ListConfiguration; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-21-listheaders-rb; text: this method is a bit overkill, but by caching the actual list header object instead of having to get it from the main config hash each time we should save some overhead. the ListHeaders part is the most frequently accessed, because it contains a lot of varied list info.">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-21-listheaders-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>This is one of those methods.  Clearly there’s some premature optimisation going on here.  Maybe I misunderstood <abbr title="YAML Ain't Markup Language">YAML</abbr> backed Hashes and though it would always be hitting the <abbr title="YAML Ain't Markup Language">YAML</abbr> file.  Even if I did, don’t optimize until you have to.</p>
@@ -309,6 +316,7 @@
         <section class="talk-section numbered" id="slide-022">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/022.png" title="Slide 22: A more convenient listHeaders" alt="A snippet of code that is more convenient than the previous method; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-22-listheaders-rb">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-22-listheaders-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>…this.</p>
@@ -320,6 +328,7 @@
         <section class="talk-section numbered" id="slide-023">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/023.png" title="Slide 23: Another more convenient listHeaders" alt="Another snippet of code that is more convenient than the original method; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-23-listheaders-rb">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-23-listheaders-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>… we could define a <code>listHeaders</code> method and use that on the <code>@config</code> instance.  But, really, the first thing is better, I’ve genuinely no idea what was going on here.</p>
@@ -329,6 +338,7 @@
         <section class="talk-section numbered" id="slide-024">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/024.png" title="Slide 24: The original listHeaders method again" alt="The listHeaders snippet of code again, without the descriptive comment; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-24-listheaders-rb">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-24-listheaders-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>The final weird thing about this <code>ListConfiguration</code> object is, if we look back at that <code>listHeaders</code> method you’ll notice we don’t use symbols or strings as the keys into the hash.  We use constants which are defined at the top of the <code>Config</code> module.  For example…</p>
@@ -338,6 +348,7 @@
         <section class="talk-section numbered" id="slide-025">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/025.png" title="Slide 25: String constants" alt="A snippet of code explaining that the constants used in listHeaders are just strings; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-25-listheaders-rb; text: these just resolve to unique strings, used as keys within the config hash">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-25-listheaders-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>…like these.</p>
@@ -348,6 +359,7 @@
         <section class="talk-section numbered" id="slide-026">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/026.png" title="Slide 26: attachment processing" alt="A snippet of the code for processing attachments; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-26-attachment-processing-fragment-rb">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-26-attachment-processing-fragment-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>The next bit of code to talk about is this, it’s a chunk of the attachment processing method.</p>
@@ -364,6 +376,7 @@
         <section class="talk-section numbered" id="slide-027">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/027.png" title="Slide 27: handleMessage (again)" alt="The handleMessage code snippet again; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-16-handlemessage-rb">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-16-handlemessage-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>I’ve covered a few of the little refactorings I’d do to individual methods, but I think the whole thing could do with an overhaul.  It’s pretty much one class and it does everything.  I think something like the following…</p>
@@ -403,6 +416,7 @@
         <section class="talk-section numbered" id="slide-031">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/031.png" title="Slide 31: handler.rb" alt="A code fragment showing the handler.rb script; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-31-handler-rb">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-31-handler-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>So, the first thing that seems weird to me, is that narf isn’t just a library that you include into your scripts.  It also comes with an executable.  As it turns out this executable is there to redirect any exceptions and errors from the ruby process back into the <abbr title="Common Gateway Interface">CGI</abbr> environment.  But this fact is buried as an aside in the docs.  It’s weird.</p>
@@ -412,6 +426,7 @@
         <section class="talk-section numbered" id="slide-032">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/032.png" title="Slide 32: Apache config" alt="A code fragment showing the Apache configuration for running the handler.rb script; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-32-apache-conf">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-32-apache-conf">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>There’s no nice abstraction of routes, but then that’s not surprising, it’s not a higher-level <abbr title="Model View Controller">MVC</abbr> framework. It’s a web framework. It abstracts the first level of <abbr title="Common Gateway Interface">CGI</abbr> interaction, it doesn’t build on top of it to give you what rails or sinatra gives you.</p>
@@ -424,6 +439,7 @@
         <section class="talk-section numbered" id="slide-033">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/033.png" title="Slide 33: narf API" alt="A code fragment showing some of the narf API use in handler.rb; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-33-cgi-handler-rb">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-33-cgi-handler-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>Having asked apache to invoke your script, you require the narf libraries and this gives you a <code>Web</code> object.  This object is what you interact with to communicate with the webserver.  This is a fragment of our main <abbr title="Common Gateway Interface">CGI</abbr> script.</p>
@@ -439,6 +455,7 @@
         <section class="talk-section numbered" id="slide-034">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/034.png" title="Slide 34: narf view templates" alt="A fragment of the view templates that narf uses; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-34-error-page-html">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-34-error-page-html">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>This is what that template looks like.</p>
@@ -453,6 +470,7 @@
         <section class="talk-section numbered" id="slide-035">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/035.png" title="Slide 35: LoginHandler" alt="A fragment of the LoginHandler; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-35-loginhandler-rb">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-35-loginhandler-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p><code>showLogin</code> is effectively the render action for the <code>"login"</code> command.  If the user isn’t logged in we want to show them the login page, we’ll call <code>.showLogin</code> on the <code>LoginHandler</code>.</p>
@@ -463,6 +481,7 @@
         <section class="talk-section numbered" id="slide-036">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/036.png" title="Slide 36: LoginHandler#showLogin refactored" alt="A fragment of the LoginHandler code showing a potential refactor to the showLogin method; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-36-showlogin-rb">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-36-showlogin-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>Maybe somewhere else (and I use this form for other handlers and their “actions”) I might want to render a template that shows a fragment of the login ui, and so grabbing the params that it needs from the <code>LoginHandler</code> might make sense.</p>
@@ -473,6 +492,7 @@
         <section class="talk-section numbered" id="slide-037">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/037.png" title="Slide 37: LoginHandler#showLogin refactored more" alt="A fragment of the LoginHandler code showing a further refactoring of the showLogin method; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-37-showlogin-refactored-rb">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-37-showlogin-refactored-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>It’s just simpler.</p>
@@ -500,6 +520,7 @@
         <section class="talk-section numbered" id="slide-039">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/039.png" title="Slide 39: UserUpdater" alt="A fragment of the code from the UserUpdater showing a lack of abstraction; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-39-userupdater-fragment-rb">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-39-userupdater-fragment-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>Let’s look at some code in one of those handlers:  <code>UserUpdater</code>.</p>
@@ -532,6 +553,7 @@
         <section class="talk-section numbered" id="slide-041">
           <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/041.png" title="Slide 41: page navigation" alt="A fragment of the code used to process query params in the ArchiveDisplayer; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-41-param-parsing-rb">
+            <figcaption><a href="https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-41-param-parsing-rb">Gist for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
             <p>Apart from this one.</p>
