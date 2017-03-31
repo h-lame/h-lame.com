@@ -87,27 +87,27 @@
         </section>
 
         <section class="talk-section numbered" id="slide-001">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/001.jpg" title="Slide 1: My first ruby" alt="A photo of a drawing of a ruby in red crayon with the crayon on top of the drawing; text: My first ruby by Murray Steele (aged 31 ½)">
-          </div>
+          </figure>
           <div class="transcript">
             <p>I’m going to talk to you about the first ruby script I ever wrote.  It’s called <em>MY</em> first ruby, but I promise it won’t all be about me.  There’ll be a little bit of personal history, just so you can get an idea of what sort of programmer I was at the time, but most of the talk will focus on the script itself.</p>
           </div>
         </section>
 
         <section class="talk-section numbered" id="slide-002">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/002.jpg" title="Slide 2: Me in 2010" alt="My 2010 passport photo and the logos of my employer (Unboxed Consulting) and preferred programming language (ruby) from 2010; text: Me in 2010, employed by Unboxed Consulting, codes mostly in Ruby, passport photo">
-          </div>
+          </figure>
           <div class="transcript">
             <p>First the personal history which I promise won’t take up much time.  This is me now.  But I wrote this script in 2003. not 2010.  So we have to go back in time.  So step into my time portal and come with me to the late summer of 2003…</p>
           </div>
         </section>
 
         <section class="talk-section numbered" id="slide-003">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/003.jpg" title="Slide 3: Me in 2003" alt="My 2003 passport photo and the logos of my employer (Applied Psychology Research) and preferred programming languages (Java and wxPython) from 2003; text: Me in 2003, employed by Applied Psychology Research, codes mostly in Java and wxPython">
-          </div>
+          </figure>
           <div class="transcript">
             <p>Cast your mind back.  Things were different then.  Summers were longer, the sun was brighter, I had more hair, and ruby 1.8.0 (the grandfather of the version you all know and love) had only just been released that August.</p>
             <p>I was in the dying stages of my first job out of university.  I was interviewed to work primarily as a Java programmer; but I ended up doing a load of C++, a bit of VB and some Python GUI development.  It was a great company, but the management decided to move the company offices to Cambridge, which I felt meant I was living the wrong way around; you commute <em>into</em> London, not out of it.  I’d never done any Ruby programming, but I did have a taste for dynamic languages having done a lot of (not very OO) Python programming (we used tuples a lot).  I still considered myself a Java programmer, not least because I’d just accepted a job at a Java-based SMS gateway company.</p>
@@ -115,9 +115,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-004">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/004.jpg" title="Slide 4: An introduction to ruby" alt="A photo of my friend James Adam, with a speech bubble containing his first description of ruby to me; text: I FORSAKE JAVA! I RENOUNCE C++! ALL HAIL the Mighty RUBY!! Riddle: 2.upto(10) { |num| print &quot;ruby is #{num} times better than java or c++&quot; }  Work it out…if you dare.">
-          </div>
+          </figure>
           <div class="transcript">
             <p>I heard of Ruby because my friend, <a href="http://lazyatom.com/">James Adam</a> (pictured), had been doing a PhD instead of working and while he flirted with Java and Python for a couple of early instalments of his thesis code, he finally settled in about 2001 on Ruby for the majority of his code, and wouldn’t stop going on about it to anyone that would listen.</p>
             <p>The prime vehicle for James’ evangelism of Ruby was to send messages a mailing list that our university classmates had set up to keep in touch after we graduated.</p>
@@ -125,18 +125,18 @@
         </section>
 
         <section class="talk-section numbered" id="slide-005">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/005.png" title="Slide 5: eGroups" alt="A screenshot of the egroups interface in Netscape navigator">
-          </div>
+          </figure>
           <div class="transcript">
             <p>This mailing list was originally running on <a href="https://en.wikipedia.org/wiki/EGroups">egroups</a>.  Which was fine.  It hosted files and polls and had a web interface.  It was pretty sweet for the year 2000.</p>
           </div>
         </section>
 
         <section class="talk-section numbered" id="slide-006">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/006.png" title="Slide 6: Yahoo! Groups" alt="A screenshot of the Yahoo! Groups interface in Internet Explorer">
-          </div>
+          </figure>
           <div class="transcript">
             <p>Then they got bought by Yahoo! and it became <a href="https://groups.yahoo.com/">Yahoo! Groups!</a>  Basically the same service, but it had a red and blue logo instead of a purple one, and yellow was banished from the UI.</p>
             <p>However, and here’s where we finally get to the ruby script, Yahoo! Groups! started dropping emails intermittently, or taking several days for emails to show up.</p>
@@ -145,9 +145,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-007">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/007.png" title="Slide 7: Yahoo! Groups - Cancelled" alt="A screenshot of the Yahoo! Groups interace in Internet Explorer with the word Cancelled stamped on it; text: cancelled">
-          </div>
+          </figure>
           <div class="transcript">
             <p>So despite thousands of available choices, and even a single click install of <a href="http://www.list.org/">mailman</a> on our shared hosting<a name="fn-1-return" href="#fn-1"><sup>1</sup></a>, we decided to write our own replacement.</p>
             <p>James somehow convinced us that we should write it in ruby even though he was the only one who knew any ruby.  James knocked up a simple test script as a proof of concept and we decided to go ahead.</p>
@@ -155,27 +155,27 @@
         </section>
 
         <section class="talk-section numbered" id="slide-008">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/008.jpg" title="Slide 8: Iʼm ready to do ruby…" alt="A photo of me dressed up fancy with a speech bubble proclaiming my readiness to program in ruby; text: I am all dressed up ready to code me some Ruby. YEAH!!!">
-          </div>
+          </figure>
           <div class="transcript">
             <p>And so, this talk is called “My First Ruby”, and while it’s true that it’s my first ruby.  It’s not like I wrote it alone.  After James wrote the prototype we both had a free weekend on the 13th September, 2003 and knocked up the initial version together.</p>
           </div>
         </section>
 
         <section class="talk-section numbered" id="slide-009">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/009.jpg" title="Slide 9: …with some help" alt="A photo of me dressed up fancy, expanded to reveal James standing near by with a speech bubble explaining that heʼll help me; text: You donʼt even know Ruby, Iʼll make sure you do it right.">
-          </div>
+          </figure>
           <div class="transcript">
             <p>My first ruby script was written under the guidance of someone who had been using it for a couple of years.  This probably isn’t that different to many of you though; any code you’ve written has hopefully had the benefit of other people at your job working on the same project, if you’re lucky you’ve even been pair programming with them.  Even if it’s code you’ve written at home, chances are you’ve put it up on github and have the chance of thousands of rubyists looking at it.  Don’t be scared of letting other people look at your code.</p>
           </div>
         </section>
 
         <section class="talk-section numbered" id="slide-010">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/010.jpg" title="Slide 10: Reading code" alt="A photo of a hand holding open a book, the pages show (Go) code; text: https://www.flickr.com/photos/ajstarks/4196202909/">
-          </div>
+          </figure>
           <div class="transcript">
             <p>Speaking of reading code, <a href="http://chrislowis.co.uk">Chris Lowis</a>, LRUG’s resident <a href="http://lrug.org/podcasts/">podcaster</a>, recently wrote <a href="http://blog.chrislowis.co.uk/2010/05/31/five-rails-apps-to-study-and-learn-from.html">a great blog post about open source rails projects and what you can learn from reading the source of them</a>.  I think it goes both ways; if you read other people’s code you learn a lot, and if you let other people read your code not only do they learn from you, but so will you when they critique it.  They'll suggest patches for edge-cases you didn’t cover or even a neat re-factoring.  It’s also a nice confidence boost when you read some code for say, <a href="https://github.com/rubygems/gemcutter">gemcutter</a>, and you notice something you think could be improved.</p>
             <p>Anyway, aside over.</p>
@@ -183,9 +183,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-011">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/011.png" title="Slide 11: My first ruby" alt="The diff of my first ever ruby commit, itʼs a small change; diff: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-11-my-first-ruby-diff">
-          </div>
+          </figure>
           <div class="transcript">
             <p>So.  Here’s the first code I committed to the project.</p>
             <p>This probably isn’t the actual first bit of ruby I ever wrote.  As I already mentioned, James had hacked up a prototype and the first commit to our source control was timed at around lunchtime on the Saturday.  It’s 7 years ago so while I can’t remember exactly what we did that day, and I do recall spending a lot of the morning hunting around for a spare ethernet cable.  I’m pretty sure we did some hacking on the code before we decided that <a href="http://www.nongnu.org/cvs/"><abbr title="Concurrent Version System">CVS</abbr></a><a name="fn-2-return" href="#fn-2"><sup>2</sup></a> might be a good idea.</p>
@@ -194,9 +194,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-012">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/012.png" title="Slide 12: Java vs. Ruby" alt="The Java logo with a speech bubble and the Ruby logo with a speech bubble.  The contents of the speech bubbles contain the same object constructor code in each language for comparison; Java code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-12-a-constructor-java, Ruby code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-12-b-initializer-rb">
-          </div>
+          </figure>
           <div class="transcript">
             <p>To compare what this felt like to me in 2003 it’d help to compare the final code to how I’d do the same thing in Java.</p>
             <p>(Well, I think so anyway; my Java is rusty).  This was pretty amazing!  So much less code!  First, there’s the fact that by allowing default values in method signatures I can get rid of that entire 2nd constructor.  Then there’s using the if statement as a statement modifier, by placing it at the end.  I don’t know why, but I’m a massive fan of this format, and I think it’s one of the reasons that I get ruby.  It just reads so neatly.  Finally, there’s a lack of extraneous syntax.</p>
@@ -206,18 +206,18 @@
         </section>
 
         <section class="talk-section numbered" id="slide-013">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/013.png" title="Slide 13: A content warning" alt="The BBFC logo for a 15 certificate filem; text: 15 for frequent strong language">
-          </div>
+          </figure>
           <div class="transcript">
             <p>Now I have to warn those of a sensitive nature, for reasons best left unexplored we decided to call our new mailing list software after a favourite insult from our university days.  And I’m not going to be able to avoid saying it or showing it on screen, so I have to warn you;</p>
           </div>
         </section>
 
         <section class="talk-section numbered" id="slide-014">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/014.png" title="Slide 14: Fucknut" alt="text: Fucknut">
-          </div>
+          </figure>
           <div class="transcript">
             <p>We called it:</p>
             <blockquote>Fucknut</blockquote>
@@ -226,9 +226,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-015">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/015.jpg" title="Slide 15: Fucknut architecture" alt="A hand-drawn architecture diagram of the fucknut system; Emails go into Procmail which reads from procmail.rc that contains a regexp to pipe the email to the fucknut.rb script; this script uses the YAML::Syck, Rmail, and Net::SMTP libraries, and outputs to an Archive database, and a set of users">
-          </div>
+          </figure>
           <div class="transcript">
             <p>The main component of fucknut is the part that processes mail, and this is also the oldest part of it as it’s based on James’ inital prototype.</p>
             <p>It starts with a <code>.procmailrc</code> file.  For those that don’t know, <a href="https://en.wikipedia.org/wiki/Procmail">procmail</a> is a UNIX tool that you can get to run against every mail that is delivered to your shell account and the <code>.procmailrc</code> file controls it.  You can think of it like a <a href="http://guides.rubyonrails.org/routing.html">rails <code>routes.rb</code> file</a> for mail (except it doesn’t use ruby or have a nice dsl).</p>
@@ -241,9 +241,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-016">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/016.png" title="Slide 16: handleMessage" alt="A snippet of code that shows the handleMessage method; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-16-handlemessage-rb">
-          </div>
+          </figure>
           <div class="transcript">
             <p>This is the main method from the mail processing script and it describes the route that the mail takes through the system.</p>
             <p>The first thing it does it make sure that the sender of the mail is one of the users.  We’re all digital natives so a user is allowed to have several email addresses attached to their account and can post from any of them.</p>
@@ -259,9 +259,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-017">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/017.png" title="Slide 17: Regarding ‘R E :’" alt="A screenshot of an email thread titled “regarding ‘R E :’”, there are 23 messages;">
-          </div>
+          </figure>
           <div class="transcript">
             <p>Originally we were just going to add the list name in square brackets to the start of the mail, but then we realised we had to do something to prevent various mail clients messing up the re: re: re: re: stuff.  After a tortuous requirements gathering thread we decided to settle on <code>[list name] &lt;original subject&gt;</code> and <code>Re: [list name] &gt;original subject without any re:&lt;</code>.  As you can might be able to see, this took 3 days and 23 messages to argue about and decide to do the thing we were going to do anyway.  A further argument, if you ever needed it, for not starting a bikeshed discussion if you can possibly get away with it.</p>
             <p>There was nothing else about this app that involved this level of debate.</p>
@@ -269,27 +269,27 @@
         </section>
 
         <section class="talk-section numbered" id="slide-018">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/018.png" title="Slide 18: processSubject" alt="A snipped of code that shows the processSubject method; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-18-processsubject-rb">
-          </div>
+          </figure>
           <div class="transcript">
             <p>This code is pretty bad.  I’m massaging a string, I should be using regexp here.  I don’t necessarily agree with using regexp for everything but doing all this string manipulation here would be much better done with regexp.  It wasn’t until a few months into doing ruby professionally (2005-ish I think) that <a href="http://snowblink.co.uk/">Jon Lim</a> (who I was working with at the time) asked my why I kept using <code>.slice</code> and <code>[]</code> all the time instead of <code>.gsub</code> with a simple regexp.  I think this was a hangover from my Java days where regular expressions were percieved as slow and crappy, and strings were immutable so you did everything with <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuffer.html"><code>StringBuffer</code>s</a>.</p>
           </div>
         </section>
 
         <section class="talk-section numbered" id="slide-019">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/019.png" title="Slide 19: processSubject (refactored)" alt="A snippet of code that shows a refactored version of the processSubject method; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-19-processsubject-refactored-rb">
-          </div>
+          </figure>
           <div class="transcript">
             <p>I’m pretty sure, that even despite using regexps, this is easier to read and understand what’s going on.</p>
           </div>
         </section>
 
         <section class="talk-section numbered" id="slide-020">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/020.png" title="Slide 20: Extending from Hash" alt="A snippet of code showing a class, ListConfiguration, that extends from Hash with a comment suggesting this is for convenience; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-20-listconfiguration-rb; text: this is a loosely extended Hash with some little things to make itʼs use more convenient">
-          </div>
+          </figure>
           <div class="transcript">
             <p>The next thing we do is add list headers.  We store those as part of the system config and have this object <code>ListConfiguration</code>, “an extended Hash with some little things to make it’s use more convenient”.</p>
             <p>As a comment at the top.  You know what, I’ve never <em>ever</em> used a hash in ruby and thought, “Gee, I wish this was more convenient”, I can’t say I even really think that <a href="http://breakthebit.org/post/8453341914/ruby-19-and-the-new-hash-syntax">the new 1.9 hash syntax</a> is that much better.  It also shouldn’t extend Hash, it should contain a Hash and delegate the bits of the Hash API that I want and then provide it’s own methods where I want more convience.</p>
@@ -297,9 +297,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-021">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/021.png" title="Slide 21: listHeaders convenience method" alt="A snippet of code showing one of the convenience methods from ListConfiguration; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-21-listheaders-rb; text: this method is a bit overkill, but by caching the actual list header object instead of having to get it from the main config hash each time we should save some overhead. the ListHeaders part is the most frequently accessed, because it contains a lot of varied list info.">
-          </div>
+          </figure>
           <div class="transcript">
             <p>This is one of those methods.  Clearly there’s some premature optimisation going on here.  Maybe I misunderstood <abbr title="YAML Ain't Markup Language">YAML</abbr> backed Hashes and though it would always be hitting the <abbr title="YAML Ain't Markup Language">YAML</abbr> file.  Even if I did, don’t optimize until you have to.</p>
             <p>Given all that, you know what would be more convenient than having to write that method in the first place…</p>
@@ -307,9 +307,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-022">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/022.png" title="Slide 22: A more convenient listHeaders" alt="A snippet of code that is more convenient than the previous method; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-22-listheaders-rb">
-          </div>
+          </figure>
           <div class="transcript">
             <p>…this.</p>
             <p>We mostly assigned instances of <code>ListConfiguration</code> to a <code>@config</code> variable when we use it, so just treat it like a hash.</p>
@@ -318,27 +318,27 @@
         </section>
 
         <section class="talk-section numbered" id="slide-023">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/023.png" title="Slide 23: Another more convenient listHeaders" alt="Another snippet of code that is more convenient than the original method; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-23-listheaders-rb">
-          </div>
+          </figure>
           <div class="transcript">
             <p>… we could define a <code>listHeaders</code> method and use that on the <code>@config</code> instance.  But, really, the first thing is better, I’ve genuinely no idea what was going on here.</p>
           </div>
         </section>
 
         <section class="talk-section numbered" id="slide-024">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/024.png" title="Slide 24: The original listHeaders method again" alt="The listHeaders snippet of code again, without the descriptive comment; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-24-listheaders-rb">
-          </div>
+          </figure>
           <div class="transcript">
             <p>The final weird thing about this <code>ListConfiguration</code> object is, if we look back at that <code>listHeaders</code> method you’ll notice we don’t use symbols or strings as the keys into the hash.  We use constants which are defined at the top of the <code>Config</code> module.  For example…</p>
           </div>
         </section>
 
         <section class="talk-section numbered" id="slide-025">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/025.png" title="Slide 25: String constants" alt="A snippet of code explaining that the constants used in listHeaders are just strings; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-25-listheaders-rb; text: these just resolve to unique strings, used as keys within the config hash">
-          </div>
+          </figure>
           <div class="transcript">
             <p>…like these.</p>
             <p>Why?  I don’t know.  I just doesn’t make any sense, until you remember my Java routes where these sorts of “magic” strings would be defined as <code>public static String</code>s because you’d only want to create that object once (woe betide the Java programmer in the early 2000s who went around creating more objects than they strictly needed to).  Thing is, Ruby has symbols which save one char on typing a string and are more idiomatic.  I can only assume I didn’t know about symbols when I wrote this.  I probably wanted some comfort that I wasn’t spelling a config key wrong and causing a <code>nil</code> error so shied away from using strings.  Using constants means I’d get a runtime error saying there’s a missing constant instead of a <code>nil</code> error somewhere down the line.</p>
@@ -346,9 +346,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-026">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/026.png" title="Slide 26: attachment processing" alt="A snippet of the code for processing attachments; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-26-attachment-processing-fragment-rb">
-          </div>
+          </figure>
           <div class="transcript">
             <p>The next bit of code to talk about is this, it’s a chunk of the attachment processing method.</p>
             <p>We get here if the message is multipart, and this fragment is run on each part.</p>
@@ -362,27 +362,27 @@
         </section>
 
         <section class="talk-section numbered" id="slide-027">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/027.png" title="Slide 27: handleMessage (again)" alt="The handleMessage code snippet again; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-16-handlemessage-rb">
-          </div>
+          </figure>
           <div class="transcript">
             <p>I’ve covered a few of the little refactorings I’d do to individual methods, but I think the whole thing could do with an overhaul.  It’s pretty much one class and it does everything.  I think something like the following…</p>
           </div>
         </section>
 
         <section class="talk-section numbered" id="slide-028">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/028.jpg" title="Slide 28: A pipeline architecture" alt="A hand-drawn diagram showing an alternative architecture for processing messages using a pipeline; Email goes into the pipeline of processors: subject -> sender -> archive (which outputs a .msg file) -> attachments (which outputs a series of files) -> users (which sends emails)">
-          </div>
+          </figure>
           <div class="transcript">
             <p>…might work.  It’s really a pipeline and, like <a href="http://rack.github.io/">Rack</a>, it might make sense to have a chain of smaller classes linked together, they all take in a mail message and do something to or with it and then pass it on.  That way everything can be tested properly in isolation and it reduces the coupling between things.</p>
           </div>
         </section>
 
         <section class="talk-section numbered" id="slide-029">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/029.png" title="Slide 29: RAA search" alt="A screenshot of Safari showing the Ruby Application Archive search page showing the results of a search for “www”">
-          </div>
+          </figure>
           <div class="transcript">
             <p>That’s the first part of fucknut covered, so now we’re onto the 2nd part, the web front-end.</p>
             <p>2003 was a dark time for web development in ruby.  There were lots of little libraries, but nothing as comprehensive as Rails, certainly not the rails we have now, but not even the rails we got in 2005.  The thing that may surprise you is that we didn’t even have gems back in 2003.  The first release of gems was in March 2004.  To find ruby stuff we scoured something called the <a href="https://www.ruby-lang.org/en/news/2013/08/08/rip-raa/">Ruby Application Archive</a> which was a website similar to what <a href="https://en.wikipedia.org/wiki/RubyForge">rubyforge</a> is now<a name="fn-5-return" href="#fn-5"><sup>5</sup></a>, where you could list ruby projects and categorise them.  Except it did no hosting, you just pointed the links to where the data was.</p>
@@ -392,27 +392,27 @@
         </section>
 
         <section class="talk-section numbered" id="slide-030">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/030.png" title="Slide 30: RAA entry" alt="A screenshot of Safari showing the Ruby Application Archive entry for narf version 0.3.4">
-          </div>
+          </figure>
           <div class="transcript">
             <p>Anyway, after a couple of false starts we settled on something called <a href="https://rubygems.org/gems/narf/">narf</a>, which appeared to be the most high-level thing at the time.  Now, remember this is me talking about narf as it was in September 2003.  It was version 0.3.4 then, and it got up to 0.7.3 before development appeared to stop in 2005, and some of the docs imply it was headed in a direction that would abstract things further.</p>
           </div>
         </section>
 
         <section class="talk-section numbered" id="slide-031">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/031.png" title="Slide 31: handler.rb" alt="A code fragment showing the handler.rb script; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-31-handler-rb">
-          </div>
+          </figure>
           <div class="transcript">
             <p>So, the first thing that seems weird to me, is that narf isn’t just a library that you include into your scripts.  It also comes with an executable.  As it turns out this executable is there to redirect any exceptions and errors from the ruby process back into the <abbr title="Common Gateway Interface">CGI</abbr> environment.  But this fact is buried as an aside in the docs.  It’s weird.</p>
           </div>
         </section>
 
         <section class="talk-section numbered" id="slide-032">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/032.png" title="Slide 32: Apache config" alt="A code fragment showing the Apache configuration for running the handler.rb script; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-32-apache-conf">
-          </div>
+          </figure>
           <div class="transcript">
             <p>There’s no nice abstraction of routes, but then that’s not surprising, it’s not a higher-level <abbr title="Model View Controller">MVC</abbr> framework. It’s a web framework. It abstracts the first level of <abbr title="Common Gateway Interface">CGI</abbr> interaction, it doesn’t build on top of it to give you what rails or sinatra gives you.</p>
             <p>So, you run it as a <abbr title="Common Gateway Interface">CGI</abbr> script, although you could have used <a href="https://github.com/shugo/mod_ruby"><code>mod_ruby</code></a> (no, not <a href="https://www.phusionpassenger.com/">passenger</a>, the <code>mod_ruby</code> that existed ages ago that no-body used).  And if you’ve installed <code>ruby_fastcgi</code><a name="fn-7-return" href="#fn-7"><sup>7</sup></a> you can run it as <a href="https://en.wikipedia.org/wiki/FastCGI">fastcgi</a>.  So, it’s very bare bones, if you want fancy urls you have to write them yourselves using <code>RewriteRule</code> directives.  This is ours.</p>
@@ -422,9 +422,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-033">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/033.png" title="Slide 33: narf API" alt="A code fragment showing some of the narf API use in handler.rb; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-33-cgi-handler-rb">
-          </div>
+          </figure>
           <div class="transcript">
             <p>Having asked apache to invoke your script, you require the narf libraries and this gives you a <code>Web</code> object.  This object is what you interact with to communicate with the webserver.  This is a fragment of our main <abbr title="Common Gateway Interface">CGI</abbr> script.</p>
             <p>Apart from showing off my naïve ruby stylings (4 space indent! <code>collect</code> instead of <code>map</code>!) this explains a lot of the narf api:</p>
@@ -437,9 +437,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-034">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/034.png" title="Slide 34: narf view templates" alt="A fragment of the view templates that narf uses; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-34-error-page-html">
-          </div>
+          </figure>
           <div class="transcript">
             <p>This is what that template looks like.</p>
             <p>As you can see here, there are 2 ways of rendering data in these templates.</p>
@@ -451,9 +451,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-035">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/035.png" title="Slide 35: LoginHandler" alt="A fragment of the LoginHandler; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-35-loginhandler-rb">
-          </div>
+          </figure>
           <div class="transcript">
             <p><code>showLogin</code> is effectively the render action for the <code>"login"</code> command.  If the user isn’t logged in we want to show them the login page, we’ll call <code>.showLogin</code> on the <code>LoginHandler</code>.</p>
             <p>So, what’s going on here?  Again I’ve defined strings as constants when they really didn’t need to be, it’s all internal.  I’ve also, for no reason abstracted the call to <code>print_template</code> out into calling it and the args I’d want to pass to it, I think it was just excitement at using the splat operator.  Nowhere in the code do I ever call <code>loginTemplateArgs</code> except in this method, and I can’t think where I’d want to given that the <code>showLogin</code> method is simply a pass through to <code>print_template</code>.  The only way this might make sense were if it was like this…</p>
@@ -461,9 +461,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-036">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/036.png" title="Slide 36: LoginHandler#showLogin refactored" alt="A fragment of the LoginHandler code showing a potential refactor to the showLogin method; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-36-showlogin-rb">
-          </div>
+          </figure>
           <div class="transcript">
             <p>Maybe somewhere else (and I use this form for other handlers and their “actions”) I might want to render a template that shows a fragment of the login ui, and so grabbing the params that it needs from the <code>LoginHandler</code> might make sense.</p>
             <p>But I don’t.  This just makes it more complex, and it should really be…</p>
@@ -471,18 +471,18 @@
         </section>
 
         <section class="talk-section numbered" id="slide-037">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/037.png" title="Slide 37: LoginHandler#showLogin refactored more" alt="A fragment of the LoginHandler code showing a further refactoring of the showLogin method; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-37-showlogin-refactored-rb">
-          </div>
+          </figure>
           <div class="transcript">
             <p>It’s just simpler.</p>
           </div>
         </section>
 
         <section class="talk-section numbered" id="slide-038">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/038.jpg" title="Slide 38: “controllers”" alt="A hand-drawn diagram of the 3 “controllers” in the system: UserUpdater, LoginHandler, ArchiveDisplayer;">
-          </div>
+          </figure>
           <div class="transcript">
             <p>You’ll have noticed that I talk about <code>LoginHandler</code>.  Narf doesn’t give you any controller framework, so we came up with our own.  There are 3 handlers:</p>
             <ol>
@@ -498,9 +498,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-039">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/039.png" title="Slide 39: UserUpdater" alt="A fragment of the code from the UserUpdater showing a lack of abstraction; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-39-userupdater-fragment-rb">
-          </div>
+          </figure>
           <div class="transcript">
             <p>Let’s look at some code in one of those handlers:  <code>UserUpdater</code>.</p>
             <p>This is some of the code that is run when the <code>'update'</code> command is sent to the handler.</p>
@@ -519,9 +519,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-040">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/040.png" title="Slide 40: URL template" alt="The URL template that the ArchiveDisplayer has to process: /archives/&lt;year&gt;/&lt;month&gt;/&lt;message_id&gt;.msg">
-          </div>
+          </figure>
           <div class="transcript">
             <p>Finally, I want to show some code from the <code>ArchiveDisplayer</code>.  The code in here isn’t actually so bad.  Maybe it’s because I wrote this in January 2004 in a week I had off between jobs.  I was clearly more learned, or maybe it’s because one you get past the web stuff, what the code is doing is fairly straightforward.  It just has to go through our disk based archive structure:</p>
             <blockquote><code>archive/&lt;year&gt;/&lt;momnth&gt;/message_id.msg</code></blockquote>
@@ -530,9 +530,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-041">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/041.png" title="Slide 41: page navigation" alt="A fragment of the code used to process query params in the ArchiveDisplayer; code: https://gist.github.com/h-lame/1f032a1f8181fe220d6f1c2c4d98f64e#file-slide-41-param-parsing-rb">
-          </div>
+          </figure>
           <div class="transcript">
             <p>Apart from this one.</p>
             <p>That doesn’t look <em>too</em> bad, until you look at the rest of the method (this is just a fragment).  That last <code>if</code> statement (which gets the navigation link or placeholder for taking you from the page you are on to the page for the previous year) is repeated almost in it’s entirety to get the navigation links for the previous month, the next month and the next year.</p>
@@ -542,9 +542,9 @@
         </section>
 
         <section class="talk-section numbered" id="slide-042">
-          <div class="slides">
+          <figure class="slides">
             <img class="slide" src="http://assets.h-lame.com/images/talks/my-first-ruby/slides/042.jpg" title="Slide 42: The end" alt="A photo of a smiley face drawn in crayon with the crayons lying on top of the drawing; text: The end">
-          </div>
+          </figure>
           <div class="transcript">
             <p>So that’s my first ruby.  And before I go, I just want to explain why I gave this talk.  Mostly it’s because I hope that after having me come up here and show you this code from 7 years ago, and how bad it is more people will want to get up and show off their code in future meetings.  Either, as I’ve intended, by showing that everyone writes bad code and you needn’t be worried about it.  Or, unintentionally, because you’re worried that if you don’t I’ll turn this into a series of lectures where I talk you through every piece of ruby code I’ve ever written.</p>
             <p>Thanks.</p>
