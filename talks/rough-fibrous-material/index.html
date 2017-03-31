@@ -157,7 +157,7 @@
           <div class="transcript">
             <p>You should be familiar with pre-emptive multitasking as it’s the standard model of concurrency used by most Thread implementations.</p>
 
-            <p>You have several tasks running at the same time, scheduled by the OS or language runtime.  The gotcha is access to shared objects.</p>
+            <p>You have several tasks running at the same time, scheduled by the <abbr title="Operating System">OS</abbr> or language runtime.  The gotcha is access to shared objects.</p>
 
             <p>Fibers however use the co-operative model.  With this no tasks run at the exact same time and it’s up to the programmer to decide when each task will give up control and who to pass control onto.</p>
           </div>
@@ -168,7 +168,7 @@
             <img class="slide" src="http://assets.h-lame.com/images/talks/rough-fibrous-material/slides/009.gif" title="Slide 9: Detour #2.a: pre-emptive" alt="An animation showing pre-emptive multitasking: the CPU bounces across two threads, when one thread locks some shared data the second thread cannot access it even if it has CPU time, text: Detour #2.a: pre-emptive">
           </div>
           <div class="transcript">
-            <p>The main problem with pre-emptive multitasking is that (on a single core machine) these two threads are given CPU time arbitrarily by some scheduler.  They don’t know when in their life-cycle this’ll happen, so when thread alpha wants to access the shared data, it has to lock it.  Unfortunately this means the shared data could remain locked while thread beta has the CPU time, so thread beta can’t do anything.</p>
+            <p>The main problem with pre-emptive multitasking is that (on a single core machine) these two threads are given <abbr title="Central Processing Unit">CPU</abbr> time arbitrarily by some scheduler.  They don’t know when in their life-cycle this’ll happen, so when thread alpha wants to access the shared data, it has to lock it.  Unfortunately this means the shared data could remain locked while thread beta has the <abbr title="Central Processing Unit">CPU</abbr> time, so thread beta can’t do anything.</p>
           </div>
         </section>
 
@@ -177,7 +177,7 @@
             <img class="slide" src="http://assets.h-lame.com/images/talks/rough-fibrous-material/slides/010.gif" title="Slide 10: Detour #2.b: co-operative" alt="An animation showing co-operative multitasking: the CPU bounces across the two fibers, but only when they yield to each other so access to shared data is not blocked, text: Detour #2.b: co-operative">
           </div>
           <div class="transcript">
-            <p>On the other hand, in co-operative multitasking, the fiber itself has explicit control of when the CPU will transfer away.  This means it doesn’t need to lock anything because it’s safe in the knowledge that no other fiber will be running unless it says it’s done.</p>
+            <p>On the other hand, in co-operative multitasking, the fiber itself has explicit control of when the <abbr title="Central Processing Unit">CPU</abbr> will transfer away.  This means it doesn’t need to lock anything because it’s safe in the knowledge that no other fiber will be running unless it says it’s done.</p>
 
             <p>When the fiber is done (or happy that it’s done enough for now), it stops accessing the shared data and simply transfers control away to some other fiber.</p>
           </div>
@@ -190,7 +190,7 @@
           <div class="transcript">
             <p>I’ve bored you with the science part, how about looking at some code?</p>
 
-            <p>If you’ve used threads in ruby this should be familiar. You create a <code>Fiber</code> by passing a block to a constructor.  The block is the “work load” for that fiber.  In this case an infinite loop to generate increasingly excited hellos to the LRUG crowd.  Don’t worry about that pesky “infinite” though…</p>
+            <p>If you’ve used threads in ruby this should be familiar. You create a <code>Fiber</code> by passing a block to a constructor.  The block is the “work load” for that fiber.  In this case an infinite loop to generate increasingly excited hellos to the <abbr title="London Ruby User Group">LRUG</abbr> crowd.  Don’t worry about that pesky “infinite” though…</p>
           </div>
         </section>
 
@@ -208,7 +208,7 @@
             <img class="slide" src="http://assets.h-lame.com/images/talks/rough-fibrous-material/slides/013.png" title="Slide 13: Using fibers means never having to say you’re finished" alt="text: Using fibers means never having to say you’re finished">
           </div>
           <div class="transcript">
-            <p>So although we gave <code>hello_lrug</code> a workload that <strong>will never end</strong>, it’s not a problem because we use the <code>yield</code> and <code>resume</code> methods to explicitly schedule when <code>hello_lrug</code> runs.  If we only want to run it 5 times and never come back to it, that’s ok, it won’t eat up CPU time.  This gives us an interesting new way to think about writing functions; if they don’t have to end lazy evaluation becomes super easy.</p>
+            <p>So although we gave <code>hello_lrug</code> a workload that <strong>will never end</strong>, it’s not a problem because we use the <code>yield</code> and <code>resume</code> methods to explicitly schedule when <code>hello_lrug</code> runs.  If we only want to run it 5 times and never come back to it, that’s ok, it won’t eat up <abbr title="Central Processing Unit">CPU</abbr> time.  This gives us an interesting new way to think about writing functions; if they don’t have to end lazy evaluation becomes super easy.</p>
           </div>
         </section>
 
@@ -269,7 +269,7 @@
 
             <p>Here’s a simplified example of how to read a webpage.  For the normal case it’s really simple, you just call a couple of methods.</p>
 
-            <p>The evented case, not so much.  You have to rely on callback methods and keep some object around to hold the result of those callbacks.  What you lose in a simplified API you gain in performance and flexibility, but it’s hard to get your head around.<a name="fn-1-return" href="#fn-1"><sup>1</sup></a></p>
+            <p>The evented case, not so much.  You have to rely on callback methods and keep some object around to hold the result of those callbacks.  What you lose in a simplified <abbr title="Application Programming Interface">API</abbr> you gain in performance and flexibility, but it’s hard to get your head around<a name="fn-1-return" href="#fn-1"><sup>1</sup></a>.</p>
           </div>
         </section>
 
@@ -278,9 +278,9 @@
             <img class="slide" src="http://assets.h-lame.com/images/talks/rough-fibrous-material/slides/019.png" title="Slide 19: So…what is a practical use for a fiber?" alt="Screenshots of actual projects that use fibers, text: So…what is a practical use for a fiber?">
           </div>
           <div class="transcript">
-            <p>The first non-ruby spec result on github that uses fibers was: <a href="https://github.com/oldmoe/neverblock">Neverblock</a>.<a name="fn-2-return" href="#fn-2"><sup>2</sup></a></p>
+            <p>The first non-ruby spec result on github that uses fibers was: <a href="https://github.com/oldmoe/neverblock">Neverblock</a><a name="fn-2-return" href="#fn-2"><sup>2</sup></a>.</p>
 
-            <p>This library uses Fibers, <a href="http://rubyeventmachine.com/">Event Machine</a> and other non-blocking APIs to present you with an API for doing asynchronous programming that looks remarkably synchronous.  So you don’t have to change your code to get the benefit of asynchronous performance.</p>
+            <p>This library uses Fibers, <a href="http://rubyeventmachine.com/">Event Machine</a> and other non-blocking <abbr title="Application Programming Interface">API</abbr>s to present you with an <abbr title="Application Programming Interface">API</abbr> for doing asynchronous programming that looks remarkably synchronous.  So you don’t have to change your code to get the benefit of asynchronous performance.</p>
 
             <p>I won’t go into details (I only have 1 more slide!), but you should check it out if you’re interested.</p>
           </div>
@@ -293,7 +293,7 @@
           <div class="transcript">
             <p>Last slide.  There’s loads I didn’t cover, but I think I got the basics.</p>
 
-            <p>There are 3 remaining API methods (apart from <code>resume</code> and <code>yield</code>) which I already covered.  <code>Fiber#transfer</code> is like <code>yield</code>, but instead of giving CPU back to the caller, you give it to the fiber you called <code>transfer</code> on.  The other two are simple enough.</p>
+            <p>There are 3 remaining <abbr title="Application Programming Interface">API</abbr> methods (apart from <code>resume</code> and <code>yield</code>) which I already covered.  <code>Fiber#transfer</code> is like <code>yield</code>, but instead of giving <abbr title="Central Processing Unit">CPU</abbr> back to the caller, you give it to the fiber you called <code>transfer</code> on.  The other two are simple enough.</p>
 
             <p>Fibers are supremely lightweight: spinning up fibers takes much less memory than spinning up a thread.  There’s <a href="http://oldmoe.blogspot.co.uk/2008/08/ruby-fibers-vs-ruby-threads.html">a good comparison from the author of the Neverblock gem</a>.</p>
 

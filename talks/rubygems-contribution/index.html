@@ -32,12 +32,12 @@
             <li><a href="#slide-005">5: showing &amp; iterating</a></li>
             <li><a href="#slide-006">6: This can be rewarding but intense work</a></li>
             <li><a href="#slide-007">7: Take some time to decompress</a></li>
-            <li><a href="#slide-008">8: be_valid_asset</a></li>
+            <li><a href="#slide-008">8: <code>be_valid_asset</code></a></li>
             <li><a href="#slide-009">9: Transpec is amazing and you should use it</a></li>
             <li><a href="#slide-010">10: error message from rubygems about dependencies</a></li>
             <li><a href="#slide-011">11: investigation montage</a></li>
             <li><a href="#slide-012">12: the bug I raised</a></li>
-            <li><a href="#slide-013">13: the workaround I made on be_valid_asset to avoid the bug I found</a></li>
+            <li><a href="#slide-013">13: the workaround I made on <code>be_valid_asset</code> to avoid the bug I found</a></li>
             <li><a href="#slide-014">14: confirmation from rubygems maintainers</a></li>
             <li><a href="#slide-015">15: thanks for the code from the maintainers and a merge</a></li>
             <li><a href="#slide-016">16: rubygems 2.5 is release with my code</a></li>
@@ -45,7 +45,7 @@
             <li><a href="#slide-018">18: My points</a></li>
             <li><a href="#slide-019">19: Reporting - Whoʼs at fault?</a></li>
             <li><a href="#slide-020">20: Reporting - Details in the issue</a></li>
-            <li><a href="#slide-021">21: Reporting - Just an issue, not a PR</a></li>
+            <li><a href="#slide-021">21: Reporting - Just an issue, not a <abbr title="Pull Request">PR</abbr></a></li>
             <li><a href="#slide-022">22: Reporting - Taking ownership</a></li>
             <li><a href="#slide-023">23: Workarounds - Donʼt rely on a fix</a></li>
             <li><a href="#slide-024">24: producing the code took a couple of days</a></li>
@@ -138,9 +138,9 @@
             <img class="slide" src="http://assets.h-lame.com/images/talks/rubygems-contribution/slides/007.jpg" title="Slide 7: Take some time to decompress" alt="A photo of someone eating gelato in an Italian Piazza - text: Take some time to decompress">
           </div>
           <div class="transcript">
-            <p>In between client projects I like to take a few days to decompress.  Obviously this can mean going on holiday and eating gelato in an <a href="https://goo.gl/maps/ws7oSu3y8yH2">Italian Piazza</a>, but what I really mean is finding something to do at work that’s less taxing than client projects.  I do things like upgrade the OS on my laptop or investigate new dev tools Iʼve read about but not had a chance to play with yet.</p>
+            <p>In between client projects I like to take a few days to decompress.  Obviously this can mean going on holiday and eating gelato in an <a href="https://goo.gl/maps/ws7oSu3y8yH2">Italian Piazza</a>, but what I really mean is finding something to do at work that’s less taxing than client projects.  I do things like upgrade the <abbr title="Operating System">OS</abbr> on my laptop or investigate new dev tools Iʼve read about but not had a chance to play with yet.</p>
 
-            <p>I also look at our internal projects and open-source tools to see if there’s anything I can do to improve them.  This usually means doing maintenance upgrades; you know: bump a dependency version here, resolve a deprecation warning there, upgrade to new APIs … everywhere.</p>
+            <p>I also look at our internal projects and open-source tools to see if there’s anything I can do to improve them.  This usually means doing maintenance upgrades; you know: bump a dependency version here, resolve a deprecation warning there, upgrade to new <abbr title="Application Programming Interface">API</abbr>s … everywhere.</p>
 
             <p>This is the perfect kind of work to do for these breaks.  You get to learn about changes to familiar dependencies in a low-risk environment, and you donʼt usually have to think too much; test failures, runtime error messages, and upgrade documentation (when it exists) guide you through the whole process.</p>
           </div>
@@ -155,7 +155,7 @@
 
             <p>Iʼd already tidied up my laptop and dev tools was looking for something else to do.</p>
 
-            <p>We have <a href="https://github.com/unboxed/be_valid_asset">a gem called “be_valid_asset”</a> which provides rspec matchers that check if your html, css, or feeds are valid according to <a href="http://validator.w3.org">the w3c specifications</a>.  The gem provides these matchers to work with any version of rspec, but itʼs own specs are written in rspec 2.</p>
+            <p>We have <a href="https://github.com/unboxed/be_valid_asset">a gem called “<code>be_valid_asset</code>”</a> which provides rspec matchers that check if your <abbr title="Hyper Text Markup Language">HTML</abbr>, <abbr title="Cascading StyleSheets">CSS</abbr>, or feeds are valid according to <a href="http://validator.w3.org">the w3c specifications</a>.  The gem provides these matchers to work with any version of rspec, but itʼs own specs are written in rspec 2.</p>
 
             <p>I decided to upgrade those specs to use rspec 3 and at the same time convert them from the old <code>should</code> syntax to <a href="http://rspec.info/blog/2012/06/rspecs-new-expectation-syntax/">the new <code>expect</code> syntax</a>.</p>
           </div>
@@ -218,7 +218,7 @@
             <img class="slide" src="http://assets.h-lame.com/images/talks/rubygems-contribution/slides/013.png" title="Slide 13: the workaround I made on be_valid_asset to avoid the bug I found" alt="A screenshot of the issue I raised on github to describe what I found titled: 'Detecting duplicate dependencies in specification doesnʼt distinguish between runtime and development dependencies' - text: https://github.com/rubygems/rubygems/pull/1032">
           </div>
           <div class="transcript">
-            <p>The source for <a href="https://github.com/unboxed/be_valid_asset">be_valid_asset</a> uses <a href="https://bundler.io">bundler</a> so I was able to move the development dependency out of the <a href="http://guides.rubygems.org/specification-reference/">gemspec</a> and into the <a href="http://bundler.io/man/gemfile.5.html">Gemfile</a>.  Rubygems only looks at the gemspec when building the gem so this avoids the issue entirely.  It’s annoying that rubygems doesn’t know about the development dependency on rspec 3, but anyone coming to the code will soon find it in the Gemfile.</p>
+            <p>The source for <a href="https://github.com/unboxed/be_valid_asset"><code>be_valid_asset</code></a> uses <a href="https://bundler.io">bundler</a> so I was able to move the development dependency out of the <a href="http://guides.rubygems.org/specification-reference/">gemspec</a> and into the <a href="http://bundler.io/man/gemfile.5.html">Gemfile</a>.  Rubygems only looks at the gemspec when building the gem so this avoids the issue entirely.  It’s annoying that rubygems doesn’t know about the development dependency on rspec 3, but anyone coming to the code will soon find it in the Gemfile.</p>
 
             <p>I <a href="https://github.com/unboxed/be_valid_asset/commit/70e846a59a1fd7c5e7990c0d08e0b39b2ae980cd">committed this change</a> and included a note about what I’d found along with a link to the issue I’d raised so I could come back to it later.</p>
 
@@ -235,7 +235,7 @@
 
             <p>A rubygems maintainer, Eric Hodel, <a href="https://github.com/rubygems/rubygems/pull/1032#issuecomment-57423713">commented on the issue</a> to confirm that what Iʼd found was a bug, and that my suggested fix sounded correct.</p>
 
-            <p>I worked on it a bit until I had <a href="https://github.com/rubygems/rubygems/pull/1032#commits-pushed-f4f611f">some code to push up</a>, and turned the issue into a PR with that code attached <a name="fn-2-return" href="#fn-2"><sup>2</sup></a>.</p>
+            <p>I worked on it a bit until I had <a href="https://github.com/rubygems/rubygems/pull/1032#commits-pushed-f4f611f">some code to push up</a>, and turned the issue into a <abbr title="Pull Request">PR</abbr> with that code attached<a name="fn-2-return" href="#fn-2"><sup>2</sup></a>.</p>
 
             <p>I had a couple of questions about my approach, particularly around going a little bit further with my solution so I <a href="https://github.com/rubygems/rubygems/pull/1032#issuecomment-57825383">asked these in a comment</a> at the same time.</p>
           </div>
@@ -248,7 +248,7 @@
           <div class="transcript">
             <p><a href="https://github.com/rubygems/rubygems/pull/1032#issuecomment-57837553">Eric replied</a> thanking me for the code, said not to worry about the other issue, and said heʼd merge it when he had some time.</p>
 
-            <p>Another Rubygems maintainer, Daniel Berger, <a href="https://github.com/rubygems/rubygems/pull/1032#event-393355907">merged the PR</a>, and <a href="https://github.com/rubygems/rubygems/commit/ae1718fd2d0e238940c38d56e32c56bffe083894">added a note to the changlog</a> about it.</p>
+            <p>Another Rubygems maintainer, Daniel Berger, <a href="https://github.com/rubygems/rubygems/pull/1032#event-393355907">merged the <abbr title="Pull Request">PR</abbr></a>, and <a href="https://github.com/rubygems/rubygems/commit/ae1718fd2d0e238940c38d56e32c56bffe083894">added a note to the changlog</a> about it.</p>
           </div>
         </section>
 
@@ -266,7 +266,7 @@
             <img class="slide" src="http://assets.h-lame.com/images/talks/rubygems-contribution/slides/017.png" title="Slide 17: ~fin~" alt="text: ~fin~">
           </div>
           <div class="transcript">
-            <p>So that’s my story.  I tried to use a tool, found a bug, raised an issue, turned it into a PR, it got merged and I got my name into the list of Rubygems contributers.  Apart from needless boasting, why’d I tell you all this?</p>
+            <p>So that’s my story.  I tried to use a tool, found a bug, raised an issue, turned it into a <abbr title="Pull Request">PR</abbr>, it got merged and I got my name into the list of Rubygems contributers.  Apart from needless boasting, why’d I tell you all this?</p>
           </div>
         </section>
 
@@ -331,7 +331,7 @@
 
             <p>Most of my open-source contributions come from finding something that can be improved about a tool I’m using, while I’m trying to use it to do something else.  It’s a bad place to be if your client work can’t continue because it relies on a bug being fixed in upstream code.  Even if the maintainers agree that the issue is a bug, thereʼs no guarantee theyʼd give it any kind of priority that aligns to when I want it done.  Their roadmap is certainly not my roadmap.</p>
 
-            <p>Knowing this was a possibility I came up with a workaround for be_valid_asset that let me actually release it.</p>
+            <p>Knowing this was a possibility I came up with a workaround for <code>be_valid_asset</code> that let me actually release it.</p>
           </div>
         </section>
 
@@ -367,7 +367,7 @@
             <img class="slide" src="http://assets.h-lame.com/images/talks/rubygems-contribution/slides/027.png" title="Slide 27: Workarounds - Donʼt rely on a fix happening quickly" alt="text: 2. Workarounds, Donʼt rely on a fix happening quickly">
           </div>
           <div class="transcript">
-            <p>Releasing a new version of be_valid_asset wasn’t very important, but imagine this was production code that you need to release quickly.  A few days delay could be a real problem, and months almost certainly would be!</p>
+            <p>Releasing a new version of <code>be_valid_asset</code> wasn’t very important, but imagine this was production code that you need to release quickly.  A few days delay could be a real problem, and months almost certainly would be!</p>
 
             <p>Itʼs worth saying that I didnʼt commit my workaround a week or a month into this process. I did it straight after reporting the issue.</p>
 
@@ -409,7 +409,7 @@
             <ol>
               <li>Raise an issue first to find out if the maintainers agree that what you want to do is something they’ll accept.  If they donʼt agree youʼve not wasted any time on the hard part of actually fixing it.</li>
 
-              <li>Donʼt assume your issue will be accepted and worked on or your PR will be merged.  Expect that it won’t be and come up with workarounds in any project that relies on the fix.</li>
+              <li>Donʼt assume your issue will be accepted and worked on or your <abbr title="Pull Request">PR</abbr> will be merged.  Expect that it won’t be and come up with workarounds in any project that relies on the fix.</li>
 
               <li>Donʼt hassle the maintainers for an update.  Theyʼll get round to your issue at some point, and if they donʼt maybe they changed their mind about how appropriate the change is.  That’s their prerogative.</li>
             </ol>
@@ -447,7 +447,7 @@
         <footer id="footnotes">
           <h3>Footnotes</h3>
           <p><a name="fn-1"><sup>1.</sup></a> It seems I also changed the <code>>=</code> operator into the <code>~></code> operator, so a two character change.  I hope you will forgive the error. <a href="#fn-1-return"><sup>⏎</sup></a></p>
-          <p><a name="fn-2"><sup>2.</sup></a> Itʼs not possible in the github UI to convert an issue into a PR, but it was possible via the API and I used the command line tool <a href="https://hub.github.com/">hub</a>  to do so.  Itʼs since <a href="https://github.com/github/hub/commit/4f70dd126f46dec14fc341c97c18efae417743c7">been deprecated though</a>.  These days youʼd create an issue and then reference it in your PR.<a href="#fn-2-return"><sup>⏎</sup></a></p>
+          <p><a name="fn-2"><sup>2.</sup></a> Itʼs not possible in the github UI to convert an issue into a <abbr title="Pull Request">PR</abbr>, but it was possible via the <abbr title="Application Programming Interface">API</abbr> and I used the command line tool <a href="https://hub.github.com/">hub</a>  to do so.  Itʼs since <a href="https://github.com/github/hub/commit/4f70dd126f46dec14fc341c97c18efae417743c7">been deprecated though</a>.  These days youʼd create an issue and then reference it in your <abbr title="Pull Request">PR</abbr>.<a href="#fn-2-return"><sup>⏎</sup></a></p>
           <p><a name="fn-3"><sup>3.</sup></a> I guess I mean reading.<a href="#fn-3-return"><sup>⏎</sup></a></p>
         </footer>
       </article>
