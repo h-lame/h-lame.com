@@ -52,7 +52,7 @@
   $(document).ready(function() {
     $('#content li a').each(function() {
       var md = this.href.match(/^(http:\/\/(.*?)\/)/);
-      $(this).prepend('<img src="' + md[1] + 'favicon.ico" width="16" height="16" alt="Favicon for ' + + md[2] +'" title="Favicon for '+ md[2] +'">');
+      $(this).prepend('<img src="' + md[1] + 'favicon.ico" width="16" height="16" alt="Favicon for ' + md[2] +'" title="Favicon for '+ md[2] +'">');
     });
   });
 </script>
