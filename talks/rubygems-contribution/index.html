@@ -183,7 +183,7 @@
 
             <p>Our gemspec said that you could use the gem with any version of rspec (the runtime dependency), but if you wanted to develop the gem you needed rspec 3 or greater (the development dependency).</p>
 
-            <p>The error tells me that I canʼt specify rspec twice and should combine the separate runtime and development dependencies into one runtime dependency ultimately saying you needed rspec 3 or greater, which isnʼt what we wanted - the matchers can be used with earlier versions of rspec.  This seemed odd to me as I only changed a single character in the gemspec; <a href="https://github.com/unboxed/be_valid_asset/commit/406b912d9c93022da652080ce1f3ab108fa5fb62#diff-099ff9702178da1533c1649a2b82e29d">swapping a 2 for a 3 in the development dependency for rspec</a> <a name="fn-1-return" href="#fn-1"><sup>1</sup></a>.</p>
+            <p>The error tells me that I canʼt specify rspec twice and should combine the separate runtime and development dependencies into one runtime dependency ultimately saying you needed rspec 3 or greater, which isnʼt what we wanted - the matchers can be used with earlier versions of rspec.  This seemed odd to me as I only changed a single character in the gemspec; <a href="https://github.com/unboxed/be_valid_asset/commit/406b912d9c93022da652080ce1f3ab108fa5fb62#diff-099ff9702178da1533c1649a2b82e29d">swapping a 2 for a 3 in the development dependency for rspec</a> <a id="fn-1-return" href="#fn-1"><sup>1</sup></a>.</p>
           </div>
         </section>
 
@@ -235,7 +235,7 @@
 
             <p>A rubygems maintainer, Eric Hodel, <a href="https://github.com/rubygems/rubygems/pull/1032#issuecomment-57423713">commented on the issue</a> to confirm that what Iʼd found was a bug, and that my suggested fix sounded correct.</p>
 
-            <p>I worked on it a bit until I had <a href="https://github.com/rubygems/rubygems/pull/1032#commits-pushed-f4f611f">some code to push up</a>, and turned the issue into a <abbr title="Pull Request">PR</abbr> with that code attached<a name="fn-2-return" href="#fn-2"><sup>2</sup></a>.</p>
+            <p>I worked on it a bit until I had <a href="https://github.com/rubygems/rubygems/pull/1032#commits-pushed-f4f611f">some code to push up</a>, and turned the issue into a <abbr title="Pull Request">PR</abbr> with that code attached<a id="fn-2-return" href="#fn-2"><sup>2</sup></a>.</p>
 
             <p>I had a couple of questions about my approach, particularly around going a little bit further with my solution so I <a href="https://github.com/rubygems/rubygems/pull/1032#issuecomment-57825383">asked these in a comment</a> at the same time.</p>
           </div>
@@ -421,7 +421,7 @@
             <img class="slide" src="http://assets.h-lame.com/images/talks/rubygems-contribution/slides/031.png" title="Slide 31: Thanks" alt="text: Thanks for listening, bye! Murray Steele, Unboxed, @hlame">
           </figure>
           <div class="transcript">
-            <p>Thanks for listening<a name="fn-3-return" href="#fn-3"><sup>3</sup></a>.</p>
+            <p>Thanks for listening<a id="fn-3-return" href="#fn-3"><sup>3</sup></a>.</p>
 
             <p>Bye!</p>
           </div>
@@ -446,9 +446,9 @@
 
         <footer id="footnotes">
           <h3>Footnotes</h3>
-          <p><a name="fn-1"><sup>1.</sup></a> It seems I also changed the <code>>=</code> operator into the <code>~></code> operator, so a two character change.  I hope you will forgive the error. <a href="#fn-1-return"><sup>⏎</sup></a></p>
-          <p><a name="fn-2"><sup>2.</sup></a> Itʼs not possible in the github UI to convert an issue into a <abbr title="Pull Request">PR</abbr>, but it was possible via the <abbr title="Application Programming Interface">API</abbr> and I used the command line tool <a href="https://hub.github.com/">hub</a>  to do so.  Itʼs since <a href="https://github.com/github/hub/commit/4f70dd126f46dec14fc341c97c18efae417743c7">been deprecated though</a>.  These days youʼd create an issue and then reference it in your <abbr title="Pull Request">PR</abbr>.<a href="#fn-2-return"><sup>⏎</sup></a></p>
-          <p><a name="fn-3"><sup>3.</sup></a> I guess I mean reading.<a href="#fn-3-return"><sup>⏎</sup></a></p>
+          <p><a id="fn-1"><sup>1.</sup></a> It seems I also changed the <code>>=</code> operator into the <code>~></code> operator, so a two character change.  I hope you will forgive the error. <a href="#fn-1-return"><sup>⏎</sup></a></p>
+          <p><a id="fn-2"><sup>2.</sup></a> Itʼs not possible in the github UI to convert an issue into a <abbr title="Pull Request">PR</abbr>, but it was possible via the <abbr title="Application Programming Interface">API</abbr> and I used the command line tool <a href="https://hub.github.com/">hub</a>  to do so.  Itʼs since <a href="https://github.com/github/hub/commit/4f70dd126f46dec14fc341c97c18efae417743c7">been deprecated though</a>.  These days youʼd create an issue and then reference it in your <abbr title="Pull Request">PR</abbr>.<a href="#fn-2-return"><sup>⏎</sup></a></p>
+          <p><a id="fn-3"><sup>3.</sup></a> I guess I mean reading.<a href="#fn-3-return"><sup>⏎</sup></a></p>
         </footer>
       </article>
     </main>

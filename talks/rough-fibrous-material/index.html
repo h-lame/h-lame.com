@@ -269,7 +269,7 @@
 
             <p>Here’s a simplified example of how to read a webpage.  For the normal case it’s really simple, you just call a couple of methods.</p>
 
-            <p>The evented case, not so much.  You have to rely on callback methods and keep some object around to hold the result of those callbacks.  What you lose in a simplified <abbr title="Application Programming Interface">API</abbr> you gain in performance and flexibility, but it’s hard to get your head around<a name="fn-1-return" href="#fn-1"><sup>1</sup></a>.</p>
+            <p>The evented case, not so much.  You have to rely on callback methods and keep some object around to hold the result of those callbacks.  What you lose in a simplified <abbr title="Application Programming Interface">API</abbr> you gain in performance and flexibility, but it’s hard to get your head around<a id="fn-1-return" href="#fn-1"><sup>1</sup></a>.</p>
           </div>
         </section>
 
@@ -278,7 +278,7 @@
             <img class="slide" src="http://assets.h-lame.com/images/talks/rough-fibrous-material/slides/019.png" title="Slide 19: So…what is a practical use for a fiber?" alt="Screenshots of actual projects that use fibers, text: So…what is a practical use for a fiber?">
           </figure>
           <div class="transcript">
-            <p>The first non-ruby spec result on github that uses fibers was: <a href="https://github.com/oldmoe/neverblock">Neverblock</a><a name="fn-2-return" href="#fn-2"><sup>2</sup></a>.</p>
+            <p>The first non-ruby spec result on github that uses fibers was: <a href="https://github.com/oldmoe/neverblock">Neverblock</a><a id="fn-2-return" href="#fn-2"><sup>2</sup></a>.</p>
 
             <p>This library uses Fibers, <a href="http://rubyeventmachine.com/">Event Machine</a> and other non-blocking <abbr title="Application Programming Interface">API</abbr>s to present you with an <abbr title="Application Programming Interface">API</abbr> for doing asynchronous programming that looks remarkably synchronous.  So you don’t have to change your code to get the benefit of asynchronous performance.</p>
 
@@ -322,8 +322,8 @@
 
         <footer id="footnotes">
           <h3>Footnotes</h3>
-          <p><a name="fn-1"><sup>1.</sup></a> To be fair to the evented code, the <code>open</code> method is a blunt abstraction that wraps up some gnarly <code>Net::HTTP</code> code thatʼs not much better than the evented code in the slide.  I guess I wanted to make Neverblock look like a better idea.  <a href="#fn-1-return"><sup>⏎</sup></a></p>
-          <p><a name="fn-2"><sup>2.</sup></a> The slide suggests visiting <a href="http://www.espace.com.eg/neverblock/">www.espace.com.eg/neverblock</a>, but that page no longer exists. The github repo will have to do for now. <a href="#fn-2-return"><sup>⏎</sup></a></p>
+          <p><a id="fn-1"><sup>1.</sup></a> To be fair to the evented code, the <code>open</code> method is a blunt abstraction that wraps up some gnarly <code>Net::HTTP</code> code thatʼs not much better than the evented code in the slide.  I guess I wanted to make Neverblock look like a better idea.  <a href="#fn-1-return"><sup>⏎</sup></a></p>
+          <p><a id="fn-2"><sup>2.</sup></a> The slide suggests visiting <a href="http://www.espace.com.eg/neverblock/">www.espace.com.eg/neverblock</a>, but that page no longer exists. The github repo will have to do for now. <a href="#fn-2-return"><sup>⏎</sup></a></p>
         </footer>
       </article>
     </main>
