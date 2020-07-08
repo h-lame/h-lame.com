@@ -14,7 +14,7 @@ hr {
 }
 
 body {
-  font: Helvetica, Helvetica Neue, Arial;
+  font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
 }
 
 a {
@@ -49,7 +49,8 @@ header, main, footer {
   margin: 0 auto;
 }
 
-main {
+main.wrapper {
+  margin-top: 8em;
 }
 
 main section, main footer {
@@ -99,9 +100,14 @@ code {
   padding: 3px;
 }
 
-#menu {
+#menu nav {
+  position: relative;
+}
+.revealer {
+  position: absolute;
   background: #ccc;
   z-index: 100;
+  width: 100%;
 }
 .revealer > .reveal-name::before {
   content: '▸ ';
@@ -111,9 +117,11 @@ code {
 }
 .revealer > .revealee {
   display: none;
+  visibility: hidden;
 }
 .revealer:hover > .revealee {
   display: block;
+  visibility: visible;
 }
 
 img.video-poster,
@@ -131,5 +139,26 @@ img.video-poster {
 @media only screen and (min-width: 1140px) {
   .wrapper {
     width: 1026px; /* 1140px - 10% for margins */
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  main.wrapper {
+    margin-top: 6em;
+  }
+  .talk-section {
+    white-space: normal;
+  }
+  .talk-section > div, .talk-section > figure {
+    width: 100%;
+  }
+  .talk-section > .transcript *:first-child {
+    margin-top: 1em;
+  }
+  .talk-section > .transcript *:last-child {
+    margin-bottom: 1em;
   }
 }
