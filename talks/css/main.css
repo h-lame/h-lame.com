@@ -93,11 +93,46 @@ main section {
 .talk-section > .transcript *:last-child {
   margin-bottom: 0;
 }
+.talk-section > .slides .terminal:first-child {
+  margin-top: 0;
+}
+.talk-section > .slides .terminal:last-child {
+  margin-bottom: 0;
+}
+
+.transcript figure {
+  text-align: center;
+}
+.transcript .example-graphic {
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
+  width: 90%;
+  display: block;
+}
 
 code {
   background: #eee;
   border-radius: 4px;
   padding: 3px;
+}
+
+.terminal {
+  background: DarkSlateGray;
+  color: snow;
+  border-radius: 4px;
+  padding: 3px;
+  font-family: Inconsolata, Consolas, monospace;
+  white-space: pre-wrap;
+}
+
+.terminal .command-result {
+  color: beige;
+  font-style: italic;
+}
+
+.talk-section > .slides .terminal {
+  text-align: left;
 }
 
 #menu nav {
