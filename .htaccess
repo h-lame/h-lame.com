@@ -18,3 +18,20 @@ Redirect "/software/" "http://shed.h-lame.com/software/"
 
 RewriteEngine on
 RewriteRule ^cvs/(.*)$ /exec/viewcvs.cgi/$1
+
+# /exec/vanilla.r?selector=display&snip=mandals
+# =>
+# /mandals
+# and preserve query string that's not selector or snip
+RewriteCond %{QUERY_STRING} (.*)(?:^|&)selector=[^&]+(?:&|$)(.*) [NC]
+RewriteCond %1&%2 (.*)(?:^|&)snip=(?:comments\-)?([^&]+)((?:&.*|$).*) [NC]
+RewriteCond %2§%1%3 ([^§]+)§&?(.*) [NC]
+RewriteRule ^exec/vanilla.r$ /%1?%2 [R=301,L]
+
+RewriteCond %{QUERY_STRING} (.*)(?:^|&)snip=(?:comments\-)?([^&]+)((?:&.*|$).*) [NC]
+RewriteCond %2§%1%3 ([^§]+)§&?(.*) [NC]
+RewriteRule ^exec/vanilla.r$ /%1?%2 [R=301,L]
+
+RewriteCond %{QUERY_STRING} (.*)(?:^|&)selector=[^&]+(?:&|$)(.*) [NC]
+RewriteCond %1%2 (^|&)([^&].*|$)
+RewriteRule ^exec/vanilla.r$ /?%1 [R=301,L]
