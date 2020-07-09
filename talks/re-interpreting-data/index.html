@@ -76,7 +76,7 @@
 
         <section class="talk-section numbered" id="slide-001" title="Re-interpreting data">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/001.png" alt="text: Re-interpreting data, Murray Steele, Cleo AI, @hlame">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/001.png" alt="text: Re-interpreting data, Murray Steele, Cleo AI, @hlame">
           </figure>
           <div class="transcript">
             <p>Hi, I’m Murray, I work at <a href="https://www.meetcleo.com">Cleo AI</a> and this is a talk about re-interpreting data.  We’ll find out what that means shortly.</p>
@@ -85,7 +85,7 @@
 
         <section class="talk-section numbered" id="slide-002" title="My downloads">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/002.png" alt="Screenshot of macos finder window showing some example filenames. text: Embarrassing Medial Procedure.ics; Endless Screaming.mp3; Favourite Meme.gif; Game of Thrones S08E06 (less disappointing edit).mp4; Hot Selfie.jpg; Secret World Domination Plans.rtf; Someone Else’s Intellectual Property.zip; Tax Return 2019 (evasion version).pdf">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/002.png" alt="Screenshot of macos finder window showing some example filenames. text: Embarrassing Medial Procedure.ics; Endless Screaming.mp3; Favourite Meme.gif; Game of Thrones S08E06 (less disappointing edit).mp4; Hot Selfie.jpg; Secret World Domination Plans.rtf; Someone Else’s Intellectual Property.zip; Tax Return 2019 (evasion version).pdf">
           </figure>
           <div class="transcript">
             <p>Here’s a screenshot of some of the files in my downloads folder.</p>
@@ -98,7 +98,7 @@
 
         <section class="talk-section numbered" id="slide-003" title="Renaming a file extension">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/003.png" alt="Screenshot of macos file rename warning dialog. text: Are you sure you want to change the extension from “.pdf” to “.wav”?  If you make this change, your document may open in a different application. Keep .pdf; Use .wav">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/003.png" alt="Screenshot of macos file rename warning dialog. text: Are you sure you want to change the extension from “.pdf” to “.wav”?  If you make this change, your document may open in a different application. Keep .pdf; Use .wav">
           </figure>
           <div class="transcript">
             <p>If you rename the file, this’ll change the icon and what application will open it, so your OS will probably warn you.</p>
@@ -109,7 +109,7 @@
 
         <section class="talk-section numbered" id="slide-004" title="The `file` command">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/004.png" alt="Screenshot of a webpage of the man page for the unix `file` command; url: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/file.html">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/004.png" alt="Screenshot of a webpage of the man page for the unix `file` command; url: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/file.html">
             <figcaption><a href="https://pubs.opengroup.org/onlinepubs/9699919799/utilities/file.html"><code>man</code> page for the <code>file</code> command</a></figcaption>
           </figure>
           <div class="transcript">
@@ -123,7 +123,7 @@
 
         <section class="talk-section numbered" id="slide-005" title="How `file` does what it does">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/005.png" alt="Screenshot of a webpage of the man page for the unix `file` command; url: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/file.html; highlighted text: 4. the file utility shall examine an initial segment of file and shall make a guess at identifying its contents based on position-sensitive tests. (The answer is not guaranteed to be correct; see the -d, -M, and -m options below); 5. The file utility shall examine file and make a guess at identifying its contents based on context-sensitive default system tests. (The answer is not guaranteed to be correct.)">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/005.png" alt="Screenshot of a webpage of the man page for the unix `file` command; url: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/file.html; highlighted text: 4. the file utility shall examine an initial segment of file and shall make a guess at identifying its contents based on position-sensitive tests. (The answer is not guaranteed to be correct; see the -d, -M, and -m options below); 5. The file utility shall examine file and make a guess at identifying its contents based on context-sensitive default system tests. (The answer is not guaranteed to be correct.)">
             <figcaption><a href="https://pubs.opengroup.org/onlinepubs/9699919799/utilities/file.html"><code>man</code> page for the <code>file</code> command</a></figcaption>
           </figure>
           <div class="transcript">
@@ -133,7 +133,7 @@
 
         <section class="talk-section numbered" id="slide-006" title="Why renaming doesn’t work">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/006.png" alt="Screenshot of macos file rename warning dialog. text: Are you sure you want to change the extension from “.pdf” to “.wav”?  If you make this change, your document may open in a different application. Keep .pdf; Use .wav">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/006.png" alt="Screenshot of macos file rename warning dialog. text: Are you sure you want to change the extension from “.pdf” to “.wav”?  If you make this change, your document may open in a different application. Keep .pdf; Use .wav">
           </figure>
           <div class="transcript">
             <p>Going back to my youthful attempts to open files without the relevant (usually expensive) software, we can now understand why it didn’t work.  You can call your file whatever you want, and the OS may use that file name to change the icon and tell you what application will open the file, but that isn’t really important.  It’s the <code>1</code>s and <code>0</code>s inside the file that really matter.  No matter how many times you try, simply renaming a PDF file to a WAV file won’t let you listen to the contents of that PDF file.</p>
@@ -142,7 +142,7 @@
 
         <section class="talk-section numbered" id="slide-007" title="The WAV file specification">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/007.png" alt="Screenshot of a webpage describing the WAV file format specification; url: http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/WAVE.html">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/007.png" alt="Screenshot of a webpage describing the WAV file format specification; url: http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/WAVE.html">
             <figcaption><a href="http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/WAVE.html">The WAV file specification</a></figcaption>
           </figure>
           <div class="transcript">
@@ -156,7 +156,7 @@
 
         <section class="talk-section numbered" id="slide-008" title="Header + Data">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/008.png" alt="text: WAV file: header part; data part">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/008.png" alt="text: WAV file: header part; data part">
           </figure>
           <div class="transcript">
             <p>Turns out, WAV files are very simple.  They’re made up of a header part, and a data part.  The header part is split in two.</p>
@@ -172,7 +172,7 @@
 
         <section class="talk-section numbered" id="slide-009" title="Could renaming work?">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/009.png" alt="Screenshot of macos file rename warning dialog. text: Are you sure you want to change the extension from “.pdf” to “.wav”?  If you make this change, your document may open in a different application. Keep .pdf; Use .wav">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/009.png" alt="Screenshot of macos file rename warning dialog. text: Are you sure you want to change the extension from “.pdf” to “.wav”?  If you make this change, your document may open in a different application. Keep .pdf; Use .wav">
           </figure>
           <div class="transcript">
             <p>Ok.  So.  We can’t rename a file from <code>foo.pdf</code> to <code>foo.wav</code> and expect to be able to listen to it.</p>
@@ -183,7 +183,7 @@
 
         <section class="talk-section numbered" id="slide-010" title="How to create the data part">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/010.png" alt="text: Data part: contents of source file">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/010.png" alt="text: Data part: contents of source file">
           </figure>
           <div class="transcript">
             <p>Yes.  But how?</p>
@@ -194,7 +194,7 @@
 
         <section class="talk-section numbered" id="slide-011" title="How to create the header part">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/011.png" alt="text: Header part calculated from source file">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/011.png" alt="text: Header part calculated from source file">
           </figure>
           <div class="transcript">
             <p>The header is more complicated, but not by much.  We can calculate what we need in the header just by looking at the size of our source file and making some choices beforehand about the sample rate and bits per sample before we go in.</p>
@@ -203,7 +203,7 @@
 
         <section class="talk-section numbered" id="slide-012" title="Creating the header in ruby">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/012.png" alt="Snippet of code showing how we can construct a wave file header in ruby.  source: https://github.com/h-lame/stegosaurus/blob/d05db3eecd0d328c9de7886dcedbb16b189b3c5d/lib/stegosaurus/waves.rb#L76-L97">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/012.png" alt="Snippet of code showing how we can construct a wave file header in ruby.  source: https://github.com/h-lame/stegosaurus/blob/d05db3eecd0d328c9de7886dcedbb16b189b3c5d/lib/stegosaurus/waves.rb#L76-L97">
             <figcaption><a href="https://github.com/h-lame/stegosaurus/blob/d05db3eecd0d328c9de7886dcedbb16b189b3c5d/lib/stegosaurus/waves.rb#L76-L97">Source for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
@@ -221,7 +221,7 @@
 
         <section class="talk-section numbered" id="slide-013" title="Using `Array#pack`">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/013.png" alt="Snippet of code showing how we can construct a wave file header in ruby, highlighting the calls to the `pack` method.  source: https://github.com/h-lame/stegosaurus/blob/d05db3eecd0d328c9de7886dcedbb16b189b3c5d/lib/stegosaurus/waves.rb#L76-L97">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/013.png" alt="Snippet of code showing how we can construct a wave file header in ruby, highlighting the calls to the `pack` method.  source: https://github.com/h-lame/stegosaurus/blob/d05db3eecd0d328c9de7886dcedbb16b189b3c5d/lib/stegosaurus/waves.rb#L76-L97">
             <figcaption><a href="https://github.com/h-lame/stegosaurus/blob/d05db3eecd0d328c9de7886dcedbb16b189b3c5d/lib/stegosaurus/waves.rb#L76-L97">Source for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
@@ -286,7 +286,7 @@ irb(main):005:0> w.make_from RbConfig.ruby
 
         <section class="talk-section numbered" id="slide-016" title="What about visuals?">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/016.png" alt="text: that was audio; what about visuals">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/016.png" alt="text: that was audio; what about visuals">
           </figure>
           <div class="transcript">
             <p>The eagle eyed would have spotted the last slide said “WAV” demo, not just demo<a id="fn-2-return" href="#fn-2"><sup>2</sup></a>.</p>
@@ -299,7 +299,7 @@ irb(main):005:0> w.make_from RbConfig.ruby
 
         <section class="talk-section numbered" id="slide-017" title="The BMP file specification">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/017.png" alt="Screenshot of a webpage describing the BMP file format specification; url: http://www.ece.ualberta.ca/~elliott/ee552/studentAppNotes/2003_w/misc/bmp_file_format/bmp_file_format.htm">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/017.png" alt="Screenshot of a webpage describing the BMP file format specification; url: http://www.ece.ualberta.ca/~elliott/ee552/studentAppNotes/2003_w/misc/bmp_file_format/bmp_file_format.htm">
             <figcaption><a href="http://www.ece.ualberta.ca/~elliott/ee552/studentAppNotes/2003_w/misc/bmp_file_format/bmp_file_format.htm">The BMP file specification</a></figcaption>
           </figure>
           <div class="transcript">
@@ -319,7 +319,7 @@ irb(main):005:0> w.make_from RbConfig.ruby
 
         <section class="talk-section numbered" id="slide-018" title="Data padding: pixels">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/018.png" alt="text: Pixel padding; 24-bit colour depth; 1 byte = 0.333 pixels; 2 bytes = 0.666 pixels; 3 bytes = 1 pixel; etc…; pad file to multiple of 3 bytes; e.g. 100 byte file gets two 0x0 pad bytes">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/018.png" alt="text: Pixel padding; 24-bit colour depth; 1 byte = 0.333 pixels; 2 bytes = 0.666 pixels; 3 bytes = 1 pixel; etc…; pad file to multiple of 3 bytes; e.g. 100 byte file gets two 0x0 pad bytes">
           </figure>
           <div class="transcript">
             <p>First up, pixel padding.</p>
@@ -332,7 +332,7 @@ irb(main):005:0> w.make_from RbConfig.ruby
 
         <section class="talk-section numbered" id="slide-019" title="Data padding: width x height">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/019.png" alt="text: Width x Height; 24-bit colour, 100 byte file, 2 padding bytes = 34 pixels; ⌈√272⌉ = 6 pixel square; 6² = 36 pixels; 2 padding pixels needed">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/019.png" alt="text: Width x Height; 24-bit colour, 100 byte file, 2 padding bytes = 34 pixels; ⌈√272⌉ = 6 pixel square; 6² = 36 pixels; 2 padding pixels needed">
           </figure>
           <div class="transcript">
             <p>Next up we have the width and heigh padding.  e.g. making sure we can turn the number of pixels into a rectangular figure.</p>
@@ -345,7 +345,7 @@ irb(main):005:0> w.make_from RbConfig.ruby
 
         <section class="talk-section numbered" id="slide-020" title="Data padding: scan lines">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/020.png" alt="text: Scan line padding; 6 pixel square image is 6 “scan lines” of 6 pixels; BMP data scan lines must be multiples of 4 bytes; 6 pixels = 18 bytes; 2 padding bytes needed per line; 12 padding bytes total">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/020.png" alt="text: Scan line padding; 6 pixel square image is 6 “scan lines” of 6 pixels; BMP data scan lines must be multiples of 4 bytes; 6 pixels = 18 bytes; 2 padding bytes needed per line; 12 padding bytes total">
           </figure>
           <div class="transcript">
             <p>Finally, we have to deal with what the BMP specification calls “scan line padding”.</p>
@@ -358,7 +358,7 @@ irb(main):005:0> w.make_from RbConfig.ruby
 
         <section class="talk-section numbered" id="slide-021" title="Data padding: total">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/021.png" alt="text: Total padding; 24-bit colour depth for 100 byte source file; 2 pixel padding bytes; 6 square pading bytes; 12 line padding bytes; 100 byte file is now 120 bytes">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/021.png" alt="text: Total padding; 24-bit colour depth for 100 byte source file; 2 pixel padding bytes; 6 square pading bytes; 12 line padding bytes; 100 byte file is now 120 bytes">
           </figure>
           <div class="transcript">
             <p>Ok, so to wrap it up we have chosen 24-bit (<code>3</code> byte) colour depth for our image, and we have a <code>100</code> byte source file.  This means adding:
@@ -381,7 +381,7 @@ irb(main):005:0> w.make_from RbConfig.ruby
 
         <section class="talk-section numbered" id="slide-022" title="Data padding in ruby #1">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/022.png" alt="Snippet of code showing how we read bytes from the source file and turn them into complete scan lines of pixels.  source: https://github.com/h-lame/stegosaurus/blob/68170f347ed0f3662ccfd03e892e5a30fc505fc0/lib/stegosaurus/bumps.rb#L231-L242">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/022.png" alt="Snippet of code showing how we read bytes from the source file and turn them into complete scan lines of pixels.  source: https://github.com/h-lame/stegosaurus/blob/68170f347ed0f3662ccfd03e892e5a30fc505fc0/lib/stegosaurus/bumps.rb#L231-L242">
             <figcaption><a href="https://github.com/h-lame/stegosaurus/blob/68170f347ed0f3662ccfd03e892e5a30fc505fc0/lib/stegosaurus/bumps.rb#L231-L242">Source for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
@@ -393,7 +393,7 @@ irb(main):005:0> w.make_from RbConfig.ruby
 
         <section class="talk-section numbered" id="slide-023" title="Data padding in ruby #2">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/023.png" alt="Snippet of code showing how we write all the remaining pixel and square padding ytes to complete the image data.  source: https://github.com/h-lame/stegosaurus/blob/68170f347ed0f3662ccfd03e892e5a30fc505fc0/lib/stegosaurus/bumps.rb#L243-L262">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/023.png" alt="Snippet of code showing how we write all the remaining pixel and square padding ytes to complete the image data.  source: https://github.com/h-lame/stegosaurus/blob/68170f347ed0f3662ccfd03e892e5a30fc505fc0/lib/stegosaurus/bumps.rb#L243-L262">
             <figcaption><a href="https://github.com/h-lame/stegosaurus/blob/68170f347ed0f3662ccfd03e892e5a30fc505fc0/lib/stegosaurus/bumps.rb#L243-L262">Source for code in slide</a><a id="fn-3-return" href="#fn-3"><sup>3</sup></a></figcaption>
           </figure>
           <div class="transcript">
@@ -459,7 +459,7 @@ irb(main):003:0> b.make_from './README'
 
         <section class="talk-section numbered" id="slide-026" title="Other audio?">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/026.png" alt="text: WAV was annoying to listen to though">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/026.png" alt="text: WAV was annoying to listen to though">
           </figure>
           <div class="transcript">
             <p>So, now we’ve looked at some files it’s a little clearer why the WAV demo was so painful to listen to; the <code>1</code>s and <code>0</code>s in most source files are pretty chaotic.  Wouldn’t it be nice to hear something more melodic?</p>
@@ -470,7 +470,7 @@ irb(main):003:0> b.make_from './README'
 
         <section class="talk-section numbered" id="slide-027" title="The MIDI file specification">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/027.png" alt="Screenshot of a webpage describing the MIDI file format specification; url: http://www.music.mcgill.ca/~ich/classes/mumt306/StandardMIDIfileformat.html">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/027.png" alt="Screenshot of a webpage describing the MIDI file format specification; url: http://www.music.mcgill.ca/~ich/classes/mumt306/StandardMIDIfileformat.html">
             <figcaption><a href="http://www.music.mcgill.ca/~ich/classes/mumt306/StandardMIDIfileformat.html">The MIDI file specification</a></figcaption>
           </figure>
           <div class="transcript">
@@ -482,7 +482,7 @@ irb(main):003:0> b.make_from './README'
 
         <section class="talk-section numbered" id="slide-028" title="MIDI Events">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/028.png" alt="text: MIDI Events; Delta time - when to trigger the event (variable length); Status - what the event is (1 byte); Event data - details for the event (1 or 2 bytes)">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/028.png" alt="text: MIDI Events; Delta time - when to trigger the event (variable length); Status - what the event is (1 byte); Event data - details for the event (1 or 2 bytes)">
           </figure>
           <div class="transcript">
             <p>The data part of a MIDI file is made up of a stream of MIDI Events.  You can think of these like the notes on sheet music.  Each event has three parts:</p>
@@ -499,7 +499,7 @@ irb(main):003:0> b.make_from './README'
 
         <section class="talk-section numbered" id="slide-029" title="MIDI Events: delta time">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/029.png" alt="text: Delta time; Variable length quantity; 7 bits of a byte for data; 1 bit to say if the next byte is more data or not; Values less than 128 stored in 1 byte; Values more than 128 stored in 2 bytes">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/029.png" alt="text: Delta time; Variable length quantity; 7 bits of a byte for data; 1 bit to say if the next byte is more data or not; Values less than 128 stored in 1 byte; Values more than 128 stored in 2 bytes">
           </figure>
           <div class="transcript">
             <p>Delta time is stored as <a href="http://www.music.mcgill.ca/~ich/classes/mumt306/StandardMIDIfileformat.html#BM1_1">a variable length value</a> of between <code>1</code> and <code>4</code> bytes.  How this is implemented is that a single byte is split into two parts: <code>7</code> bits are used to store the value, and the remaining <code>1</code> bit is used to say if the next byte contains more data for the value or not.</p>
@@ -510,7 +510,7 @@ irb(main):003:0> b.make_from './README'
 
         <section class="talk-section numbered" id="slide-030" title="MIDI Events: status + data">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/030.png" alt="text: Status + Data; Status bytes are values > 128; Data bytes are values < 128; 1000xxxx = note off status; 1001xxxx = note on status; Both take 2 bytes of data, key and velocity">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/030.png" alt="text: Status + Data; Status bytes are values > 128; Data bytes are values < 128; 1000xxxx = note off status; 1001xxxx = note on status; Both take 2 bytes of data, key and velocity">
           </figure>
           <div class="transcript">
             <p>In MIDI all status bytes are values greater than 128, and all data bytes are values less than 128.  Meaning we use <code>1</code> bit of the byte to tell us if the byte contains a status or some data.</p>
@@ -529,7 +529,7 @@ irb(main):003:0> b.make_from './README'
 
         <section class="talk-section numbered" id="slide-031" title="MIDI Events: solution">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/031.png" alt="text: Solution; Deal with bits, not bytes; 27 bits of source data become 1 midi event; delta-time-for(xxxxxxxx) - 8 bits; status = 100x xxxx - 5 bits; key data = 0xxx xxxx - 7 bits; velocity data = 0xxx xxxx - 7 bits">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/031.png" alt="text: Solution; Deal with bits, not bytes; 27 bits of source data become 1 midi event; delta-time-for(xxxxxxxx) - 8 bits; status = 100x xxxx - 5 bits; key data = 0xxx xxxx - 7 bits; velocity data = 0xxx xxxx - 7 bits">
           </figure>
           <div class="transcript">
             <p>Our solution is to deal with the <em>bits</em> within the source file, not the <em>bytes</em>.  We need <code>27</code> bits of data from the source file to make one MIDI event:</p>
@@ -546,7 +546,7 @@ irb(main):003:0> b.make_from './README'
 
         <section class="talk-section numbered" id="slide-032" title="MIDI Events in ruby">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/032.png" alt="text: code snippet">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/032.png" alt="text: code snippet">
             <figcaption><a href="https://github.com/h-lame/stegosaurus/blob/68170f347ed0f3662ccfd03e892e5a30fc505fc0/lib/stegosaurus/midriffs.rb#L117-L146">Source for code in slide</a></figcaption>
           </figure>
           <div class="transcript">
@@ -624,7 +624,7 @@ Notes lost totally: 302608</span></p>
 
         <section class="talk-section numbered" id="slide-035" title="Why ruby?">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/035.png" alt="text: Why ruby?">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/035.png" alt="text: Why ruby?">
           </figure>
           <div class="transcript">
             <p>So, why ruby though?</p>
@@ -637,7 +637,7 @@ Notes lost totally: 302608</span></p>
 
         <section class="talk-section numbered" id="slide-036" title="Source code">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/036.png" alt="url: https://github.com/h-lame/stegosaurus">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/036.png" alt="url: https://github.com/h-lame/stegosaurus">
             <figcaption><a href="https://github.com/h-lame/stegosaurus/">https://github.com/h-lame/stegosaurus</a></figcaption>
           </figure>
           <div class="transcript">
@@ -651,7 +651,7 @@ Notes lost totally: 302608</span></p>
 
         <section class="talk-section numbered" id="slide-037" title="Thanks for listening">
           <figure class="slides">
-            <img class="slide" src="/talks/re-interpreting-data/images/slides/037.png" alt="text: Thanks for listening, bye! Murray Steele, Cleo AI, @hlame">
+            <img class="slide" src="http://assets.h-lame.com/images/talks/re-interpreting-data/slides/037.png" alt="text: Thanks for listening, bye! Murray Steele, Cleo AI, @hlame">
           </figure>
           <div class="transcript">
             <p>Thanks for listening!</p>
