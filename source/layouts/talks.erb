@@ -18,7 +18,30 @@
       <h1 class="title"><%= page_title %></h1>
     </header>
 
-    <%= yield %></p>
+    <aside id="menu" class="wrapper">
+      <nav>
+        <div class="revealer">
+          <h1 class="reveal-name"><%= toc_name %></h1>
+          <ol class="revealee">
+            <% slides.each do |slide| %>
+              <li><a href="#<%= slide.data[:id] %>"><%= slide.data[:title] %></a></li>
+            <% end %>
+          </ol>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="wrapper">
+      <article class="numberer">
+        <section>
+          <p><%= yield %></p>
+        </section>
+
+        <% slides.each do |slide| %>
+          <%= partial 'talks/slide', locals: { slide: slide } %>
+        <% end %>
+      </article>
+    </main>
 
     <%= partial 'ga' %>
   </body>

@@ -22,6 +22,7 @@ page '/*.ico', layout: false
 
 page "/talks/*", :layout => "talks"
 
+ignore "/talks/slides/*.md"
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
 
@@ -47,6 +48,15 @@ helpers do
 
   def page_meta_description(for_page = current_page)
     for_page.data[:description]
+  end
+
+  def toc_name(for_page = current_page)
+    for_page.data[:toc_name] || 'Table of contents'
+  end
+
+  def slides(for_page = current_page)
+    folder = File.dirname(for_page.path)
+    sitemap.resources(true).select(&:ignored?).select { |p| p.path.match? /\A#{folder}\/slides\/\d+\Z/ }.sort_by { |x| x.path }
   end
 end
 
