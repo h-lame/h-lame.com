@@ -20,6 +20,8 @@ page '/*.txt', layout: false
 page '/.htaccess', layout: false
 page '/*.ico', layout: false
 
+page "/talks/*", :layout => "talks"
+
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
 
@@ -39,6 +41,13 @@ page '/*.ico', layout: false
 # https://middlemanapp.com/basics/helper-methods/
 
 helpers do
+  def page_title(for_page = current_page)
+    yield_content(:title) || for_page.data.title
+  end
+
+  def page_meta_description(for_page = current_page)
+    for_page.data[:description]
+  end
 end
 
 # Build-specific configuration
