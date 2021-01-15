@@ -22,19 +22,22 @@
       <nav>
         <div class="revealer">
           <h1 class="reveal-name"><%= toc_name %></h1>
-          <ol class="revealee">
-            <% slides.each do |slide| %>
-              <li><a href="#<%= slide.data[:id] %>"><%= slide.data[:title] %></a></li>
+          <ul class="revealee">
+            <% unless current_page.data[:exclude_intro_from_toc] %>
+              <li><a href="#intro">Introduction</a></li>
             <% end %>
-          </ol>
+            <% slides.each.with_index do |slide, idx| %>
+              <li><a href="#<%= slide.data[:id] %>"><%= idx + 1 %>: <% markdown do %><%= slide.data[:title] %><% end %></a></li>
+            <% end %>
+          </ul>
         </div>
       </nav>
     </aside>
 
     <main class="wrapper">
       <article class="numberer">
-        <section>
-          <p><%= yield %></p>
+        <section id="intro">
+          <%= yield %>
         </section>
 
         <% slides.each do |slide| %>
