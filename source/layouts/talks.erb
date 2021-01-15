@@ -30,7 +30,7 @@
               <li><a href="#<%= extra_toc_item.id %>"><%= extra_toc_item.title %></a></li>
             <% end %>
             <% slides.each.with_index do |slide, idx| %>
-              <li><a href="#<%= slide.data[:id] %>"><%= idx + 1 %>: <% markdown do %><%= slide.data[:title] %><% end %></a></li>
+              <li><a href="#<%= slide.data[:id] %>"><%= idx + 1 %>: <% markdown(inline: true) do %><%= slide.data[:title] %><% end %></a></li>
             <% end %>
             <% if content_for? :footnotes %>
               <li><a href="#footnotes">Footnotes</a></li>

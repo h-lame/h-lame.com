@@ -70,10 +70,13 @@ helpers do
     concat_content %{<a id="fn-#{number}"><sup>#{number}.</sup></a> #{footnote} <a href="#fn-#{number}-return"><sup>⏎</sup></a>}
   end
 
-  def markdown(&block)
+  def markdown(inline: false, strip_tags: false, &block)
     raise ArgumentError, "Missing block" unless block_given?
     content = capture_html(&block)
-    concat Tilt['markdown'].new(context: @app) { content }.render
+    rendered = Tilt['markdown'].new(context: @app) { content }.render
+    rendered = rendered.gsub('<p>', '').gsub("</p>", '').gsub("\n", '') if inline
+    rendered = strip_tags(rendered) if strip_tags
+    concat rendered
   end
 end
 

@@ -1,4 +1,4 @@
-<section class="talk-section numbered" id="<%= slide.data[:id] %>" title="<%= slide.data[:title] %>" >
+<section class="talk-section numbered" id="<%= slide.data[:id] %>" title="<% markdown(inline: true, strip_tags: true) do %><%= slide.data[:title] %><% end %>">
   <figure class="slides">
     <img class="slide" src="<%= slide.data[:slide][:image_url] %>" alt="<%= slide.data[:slide][:image_alt] %>"<% if slide.data[:slide][:image_title].present? %> title="<%= slide.data[:slide][:image_title]%>"<% end %>>
   </figure>
