@@ -51,7 +51,7 @@
 
         <% current_page.data.fetch(:prepend_toc_items, []).each do |extra_toc_item| %>
           <section id="<%= extra_toc_item.id %>">
-            <% markdown do %><%= yield_content extra_toc_item.id.to_sym %><% end %>
+            <% markdown do %><%= yield_content extra_toc_item.id.to_sym %><% end -%>
           </section>
         <% end %>
 
@@ -68,12 +68,12 @@
         <% if content_for? :footnotes %>
           <footer id="footnotes">
             <h3>Footnotes</h3>
-            <% markdown do %><%= yield_content :footnotes %><% end %>
+            <% markdown do %><%= yield_content :footnotes %><% end -%>
           </footer>
         <% end %>
       </article>
     </main>
 
-    <%= partial 'ga' %>
+    <%= partial 'ga' -%>
   </body>
 </html>
