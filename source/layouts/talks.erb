@@ -26,11 +26,14 @@
             <% unless current_page.data[:exclude_intro_from_toc] %>
               <li><a href="#intro">Introduction</a></li>
             <% end %>
-            <% current_page.data.fetch(:extra_toc_items, []).each do |extra_toc_item| %>
+            <% current_page.data.fetch(:prepend_toc_items, []).each do |extra_toc_item| %>
               <li><a href="#<%= extra_toc_item.id %>"><%= extra_toc_item.title %></a></li>
             <% end %>
             <% slides.each.with_index do |slide, idx| %>
               <li><a href="#<%= slide.data[:id] %>"><%= idx + 1 %>: <% markdown(inline: true) do %><%= slide.data[:title] %><% end %></a></li>
+            <% end %>
+            <% current_page.data.fetch(:append_toc_items, []).each do |extra_toc_item| %>
+              <li><a href="#<%= extra_toc_item.id %>"><%= extra_toc_item.title %></a></li>
             <% end %>
             <% if content_for? :footnotes %>
               <li><a href="#footnotes">Footnotes</a></li>
@@ -46,7 +49,7 @@
           <%= yield %>
         </section>
 
-        <% current_page.data.fetch(:extra_toc_items, []).each do |extra_toc_item| %>
+        <% current_page.data.fetch(:prepend_toc_items, []).each do |extra_toc_item| %>
           <section id="<%= extra_toc_item.id %>">
             <% markdown do %><%= yield_content extra_toc_item.id.to_sym %><% end %>
           </section>
@@ -54,6 +57,12 @@
 
         <% slides.each do |slide| %>
           <%= partial 'talks/slide', locals: { slide: slide } %>
+        <% end %>
+
+        <% current_page.data.fetch(:append_toc_items, []).each do |extra_toc_item| %>
+          <section class="talk-section" id="<%= extra_toc_item.id %>">
+            <% markdown do %><%= yield_content extra_toc_item.id.to_sym %><% end -%>
+          </section>
         <% end %>
 
         <% if content_for? :footnotes %>
