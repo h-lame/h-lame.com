@@ -29,6 +29,7 @@ toc.select { |item| item.attribute('href').value.match?(/\A\#slide/) }
          l.gsub('<p>', '')
           .gsub('</p>',"\n\n")
           .gsub(/<a href="([^"]+)">(.+?)<\/a>/, '[\2](\1)')
+          .gsub(/<code>(.+?)<\/code>/, '`\1`')
        end
        .join "\n"
        .strip
