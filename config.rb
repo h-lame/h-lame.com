@@ -22,7 +22,7 @@ page '/*.ico', layout: false
 
 page "/talks/*", :layout => "talks"
 
-ignore "/talks/slides/*.md"
+ignore "/talks/**/slides/*.md"
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
 

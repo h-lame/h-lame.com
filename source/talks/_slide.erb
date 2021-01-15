@@ -1,6 +1,6 @@
 <section class="talk-section numbered" id="<%= slide.data[:id] %>" title="<%= slide.data[:title] %>" >
   <figure class="slides">
-    <img class="slide" src="<%= slide.data[:slide][:image_url] %>" alt="<%= slide.data[:slide][:image_alt] %>">
+    <img class="slide" src="<%= slide.data[:slide][:image_url] %>" alt="<%= slide.data[:slide][:image_alt] %>"<% if slide.data[:slide][:image_title].present? %> title="<%= slide.data[:slide][:image_title]%>"<% end %>>
   </figure>
   <div class="transcript">
     <%= slide.render(layout: false) %>
