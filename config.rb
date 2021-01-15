@@ -56,7 +56,7 @@ helpers do
 
   def slides(for_page = current_page)
     folder = File.dirname(for_page.path)
-    sitemap.resources(true).select(&:ignored?).select { |p| p.path.match? /\A#{folder}\/slides\/\d+\Z/ }.sort_by { |x| x.path }
+    sitemap.resources(true).select(&:ignored?).select { |p| p.path.match? /\A#{folder}\/slides\/(\d+)\Z/ }.sort_by { |x| File.basename(x.path).to_i }
   end
 end
 
