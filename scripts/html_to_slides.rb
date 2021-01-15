@@ -37,6 +37,8 @@ toc.select { |item| item.attribute('href').value.match?(/\A\#slide/) }
             "<% footnote_reference #{reference} %>"
           end
           .gsub(/<code>(.+?)<\/code>/, '`\1`')
+          .gsub(/<(em|i)>(.+?)<\/\1>/, '*\2*')
+          .gsub(/<(strong|b)>(.+?)<\/\1>/, '**\2**')
           .gsub(/<abbr title="([^"]+)">(.+?)<\/abbr>/) do
             abbrev = Regexp.last_match[2]
             definition = Regexp.last_match[1]
