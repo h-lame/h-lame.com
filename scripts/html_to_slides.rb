@@ -44,6 +44,12 @@ toc.select { |item| item.attribute('href').value.match?(/\A\#slide/) }
        end
        .join "\n"
        .strip
+     body = body.lines.map do |l|
+         l.gsub(/<ol>(.+?)<\/ol>/) { Regexp.last_match[1].gsub(/<li>(.+?)<\/li>/, "1. \\1\n") + "\n" }
+          .gsub(/<ul>(.+?)<\/ul>/) { Regexp.last_match[1].gsub(/<li>(.+?)<\/li>/, "* \\1\n") + "\n" }
+       end
+       .join "\n"
+       .strip
      frontmatter = item.transform_keys(&:to_s).to_yaml
      File.open(File.join(ARGV[0], 'slides', "#{idx+1}.md"), 'w') do |f|
        f.puts(frontmatter)
