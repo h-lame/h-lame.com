@@ -39,15 +39,17 @@ toc.select { |item| item.attribute('href').value.match?(/\A\#slide/) }
           .gsub(/<code>(.+?)<\/code>/, '`\1`')
           .gsub(/<(em|i)>(.+?)<\/\1>/, '*\2*')
           .gsub(/<(strong|b)>(.+?)<\/\1>/, '**\2**')
-          .gsub(/<abbr title="([^"]+)">(.+?)<\/abbr>/) do
+          .gsub(/<abbr title="([^"]+)">(.+?)<\/abbr>s?/) do
             abbrev = Regexp.last_match[2]
+            plural_abbrev = "#{abbrev}s"
             definition = Regexp.last_match[1]
             if abbrevs.key? abbrev && abbrevs[abbrev] != definition
               puts "Uh oh, already defined #{abbrev} as #{abbrevs[abbrev]} not as #{definition}"
             else
+              abbrevs[plural_abbrev] = definition
               abbrevs[abbrev] = definition
             end
-            abbrev
+            Regexp.last_match[0].end_with?('s') ? plural_abbrev : abbrev
           end
        end
        .join "\n"
