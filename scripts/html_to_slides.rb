@@ -24,12 +24,18 @@ toc.select { |item| item.attribute('href').value.match?(/\A\#slide/) }
    .each.with_index do |item, idx|
      body = item.delete(:body)
      abbrevs = {}
+     erb_used = false
      body = body.lines
        .map(&:strip)
        .map do |l|
          l.gsub('<p>', '')
           .gsub('</p>',"\n\n")
           .gsub(/<a href="([^"]+)">(.+?)<\/a>/, '[\2](\1)')
+          .gsub(/<a id="fn-(\d+)-return" href="#fn-\1"><sup>\1<\/sup><\/a>/) do
+            reference = Regexp.last_match[1]
+            erb_used = true
+            "<% footnote_reference #{reference} %>"
+          end
           .gsub(/<code>(.+?)<\/code>/, '`\1`')
           .gsub(/<abbr title="([^"]+)">(.+?)<\/abbr>/) do
             abbrev = Regexp.last_match[2]
@@ -51,7 +57,9 @@ toc.select { |item| item.attribute('href').value.match?(/\A\#slide/) }
        .join "\n"
        .strip
      frontmatter = item.transform_keys(&:to_s).to_yaml
-     File.open(File.join(ARGV[0], 'slides', "#{idx+1}.md"), 'w') do |f|
+     file_name = "#{idx+1}.md"
+     file_name << '.erb' if erb_used
+     File.open(File.join(ARGV[0], 'slides', file_name), 'w') do |f|
        f.puts(frontmatter)
        f.puts('---')
        f.puts body

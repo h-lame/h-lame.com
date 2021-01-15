@@ -29,6 +29,9 @@
             <% slides.each.with_index do |slide, idx| %>
               <li><a href="#<%= slide.data[:id] %>"><%= idx + 1 %>: <% markdown do %><%= slide.data[:title] %><% end %></a></li>
             <% end %>
+            <% if content_for? :footnotes %>
+              <li><a href="#footnotes">Footnotes</a></li>
+            <% end %>
           </ul>
         </div>
       </nav>
@@ -42,6 +45,13 @@
 
         <% slides.each do |slide| %>
           <%= partial 'talks/slide', locals: { slide: slide } %>
+        <% end %>
+
+        <% if content_for? :footnotes %>
+          <footer id="footnotes">
+            <h3>Footnotes</h3>
+            <% markdown do %><%= yield_content :footnotes %><% end %>
+          </footer>
         <% end %>
       </article>
     </main>

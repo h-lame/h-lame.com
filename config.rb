@@ -22,7 +22,8 @@ page '/*.ico', layout: false
 
 page "/talks/*", :layout => "talks"
 
-ignore "/talks/**/slides/*.md"
+ignore "/talks/slides/*.md*"
+ignore "/talks/**/slides/*.md*"
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
 
@@ -57,6 +58,22 @@ helpers do
   def slides(for_page = current_page)
     folder = File.dirname(for_page.path)
     sitemap.resources(true).select(&:ignored?).select { |p| p.path.match? /\A#{folder}\/slides\/(\d+)\Z/ }.sort_by { |x| File.basename(x.path).to_i }
+  end
+
+  def footnote_reference(number)
+    concat_content %{<a id="fn-#{number}-return" href="#fn-#{number}"><sup>#{number}</sup></a>}
+  end
+
+  def footnote_definition(number, &block)
+    footnote = capture_html(&block)
+
+    concat_content %{<a id="fn-#{number}"><sup>#{number}.</sup></a> #{footnote} <a href="#fn-#{number}-return"><sup>⏎</sup></a>}
+  end
+
+  def markdown(&block)
+    raise ArgumentError, "Missing block" unless block_given?
+    content = capture_html(&block)
+    concat Tilt['markdown'].new(context: @app) { content }.render
   end
 end
 
