@@ -23,6 +23,7 @@ toc.select { |item| item.attribute('href').value.match?(/\A\#slide/) }
    end
    .each.with_index do |item, idx|
      body = item.delete(:body)
+     abbrevs = {}
      body = body.lines
        .map(&:strip)
        .map do |l|
@@ -30,6 +31,16 @@ toc.select { |item| item.attribute('href').value.match?(/\A\#slide/) }
           .gsub('</p>',"\n\n")
           .gsub(/<a href="([^"]+)">(.+?)<\/a>/, '[\2](\1)')
           .gsub(/<code>(.+?)<\/code>/, '`\1`')
+          .gsub(/<abbr title="([^"]+)">(.+?)<\/abbr>/) do
+            abbrev = Regexp.last_match[2]
+            definition = Regexp.last_match[1]
+            if abbrevs.key? abbrev && abbrevs[abbrev] != definition
+              puts "Uh oh, already defined #{abbrev} as #{abbrevs[abbrev]} not as #{definition}"
+            else
+              abbrevs[abbrev] = definition
+            end
+            abbrev
+          end
        end
        .join "\n"
        .strip
@@ -38,5 +49,9 @@ toc.select { |item| item.attribute('href').value.match?(/\A\#slide/) }
        f.puts(frontmatter)
        f.puts('---')
        f.puts body
+       if abbrevs.any?
+         f.puts
+         f.puts abbrevs.map { |abbrev, definition| "*[#{abbrev}]: #{definition}"}.join("\n")
+       end
      end
    end
