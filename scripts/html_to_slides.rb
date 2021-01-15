@@ -23,6 +23,14 @@ toc.select { |item| item.attribute('href').value.match?(/\A\#slide/) }
    end
    .each.with_index do |item, idx|
      body = item.delete(:body)
+     body = body.lines
+       .map(&:strip)
+       .map do |l|
+         l.gsub('<p>', '')
+          .gsub('</p>',"\n\n")
+       end
+       .join "\n"
+       .strip
      frontmatter = item.transform_keys(&:to_s).to_yaml
      File.open(File.join(ARGV[0], 'slides', "#{idx+1}.md"), 'w') do |f|
        f.puts(frontmatter)
