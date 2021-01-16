@@ -41,6 +41,9 @@ def convert_html_to_markdown_line_pass_1(line, config)
      "<% footnote_reference #{reference} %>"
     end
     .gsub(/<code>(.+?)<\/code>/, '`\1`')
+    .gsub(/<blockquote>(.+?)<\/blockquote>/) do
+      "#{Regexp.last_match[1].lines.map { |l| "> #{l}" }.join("\n")}\n\n"
+    end
     .gsub(/<(em|i)>(.+?)<\/\1>/, '*\2*')
     .gsub(/<(strong|b)>(.+?)<\/\1>/, '**\2**')
     .gsub(/<abbr title="([^"]+)">(.+?)<\/abbr>s?/) do
