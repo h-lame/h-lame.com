@@ -99,6 +99,34 @@ def extract_slide(link, doc)
   )
 end
 
+def extract_part_content_from_doc(item, doc)
+  part_content = doc.css("##{item[:id]}")
+  item[:body] = part_content.css('>:not(.talk-section)').to_html
+  item
+end
+
+def extract_part(link, doc)
+  convert_content_to_markdown(
+    extract_part_content_from_doc(
+      { title: link.text, id: link.attribute('href').value.tr('#','') },
+      doc
+    )
+  )
+end
+
+def extract_parts(links, doc)
+  links.each.with_index do |part_link, idx|
+    part_number = idx + 1
+
+    path = File.join(ARGV[0], "parts", part_number.to_s)
+    FileUtils.mkdir_p path
+
+    part_content = extract_part(part_link, doc)
+    write_slide(part_content, part_number, File.dirname(path))
+
+    extract_slides(part_link.parent.css('ul li [href]'), path, doc)
+  end
+end
 
 puts ARGV[0]
 
@@ -107,4 +135,9 @@ talk_index = File.read(File.join(ARGV[0], 'index.html'))
 doc = Nokogiri::HTML(talk_index)
 
 toc = doc.css('#menu ul li [href]')
-extract_slides(toc, ARGV[0], doc)
+parts = toc.select { |item| item.attribute('href').value.match?(/\A\#part/) }
+if parts.empty?
+  extract_slides(toc, ARGV[0], doc)
+else
+  extract_parts(parts, doc)
+end

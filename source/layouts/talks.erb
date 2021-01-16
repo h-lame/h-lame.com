@@ -29,8 +29,21 @@
             <% current_page.data.fetch(:prepend_toc_items, []).each do |extra_toc_item| %>
               <li><a href="#<%= extra_toc_item.id %>"><%= extra_toc_item.title %></a></li>
             <% end %>
-            <% slides.each.with_index do |slide, idx| %>
-              <li><a href="#<%= slide.data[:id] %>"><%= idx + 1 %>: <% markdown(inline: true) do %><%= slide.data[:title] %><% end %></a></li>
+            <% if parts.any? %>
+              <% slide_idx = 0 -%>
+              <% parts.each do |part| %>
+                <li><a href="#<%= part.data[:id] %>"><% markdown(inline: true) do %><%= part.data[:title] %><% end %></a>
+                  <ul>
+                    <% slides(part, use_full_path: true).each do |slide| %>
+                      <li><a href="#<%= slide.data[:id] %>"><%= slide_idx += 1 %>: <% markdown(inline: true) do %><%= slide.data[:title] %><% end %></a></li>
+                    <% end %>
+                  </ul>
+                </li>
+              <% end %>
+            <% else %>
+              <% slides.each.with_index do |slide, idx| %>
+                <li><a href="#<%= slide.data[:id] %>"><%= idx + 1 %>: <% markdown(inline: true) do %><%= slide.data[:title] %><% end %></a></li>
+              <% end %>
             <% end %>
             <% current_page.data.fetch(:append_toc_items, []).each do |extra_toc_item| %>
               <li><a href="#<%= extra_toc_item.id %>"><%= extra_toc_item.title %></a></li>
@@ -55,8 +68,14 @@
           </section>
         <% end %>
 
-        <% slides.each do |slide| %>
-          <%= partial 'talks/slide', locals: { slide: slide } %>
+        <% if parts.any? %>
+          <% parts.each do |part| %>
+            <%= partial 'talks/part', locals: { part: part } %>
+          <% end %>
+        <% else %>
+          <% slides.each do |slide| %>
+            <%= partial 'talks/slide', locals: { slide: slide } %>
+          <% end %>
         <% end %>
 
         <% current_page.data.fetch(:append_toc_items, []).each do |extra_toc_item| %>
