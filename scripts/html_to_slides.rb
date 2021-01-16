@@ -2,6 +2,15 @@ require 'nokogiri'
 require 'yaml'
 require 'fileutils'
 
+def markdown_text(item)
+  out = %{#{item[:body]}}
+  out << "\n" unless out.end_with? "\n"
+  if item[:config][:abbrevs].any?
+    out << %{\n#{item[:config][:abbrevs].map { |abbrev, definition| "*[#{abbrev}]: #{definition}" }.join("\n")}\n}
+  end
+  out
+end
+
 def write_slide(item, slide_number, path)
   frontmatter = item[:frontmatter].transform_keys(&:to_s).to_yaml
   file_name = "#{slide_number}.md"
@@ -9,11 +18,7 @@ def write_slide(item, slide_number, path)
   File.open(File.join(path, file_name), 'w') do |f|
     f.puts(frontmatter)
     f.puts('---')
-    f.puts item[:body]
-    if item[:config][:abbrevs].any?
-      f.puts
-      f.puts item[:config][:abbrevs].map { |abbrev, definition| "*[#{abbrev}]: #{definition}" }.join("\n")
-    end
+    f.write markdown_text(item) # markdown_text already has trailing "\n"
   end
 end
 
@@ -25,6 +30,11 @@ def extract_slide_content_from_doc(item, doc)
     image_alt: image.attribute('alt').value,
     image_title: image.attribute('title').value
   }
+  image_caption = slide_content.css('figure.slides figcaption')
+  if image_caption.any?
+    caption_markdown = convert_content_to_markdown({body: image_caption.children.to_html})
+    item[:slide][:caption] = markdown_text(caption_markdown)
+  end
   item[:body] = slide_content.css('.transcript').children.to_html
   item
 end
