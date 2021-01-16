@@ -33,6 +33,7 @@ def convert_html_to_markdown_line_pass_1(line, config)
   line
     .gsub('<p>', '')
     .gsub('</p>',"\n\n")
+    .gsub(/<h([1-6])>(.+?)<\/h\1>/) { "#{'#' * Regexp.last_match[1].to_i} #{Regexp.last_match[2]}" }
     .gsub(/<a href="([^"]+)">(.+?)<\/a>/, '[\2](\1)')
     .gsub(/<a id="fn-(\d+)-return" href="#fn-\1"><sup>\1<\/sup><\/a>/) do
      reference = Regexp.last_match[1]
