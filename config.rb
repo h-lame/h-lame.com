@@ -76,6 +76,22 @@ helpers do
     concat_content %{<a id="fn-#{number}"><sup>#{number}.</sup></a> #{footnote} <a href="#fn-#{number}-return"><sup>⏎</sup></a>}
   end
 
+  def audio_figure(src:, &block)
+    concat_content %{<figure>
+  <audio controls class="example-graphic" src="#{src}"></audio>
+  <figcaption markdown="span">#{capture_html(&block).strip}</figcaption>
+</figure>
+}
+  end
+
+  def img_figure(src:, &block)
+    concat_content %{<figure>
+  <img class="example-graphic" src="#{src}">
+  <figcaption markdown="span">#{capture_html(&block).strip}</figcaption>
+</figure>
+}
+  end
+
   def markdown(inline: false, strip_tags: false, &block)
     raise ArgumentError, "Missing block" unless block_given?
     content = capture_html(&block)
