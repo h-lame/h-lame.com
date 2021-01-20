@@ -24,16 +24,22 @@ end
 
 def extract_slide_content_from_doc(item, doc)
   slide_content = doc.css("##{item[:id]}")
-  image = slide_content.css('figure.slides img')
-  item[:slide] = {
-    image_url: image.attribute('src').value,
-    image_alt: image.attribute('alt').value,
-    image_title: image.attribute('title').value
-  }
-  image_caption = slide_content.css('figure.slides figcaption')
-  if image_caption.any?
-    caption_markdown = convert_content_to_markdown({body: image_caption.children.to_html})
-    item[:slide][:caption] = markdown_text(caption_markdown)
+  slides = slide_content.css('.slides')
+  if slides.css('img').any?
+    image = slides.css('img')
+    item[:slide] = {
+      image_url: image.attribute('src').value,
+      image_alt: image.attribute('alt').value,
+      image_title: image.attribute('title')&.value
+    }
+    image_caption = slides.css('figcaption')
+    if image_caption.any?
+      caption_markdown = convert_content_to_markdown({body: image_caption.children.to_html})
+      item[:slide][:caption] = markdown_text(caption_markdown)
+    end
+  end
+  if slides.css('.terminal').any?
+    item[:terminal_output] = slides.css('.terminal').to_html.gsub(/<\/p><p /, "</p>\n\n<p ")
   end
   item[:body] = slide_content.css('.transcript').children.to_html
   item
