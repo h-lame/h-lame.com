@@ -4,6 +4,7 @@
 $baseFontSize: 18;
 $scale: 1.2;
 @import "../vendor/typebase";
+@import "../utils";
 
 html {
   color: #222;
@@ -56,13 +57,25 @@ header, main, footer {
 
 main {
   &.wrapper {
-    margin-top: 8em;
+    margin-top: 5em;
   }
   section, footer {
     border-top: 4px double #ccc;
   }
   section {
     padding: 1em 0;
+  }
+}
+
+.part {
+  *:first-child {
+    @extend .hug;
+  }
+  *:last-child {
+    @extend .spoon;
+  }
+  .talk-section:nth-of-type(1) {
+    @extend .reject-hug;
   }
 }
 
@@ -84,20 +97,20 @@ main {
     .terminal {
       text-align: left;
       &:first-child {
-        margin-top: 0;
+        @extend .hug;
       }
       &:last-child {
-        margin-bottom: 0;
+        @extend .spoon;
       }
     }
   }
   > .transcript {
     white-space: normal;
     *:first-child {
-      margin-top: 0;
+      @extend .hug;
     }
     *:last-child {
-      margin-bottom: 0;
+      @extend .spoon;
     }
   }
 }
@@ -155,8 +168,12 @@ code {
   z-index: 100;
   width: 100%;
 
-  > .reveal-name::before {
-    content: '▸ ';
+  > .reveal-name {
+    @extend .hug;
+
+    &::before {
+      content: '▸ ';
+    }
   }
   &:hover {
     > .reveal-name::before {
@@ -168,6 +185,7 @@ code {
     }
   }
   > .revealee {
+    @extend .hug;
     display: none;
     visibility: hidden;
   }
