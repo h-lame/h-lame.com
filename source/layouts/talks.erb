@@ -58,11 +58,13 @@
     <main class="wrapper">
       <div class="numberer">
         <section id="intro" class="pre-slide">
+          <h2 class="slide-title">Introduction</h2>
           <%= yield %>
         </section>
 
         <% current_page.data.fetch(:prepend_toc_items, []).each do |extra_toc_item| %>
           <section id="<%= extra_toc_item.id %>" class="pre-slide">
+            <h2 class="slide-title"><%= extra_toc_item.title %></h2>
             <% markdown do %><%= yield_content extra_toc_item.id.to_sym %><% end -%>
           </section>
         <% end %>
@@ -79,6 +81,7 @@
 
         <% current_page.data.fetch(:append_toc_items, []).each do |extra_toc_item| %>
           <section class="talk-section" id="<%= extra_toc_item.id %>">
+            <h2 class="slide-title"><%= extra_toc_item.title %></h2>
             <% markdown do %><%= yield_content extra_toc_item.id.to_sym %><% end -%>
           </section>
         <% end %>

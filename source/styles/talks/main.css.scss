@@ -37,16 +37,21 @@ header, main, footer {
  .numbered {
     position: relative;
     counter-increment: numberer-counter;
-    &:before {
-      content: counter(numberer-counter) ": " attr(title);
+    .slide-title {
       display: inline-block;
       position: absolute;
-      top: -1em;
-      left: 1em;
+      top: -1rem;
+      left: 1rem;
       padding: 0 10px;
       background: #fff;
       color: #ccc;
-      font-size: 18px;
+      font-size: 1rem;
+      line-height: $leading;
+      font-weight: normal;
+      @extend .hug, .spoon;
+      &:before {
+        content: counter(numberer-counter) ": ";
+      }
     }
   }
 }
@@ -68,6 +73,9 @@ main {
 }
 
 .pre-slide {
+  .slide-title {
+    display: none;
+  }
   *:nth-child(2) {
     @extend .hug;
   }
