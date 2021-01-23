@@ -56,7 +56,7 @@
     </aside>
 
     <main class="wrapper">
-      <article class="numberer">
+      <div class="numberer">
         <section id="intro" class="pre-slide">
           <%= yield %>
         </section>
@@ -89,7 +89,7 @@
             <% markdown do %><%= yield_content :footnotes %><% end -%>
           </footer>
         <% end %>
-      </article>
+      </div>
     </main>
 
     <%= partial 'ga' -%>
