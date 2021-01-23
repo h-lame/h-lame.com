@@ -67,13 +67,21 @@ main {
   }
 }
 
-.part {
+.pre-slide {
+  *:nth-child(2) {
+    @extend .hug;
+  }
+}
+
+.pre-slide, .part {
   *:first-child {
     @extend .hug;
   }
   *:last-child {
     @extend .spoon;
   }
+}
+.part {
   .talk-section:nth-of-type(1) {
     @extend .reject-hug;
   }

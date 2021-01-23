@@ -57,12 +57,12 @@
 
     <main class="wrapper">
       <article class="numberer">
-        <section id="intro">
+        <section id="intro" class="pre-slide">
           <%= yield %>
         </section>
 
         <% current_page.data.fetch(:prepend_toc_items, []).each do |extra_toc_item| %>
-          <section id="<%= extra_toc_item.id %>">
+          <section id="<%= extra_toc_item.id %>" class="pre-slide">
             <% markdown do %><%= yield_content extra_toc_item.id.to_sym %><% end -%>
           </section>
         <% end %>
