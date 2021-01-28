@@ -43,6 +43,14 @@ jobs:
           tar -cf h-lame.com.tar public
           bzip2 h-lame.com.tar
 
+      - name: Delete old release assets
+        uses: mknejp/delete-release-assets@v1
+        with:
+          token: ${{ github.token }}
+          tag: deploy
+          fail-if-no-assets: false
+          assets: h-lame.com.tar.bz2
+
       - name: Upload Release Asset
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
