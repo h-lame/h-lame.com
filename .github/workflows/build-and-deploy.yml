@@ -37,3 +37,19 @@ jobs:
         run: |
           export TERM=xterm
           bundle exec middleman build -e production --verbose
+
+      - name: Prepare Release Asset
+        run: |
+          tar -cf h-lame.com.tar public
+          bzip2 h-lame.com.tar
+
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: https://uploads.github.com/repos/h-lame/h-lame.com/releases/37054526/assets{?name,label}
+          asset_path: ./h-lame.com.tar.bz2
+          asset_name: h-lame.com.tar.bz2
+          asset_content_type: application/x-tar
