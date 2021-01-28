@@ -53,3 +53,10 @@ jobs:
           asset_path: ./h-lame.com.tar.bz2
           asset_name: h-lame.com.tar.bz2
           asset_content_type: application/x-tar
+
+      - name: Trigger deploy
+        run: >
+          curl http://webhooks.h-lame.com/deploy.cgi \
+            -X POST \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            --data-urlencode "payload={\"actor\":\"${{ github.actor }}\",\"ref\":\"${{ github.ref }}\",\"state\":\"${{ job.status }}\"}"
