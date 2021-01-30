@@ -6,6 +6,9 @@ $scale: 1.2;
 @import "../vendor/typebase";
 @import "../utils";
 
+@import "../footer";
+@import "../header";
+
 html {
   color: #222;
 }
@@ -56,6 +59,12 @@ a {
         content: counter(numberer-counter) ": ";
       }
     }
+  }
+}
+
+body {
+  > header, > footer {
+    @extend .wrapper;
   }
 }
 

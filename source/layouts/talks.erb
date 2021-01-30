@@ -13,6 +13,8 @@
     <%= stylesheet_link_tag "talks/main" %>
   </head>
   <body>
+    <%= partial 'header' %>
+
     <main>
       <header>
         <h1 class="title"><% unless current_page.data[:talks_index] %><a href="/talks">Talks</a> ∋ <% end %><%= page_title %></h1>
@@ -95,5 +97,6 @@
       </div>
     </main>
 
+    <%= partial 'footer' %>
   </body>
 </html>
