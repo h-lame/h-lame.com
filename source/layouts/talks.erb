@@ -13,49 +13,49 @@
     <%= stylesheet_link_tag "talks/main" %>
   </head>
   <body>
-    <header class="wrapper">
-      <h1 class="title"><% unless current_page.data[:talks_index] %><a href="/talks">Talks</a> ∋ <% end %><%= page_title %></h1>
-    </header>
+    <main>
+      <header>
+        <h1 class="title"><% unless current_page.data[:talks_index] %><a href="/talks">Talks</a> ∋ <% end %><%= page_title %></h1>
+      </header>
 
-    <aside id="menu" class="wrapper">
-      <nav>
-        <div class="revealer">
-          <h1 class="reveal-name"><%= toc_name %></h1>
-          <ul class="revealee">
-            <% unless current_page.data[:exclude_intro_from_toc] %>
-              <li><a href="#intro">Introduction</a></li>
-            <% end %>
-            <% current_page.data.fetch(:prepend_toc_items, []).each do |extra_toc_item| %>
-              <li><a href="#<%= extra_toc_item.id %>"><%= extra_toc_item.title %></a></li>
-            <% end %>
-            <% if parts.any? %>
-              <% slide_idx = 0 -%>
-              <% parts.each do |part| %>
-                <li><a href="#<%= part.data[:id] %>"><% markdown(inline: true) do %><%= part.data[:title] %><% end %></a>
-                  <ul>
-                    <% slides(part, use_full_path: true).each do |slide| %>
-                      <li><a href="#<%= slide.data[:id] %>"><%= slide_idx += 1 %>: <% markdown(inline: true) do %><%= slide.data[:title] %><% end %></a></li>
-                    <% end %>
-                  </ul>
-                </li>
+      <aside id="menu">
+        <nav>
+          <div class="revealer">
+            <h1 class="reveal-name"><%= toc_name %></h1>
+            <ul class="revealee">
+              <% unless current_page.data[:exclude_intro_from_toc] %>
+                <li><a href="#intro">Introduction</a></li>
               <% end %>
-            <% else %>
-              <% slides.each.with_index do |slide, idx| %>
-                <li><a href="#<%= slide.data[:id] %>"><%= idx + 1 %>: <% markdown(inline: true) do %><%= slide.data[:title] %><% end %></a></li>
+              <% current_page.data.fetch(:prepend_toc_items, []).each do |extra_toc_item| %>
+                <li><a href="#<%= extra_toc_item.id %>"><%= extra_toc_item.title %></a></li>
               <% end %>
-            <% end %>
-            <% current_page.data.fetch(:append_toc_items, []).each do |extra_toc_item| %>
-              <li><a href="#<%= extra_toc_item.id %>"><%= extra_toc_item.title %></a></li>
-            <% end %>
-            <% if content_for? :footnotes %>
-              <li><a href="#footnotes">Footnotes</a></li>
-            <% end %>
-          </ul>
-        </div>
-      </nav>
-    </aside>
+              <% if parts.any? %>
+                <% slide_idx = 0 -%>
+                <% parts.each do |part| %>
+                  <li><a href="#<%= part.data[:id] %>"><% markdown(inline: true) do %><%= part.data[:title] %><% end %></a>
+                    <ul>
+                      <% slides(part, use_full_path: true).each do |slide| %>
+                        <li><a href="#<%= slide.data[:id] %>"><%= slide_idx += 1 %>: <% markdown(inline: true) do %><%= slide.data[:title] %><% end %></a></li>
+                      <% end %>
+                    </ul>
+                  </li>
+                <% end %>
+              <% else %>
+                <% slides.each.with_index do |slide, idx| %>
+                  <li><a href="#<%= slide.data[:id] %>"><%= idx + 1 %>: <% markdown(inline: true) do %><%= slide.data[:title] %><% end %></a></li>
+                <% end %>
+              <% end %>
+              <% current_page.data.fetch(:append_toc_items, []).each do |extra_toc_item| %>
+                <li><a href="#<%= extra_toc_item.id %>"><%= extra_toc_item.title %></a></li>
+              <% end %>
+              <% if content_for? :footnotes %>
+                <li><a href="#footnotes">Footnotes</a></li>
+              <% end %>
+            </ul>
+          </div>
+        </nav>
+      </aside>
 
-    <main class="wrapper">
       <div class="numberer">
         <section id="intro" class="pre-slide">
           <h2 class="slide-title">Introduction</h2>
