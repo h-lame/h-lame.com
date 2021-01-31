@@ -54,7 +54,7 @@ def convert_html_to_markdown_line_pass_1(line, config)
     .gsub(/<a id="fn-(\d+)-return" href="#fn-\1"><sup>\1<\/sup><\/a>/) do
      reference = Regexp.last_match[1]
      config[:erb_used] = true
-     "<% footnote_reference #{reference} %>"
+     "<% fnrf #{reference} %>"
     end
     .gsub(/<code>(.+?)<\/code>/, '`\1`')
     .gsub(/<blockquote>(.+?)<\/blockquote>/) do

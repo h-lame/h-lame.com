@@ -9,10 +9,10 @@ append_toc_items:
     title: Research links
 ---
 <% content_for(:title) { 'Some rough fibrous material' }%>
-<% content_for(:footnotes) do %>
-  <% footnote_definition 1 do %> To be fair to the evented code, the `open` method is a blunt abstraction that wraps up some gnarly `Net::HTTP` code thatʼs not much better than the evented code in the slide.  I guess I wanted to make Neverblock look like a better idea.<% end %>
+<% footnotes do %>
+  <% fndf 1 do %> To be fair to the evented code, the `open` method is a blunt abstraction that wraps up some gnarly `Net::HTTP` code thatʼs not much better than the evented code in the slide.  I guess I wanted to make Neverblock look like a better idea.<% end %>
 
-  <% footnote_definition 2 do %> The slide suggests visiting [www.espace.com.eg/neverblock](http://www.espace.com.eg/neverblock/), but that page no longer exists. The github repo will have to do for now.<% end %>
+  <% fndf 2 do %> The slide suggests visiting [www.espace.com.eg/neverblock](http://www.espace.com.eg/neverblock/), but that page no longer exists. The github repo will have to do for now.<% end %>
 <% end %>
 <% content_for(:video) do %>
   A [video of this talk](https://skillsmatter.com/skillscasts/1247-fibers-in-ruby-1-9) is availble from [Skills Matter](http://skillsmatter.com/):

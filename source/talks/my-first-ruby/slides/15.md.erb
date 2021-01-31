@@ -19,7 +19,7 @@ For fucknut we have a rule that matches against the TO (or CC) address, and if i
 
 These handler scripts are slim wrappers that set up the environment for the mailing list processor and then pass it the mail as a ruby object.  We use [Rmail](https://github.com/terceiro/rmail) for this (not the [Tmail](http://tmail.rubyforge.org/) or [Mail](https://github.com/mikel/mail) gems which you may be more famlilar with).
 
-This mail part of fucknut also uses [`YAML::Syck`](https://ruby-doc.org/stdlib-1.8.6/libdoc/yaml/rdoc/YAML.html) (which is now the default YAML parser in 1.8.x so you’re just using `YAML` now<% footnote_reference 3 %>) to deal with some configuration stuff and [Net::Smtp](http://ruby-doc.org/stdlib-1.8.6/libdoc/net/smtp/rdoc/Net/SMTP.html) to send out email.
+This mail part of fucknut also uses [`YAML::Syck`](https://ruby-doc.org/stdlib-1.8.6/libdoc/yaml/rdoc/YAML.html) (which is now the default YAML parser in 1.8.x so you’re just using `YAML` now<% fnrf 3 %>) to deal with some configuration stuff and [Net::Smtp](http://ruby-doc.org/stdlib-1.8.6/libdoc/net/smtp/rdoc/Net/SMTP.html) to send out email.
 
 We’ll cover this in detail later, but having received an email it stores it in an archive db and then sends it on to the other users on the list.
 

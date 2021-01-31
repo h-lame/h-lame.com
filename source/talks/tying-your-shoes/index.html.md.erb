@@ -6,12 +6,12 @@ prepend_toc_items:
     title: Video
 ---
 <% content_for(:title) { 'Tying your shoes' }%>
-<% content_for(:footnotes) do %>
-  <% footnote_definition 1 do %>This brilliant mnemonic is rather moot now as the shoooes.net website has gone away, and shoes lives at [shoesrb.com](http://shoesrb.com/) now.<% end %>
+<% footnotes do %>
+  <% fndf 1 do %>This brilliant mnemonic is rather moot now as the shoooes.net website has gone away, and shoes lives at [shoesrb.com](http://shoesrb.com/) now.<% end %>
 
-  <% footnote_definition 2 do %>I actually [built this hat-based UI](https://github.com/h-lame/lruggery/blob/master/names_from_a_hat/hat.rb) for one of the LRUG lightning talk events where we would randomise the order of the speakers.  I think this talk came after I wrote that script, so this must be me poking fun at myself.<% end %>
+  <% fndf 2 do %>I actually [built this hat-based UI](https://github.com/h-lame/lruggery/blob/master/names_from_a_hat/hat.rb) for one of the LRUG lightning talk events where we would randomise the order of the speakers.  I think this talk came after I wrote that script, so this must be me poking fun at myself.<% end %>
 
-  <% footnote_definition 3 do %>Of course, almost all of the links in this slide are out of date now so I've updated the ones in the transcript to refer to modern equivalents.  Hopefully they don't go out of date too.<% end %>
+  <% fndf 3 do %>Of course, almost all of the links in this slide are out of date now so I've updated the ones in the transcript to refer to modern equivalents.  Hopefully they don't go out of date too.<% end %>
 
   *[UI]: User Interface
   *[LRUG]: London Ruby User Group
