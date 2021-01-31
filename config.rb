@@ -47,6 +47,18 @@ ignore "/talks/**/slides/*.md*"
 # Methods defined in the helpers block are available in templates
 # https://middlemanapp.com/basics/helper-methods/
 
+require 'middleman-core/renderers/kramdown'
+
+class Middleman::Renderers::MiddlemanKramdownHTML < Kramdown::Converter::Html
+  def format_as_block_html(name, attr, body, indent)
+    return super unless name =~ /\Ah\d\Z/ && attr['id'].present?
+    return super unless scope.current_page.data.fetch(:heading_anchors, true)
+
+    anchor = %{<span class="heading-anchor-wrapper"><span class="heading-anchor"><a href="##{attr['id']}" aria-hidden="true">#</a></span></span>}
+    super(name, attr, anchor + body, indent)
+  end
+end
+
 helpers do
   def page_title(for_page = current_page)
     yield_content(:title) || for_page.data.title
