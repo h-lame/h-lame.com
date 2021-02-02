@@ -3,6 +3,8 @@ set :js_dir, 'scripts'
 set :images_dir, 'images'
 set :build_dir, 'public'
 
+set :markdown, smartypants: true
+
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
