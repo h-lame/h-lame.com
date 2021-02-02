@@ -23,6 +23,8 @@ GEM
     fast_blank (1.0.0)
     fastimage (2.2.1)
     ffi (1.14.2)
+    git (1.8.1)
+      rchardet (~> 1.8)
     haml (5.2.1)
       temple (>= 0.8.0)
       tilt
@@ -89,6 +91,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    rchardet (1.8.0)
     rexml (3.2.4)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -106,6 +109,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  git
   middleman
   middleman-autoprefixer (~> 2.7)
   nokogiri
