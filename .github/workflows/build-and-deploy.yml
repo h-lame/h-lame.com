@@ -33,6 +33,17 @@ jobs:
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
 
+      - name: Publish new notes
+        run: |
+          bundle exec ruby scripts/publish.rb > publish_output.txt
+          if test -s "./publish_output.txt"; then
+            git config user.name "h-lame.com deploy robot"
+            git config user.email github-actions@github.com
+            git add source/
+            echo $'Publishing new notes\n' | cat - publish_output.txt | git commit -F -
+            git push
+          fi
+
       - name: Middleman Build
         run: |
           export TERM=xterm
