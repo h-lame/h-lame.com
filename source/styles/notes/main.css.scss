@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
     visibility: hidden;
     position: relative;
   }
-  &:hover {
+  &:hover, &:active {
     .heading-anchor-wrapper {
       visibility: visible;
     }
@@ -69,7 +69,7 @@ a[href] {
   &:visited {
     text-decoration-color: darken( $link-color, 25%);
   }
-  &:hover {
+  &:hover, &:active {
     animation: rainbow 3s linear infinite;
   }
 }
@@ -143,6 +143,13 @@ main {
   }
 
   > div {
+
+    *:target {
+      padding: 3px;
+      border-radius: 4px;
+      animation: rainbow 3s linear infinite;
+    }
+
     > *:first-child {
       margin-top: 0;
       padding-top: $leading;
