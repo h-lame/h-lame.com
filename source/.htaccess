@@ -1,4 +1,5 @@
 AddHandler cgi-script .r
+AddType 'application/atom+xml; charset=utf-8' .atom
 
 Redirect "/cv/" "http://assets.h-lame.com/cv/"
 Redirect "/movs/" "http://assets.h-lame.com/movs/"
