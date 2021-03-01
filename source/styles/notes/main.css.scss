@@ -143,6 +143,10 @@ main {
   }
 
   > div {
+    img.icon {
+      width: 1em;
+      height: 1em;
+    }
 
     *:target {
       padding: 3px;

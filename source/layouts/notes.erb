@@ -28,6 +28,7 @@
             <li><% link_to(note) do %><%= page_title(note) %><% end %> - <%= page_description(note) %></li>
           <% end %>
         </ol>
+        <p><a href="/notes/index.atom"><img class="icon" src="/images/feed-icon.svg"/></a> There's <a href="/notes/index.atom">a feed of these notes</a> if you'd like that.</p>
         <%- end -%>
         <%- if content_for? :footnotes %>
         <aside id="footnotes">
