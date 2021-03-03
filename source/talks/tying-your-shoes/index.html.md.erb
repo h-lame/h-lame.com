@@ -7,14 +7,17 @@ prepend_toc_items:
 ---
 <% content_for(:title) { 'Tying your shoes' }%>
 <% footnotes do %>
-  <% fndf 1 do %>This brilliant mnemonic is rather moot now as the shoooes.net website has gone away, and shoes lives at [shoesrb.com](http://shoesrb.com/) now.<% end %>
+  <% fndf 1 do %>This brilliant mnemonic is rather moot now as the shoooes.net website has gone away, and shoes lives at [shoesrb.com][] now.<% end %>
 
-  <% fndf 2 do %>I actually [built this hat-based UI](https://github.com/h-lame/lruggery/blob/master/names_from_a_hat/hat.rb) for one of the LRUG lightning talk events where we would randomise the order of the speakers.  I think this talk came after I wrote that script, so this must be me poking fun at myself.<% end %>
+  <% fndf 2 do %>I actually [built this hat-based UI][hat-based-ui] for one of the LRUG lightning talk events where we would randomise the order of the speakers.  I think this talk came after I wrote that script, so this must be me poking fun at myself.<% end %>
 
   <% fndf 3 do %>Of course, almost all of the links in this slide are out of date now so I've updated the ones in the transcript to refer to modern equivalents.  Hopefully they don't go out of date too.<% end %>
 
   *[UI]: User Interface
   *[LRUG]: London Ruby User Group
+
+  [shoesrb.com]: http://shoesrb.com/
+  [hat-based-ui]: https://github.com/h-lame/lruggery/blob/master/names_from_a_hat/hat.rb
 <% end %>
 <% content_for(:video) do %>
   A [video of this talk](http://rubymanor.org/videos/gui_manor_born/) is available from [Ruby Manor](http://rubymanor.org/classic/):
