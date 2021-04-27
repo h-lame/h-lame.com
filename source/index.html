@@ -30,14 +30,15 @@
     <h3>So what's going on?</h3>
     <p>I used to blog here, but I've lost my way.  Until I rethink this place, you can find me hanging out in other places, generating slightly less pathetic content.  Here are the places that I&hellip;</p>
     <ul>
-      <li><a href="http://twitter.com/hlame" class="url uid" rel="me">talk rubbish</a></li>
-      <li><a href="http://last.fm/user/h-lame" class="url uid" rel="me">listen to music</a></li>
-      <li><a href="http://github.com/h-lame" class="url uid" rel="me">write code</a></li>
-      <li><a href="http://flickr.com/photos/h-lame" class="url">take photos</a></li>
-      <li><a href="http://lanyrd.com/profile/hlame/" class="url uid" rel="me">organise my evenings</a></li>
-      <li><a href="http://www.songkick.com/users/h-lame" class="url uid" rel="me">go to gigs</a></li>
-      <li><a href="http://pinboard.in/u:h-lame" class="url uid" rel="me">point at web things</a></li>
-      <li><a href="http://www.linkedin.com/in/hlame" class="url uid" rel="me">pretend to be a professional</a></li>
+      <li><a href="https://twitter.com/hlame" class="url uid" rel="me">talk rubbish</a></li>
+      <li><a href="https://last.fm/user/h-lame" class="url uid" rel="me">listen to music</a></li>
+      <li><a href="https://github.com/h-lame" class="url uid" rel="me">write code</a></li>
+      <li><a href="https://flickr.com/photos/h-lame" class="url">take photos</a></li>
+      <li><a href="https://www.instagram.com/hlame/" class="url">take other photos</a></li>
+      <li><a href="https://www.songkick.com/users/h-lame" class="url uid" rel="me">go to gigs</a></li>
+      <li><a href="https://pinboard.in/u:h-lame" class="url uid" rel="me">point at web things</a></li>
+      <li><a href="https://www.linkedin.com/in/hlame" class="url uid" rel="me">pretend to be a professional</a></li>
+      <li><a href="https://www.goodreads.com/user/show/50888632-murray-steele" class="url uid" rel="me">read books</a></li>
     </ul>
     <p>You might also be interested in some <a href="/talks">talks I've given</a>.</p>
   </div>
@@ -51,7 +52,7 @@
 <script>
   $(document).ready(function() {
     $('#content li a').each(function() {
-      var md = this.href.match(/^(http:\/\/(.*?)\/)/);
+      var md = this.href.match(/^(https?:\/\/(.*?)\/)/);
       $(this).prepend('<img src="' + md[1] + 'favicon.ico" width="16" height="16" alt="Favicon for ' + md[2] +'" title="Favicon for '+ md[2] +'">');
     });
   });
