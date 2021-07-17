@@ -28,6 +28,11 @@ $footer-bg-color: #f2f3f4;
       padding-right: $leading;
     }
   }
+  .inline-img-list {
+    img {
+      width: 190px;
+    }
+  }
 }
 @media only screen and (max-width: calc(600px + 2em + #{$leading} + 1ch - 1px)) {
   h1, h2, h3, h4, h5, h6 {
@@ -35,6 +40,17 @@ $footer-bg-color: #f2f3f4;
     .heading-anchor-wrapper {
       padding-left: 0.25 * $leading;
       order: 2;
+    }
+  }
+  .inline-img-list {
+    li {
+      width: 100%;
+      a {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
     }
   }
 }
@@ -180,4 +196,17 @@ code {
 body > footer {
   background-color: $footer-bg-color;
   @extend .wrapper;
+}
+.inline-img-list {
+  display: inline-block;
+  padding-inline-start: 0em;
+  margin-block-end: 0em;
+
+  li {
+    display: inline-block;
+
+    a {
+      display: inline-block;
+    }
+  }
 }
