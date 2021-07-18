@@ -34,6 +34,9 @@ GEM
     hashie (3.6.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.1)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     kramdown (2.3.0)
       rexml
     listen (3.0.8)
@@ -74,6 +77,7 @@ GEM
       servolux
       tilt (~> 2.0.9)
       uglifier (~> 3.0)
+    mini_magick (4.11.0)
     mini_portile2 (2.5.0)
     minitest (5.14.3)
     nokogiri (1.11.1)
@@ -94,6 +98,8 @@ GEM
       ffi (~> 1.0)
     rchardet (1.8.0)
     rexml (3.2.4)
+    ruby-vips (2.1.2)
+      ffi (~> 1.12)
     sassc (2.4.0)
       ffi (~> 1.9)
     servolux (0.13.0)
@@ -112,6 +118,7 @@ PLATFORMS
 DEPENDENCIES
   builder
   git
+  image_processing
   middleman
   middleman-autoprefixer (~> 2.7)
   nokogiri
