@@ -3,6 +3,7 @@ set :js_dir, 'scripts'
 set :images_dir, 'images'
 set :build_dir, 'public'
 
+set :markdown_engine, :kramdown
 set :markdown, smartypants: true
 
 # Activate and configure extensions
@@ -13,6 +14,8 @@ activate :autoprefixer do |prefix|
 end
 
 activate :directory_indexes
+
+activate :syntax
 
 # Layouts
 # https://middlemanapp.com/basics/layouts/

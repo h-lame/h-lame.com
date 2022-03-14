@@ -11,9 +11,12 @@ $link-color: #828e84;
 $bg-color: #f2f3f4;
 $text-bg-color: lighten( $bg-color, 15%);
 $footer-bg-color: #f2f3f4;
+$inline-code-bg-color: #ededed;
+$inline-code-text-color: lighten( $text-color, 15%);
 
 @import "../footer";
 @import "../header";
+@import "../highlighting";
 
 @media only screen and (min-width: calc(600px + 2em + #{$leading} + 1ch)) {
   .wrapper {
@@ -188,8 +191,17 @@ main {
     }
   }
 }
-code {
-  background: silver;
+a {
+  &:hover, &:active {
+    code {
+      background: transparent;
+      color: inherit;
+    }
+  }
+}
+p code {
+  background: $inline-code-bg-color;
+  color: $inline-code-text-color;
   border-radius: 4px;
   padding: 3px;
 }
