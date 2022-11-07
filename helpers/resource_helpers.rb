@@ -6,7 +6,12 @@ module ResourceHelpers
 
   def slides(for_page = current_page, use_full_path: false)
     folder = use_full_path ? for_page.path : File.dirname(for_page.path)
-    sitemap.resources(true).select(&:ignored?).select { |p| p.path.match? /\A#{folder}\/slides\/(\d+)\Z/ }.sort_by { |x| File.basename(x.path).to_i }
+    slides = sitemap.resources(true)
+      .select(&:ignored?)
+      .select { |p| p.path.match? /\A#{folder}\/slides\/(\d+)\Z/ }
+      .sort_by { |x| File.basename(x.path).to_i }
+
+    for_page.data[:in_reverse_order] ? slides.reverse : slides
   end
 
   def notes
