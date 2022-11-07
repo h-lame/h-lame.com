@@ -1,0 +1,23 @@
+---
+title: Unforch, that's where the similarties end
+id: slide-027
+slide:
+  :image_url: http://assets.h-lame.com/images/talks/the-long-road-to-ruby-3-0-vs-the-short-road-to-ruby-3-1/slides/027.png
+  :image_alt: "4 points explaining where we got the ruby 3.1 upgrade wrong 1 - lack of comms, 2 - local build failures, 3 - rubocop problems, 4 - CI cache issues; text: Unforch, that's where the similarities end, 1: Lack of comms, People surprised about needing to install a new version of ruby; 2: Local builds, failing post upgrade, rmagick specifically; 3: Rubocop, new cops for ruby 3.1 syntax; 4: CI Cache, Add ruby version to cache key to speed up CI"
+  :image_title: "Slide 27: Unforch, that's where the similarties end"
+---
+Unfortunately that is where the similarities end; this did not go smoothly!
+
+We didn't tell anyone we are going to do it.  All of our frontend colleagues asked, "Why am I being asked to install another version of ruby two weeks after the last one?", we replied, "Oh, we merged another update.  That's cool right?".  Normally this would be fine, but we hadn't told them, they weren't prepped and it blocked them from doing some stuff.
+
+Some builds failed locally because of macOS problems.  The person who had done it had all the updates ready but other people didn't.  So we weren't really aware, that, [`rmagick`](https://rmagick.github.io) specifically was [a nightmare for some people to build locally](https://github.com/rmagick/rmagick/issues/1314).
+
+[Rubocop](https://rubocop.org) turned on some ruby 3.1 syntax cops.  We didn't really know that it was going to do that because on CI we run rubocop only on the diff from main.  So our ruby 3.1 branch wasn't going to see these, it was only as people touched files that had, what rubocop deemed unacceptable ruby 3.1 code in it, that it would start complaining.  We had a big debate about whether or not we like [the new valueless hash syntax](https://blog.saeloun.com/2021/09/28/ruby-allow-value-omission-in-hash-literals.html).  Someone turned it on by default, someone said "no!!!!".  We had a big debate about that.<% fnrf 3 %>
+
+And our CI builds got slow because we weren't using the ruby version as part of the cache key, and sometimes when you bump a ruby version you need to re-compile some of your gems if they're native.  Ruby is smart enough to know "I can't use this one, I'll recompile it when you `bundle install`".  It was doing that every time because it wasn't cacheing, so we had to sort that out so that we didn't breach our SLAs on our build time on CI.
+
+We just hadn't really paid attention to this piece of work this time, and there were is lots of problems.
+
+*[macOS]: Macintosh Operating System
+*[CI]: Continuous Integration
+*[SLAs]: Service Level Agreements

@@ -1,0 +1,17 @@
+---
+title: May 2022
+id: slide-026
+slide:
+  :image_url: http://assets.h-lame.com/images/talks/the-long-road-to-ruby-3-0-vs-the-short-road-to-ruby-3-1/slides/026.png
+  :image_alt: 'Another image of a PR announcement in slack, this time also May 2022, but for ruby 3.1; text: May 2022, A couple of weeks later..., similar story to ruby 3.0 but on a smaller scale'
+  :image_title: 'Slide 26: May 2022'
+---
+It's very similar.  A couple of weeks later Murad raised a PR saying "What if we used ruby 3.1.2 now?"<% fnrf 2 %>
+
+It's a very similar story.  There were some gems that meant we couldn't boot the app because ruby 3.1 [removed some stuff from the standard library](https://stdgems.org/new-in/3.1/).  They are now gems and we had to put them into our `gemfile`.  There were a handful of gems that just needed another upgrade.  There were a handful of test failures.  So we did we did the same thing -- we portioned it all out, we got everyone to fix those things, and a couple of days later that was all green.  That had all been landed on main and we were ready to ship this.
+
+So we did!
+
+A couple of days later we just launched another version of ruby.
+
+*[PR]: Pull Request
