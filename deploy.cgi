@@ -40,9 +40,9 @@ begin
     # Remove the oldest release
     FileUtils.rm_rf(OLDEST_RELEASE) if Dir[File.join(BASE_DIR, "releases", "*")].size > 10
 
-    response = "OK deploying #{File.basename(NEW_RELEASE)} from #{params['branch'].inspect}, by #{params['actor'].inspect}"
+    response = "OK deploying #{File.basename(NEW_RELEASE)} from #{params['ref'].inspect}, by #{params['actor'].inspect}"
   else
-    response = "Not deploying; passed = #{passed.inspect}, branch = #{params['branch'].inspect}, by #{params['actor'].inspect}"
+    response = "Not deploying; passed = #{passed.inspect}, ref = #{params['ref'].inspect}, by #{params['actor'].inspect}"
   end
 
   puts "HTTP-Version: HTTP/1.0 200 OK"
