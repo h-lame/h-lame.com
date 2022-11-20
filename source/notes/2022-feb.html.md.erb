@@ -1,0 +1,142 @@
+---
+title: February 2022
+canonical_order: 16
+description: |-
+  Quality of life; Going out; TV catch-up; Moderate language;
+  A bruiser; A heartbreaking work of staggering genius;
+  Running; Books
+published_at: '2022-03-14T23:05:08Z'
+---
+A lot of musing on language and writing apparently.
+
+## Quality of life
+
+This month I managed to find the time to raise a small PR to increase the quality of life for our engineering team.  Like most teams, our devs will frequently bootstrap a new piece of work by copy and pasting a similar piece of code from elsewhere in the app.  Doubly so with tests where writing out all the boilerplate to set them up can be a bit much.  The problem is that we often forget to rename the test case because it's the least interesting part of the boilerplate.  If these two tests have wildly different `setup` or `teardown` this can mean that one of them will fail when run as part of the complete test-suite depending on the order they're run.  For example:
+
+<% code('ruby') do %>
+# something_test.rb
+class SomethingTest < ActionSupport::TestCase
+  def setup
+    @something = Something.new
+  end
+
+  test 'check there is a something' do
+    assert @something
+  end
+end
+
+# another_thing_test.rb
+class SomethingTest < ActionSupport::TestCase
+  def setup
+  end
+
+  test 'check we can create another thing' do
+    assert AnotherThing.can_create?
+  end
+end
+<% end %>
+
+Both `something_test.rb` and `another_thing_test.rb` define `SomethingTest` but with different `setup` methods.  If `something_test.rb` is loaded first and then `another_thing_test.rb` we end up with an empty `setup` method for `SomethingTest` because the last evaluated version of a method "wins".  This will cause `something_test.rb`'s first test to fail.  However, if the files are loaded in the opposite order, the `setup` method from `something_test.rb` "wins" and the tests won't fail.  Naturally, to avoid calling [`i_suck_and_my_tests_are_order_dependent!`][minitest-sure-is-friendly], we randomise the order of our tests so this means our tests are loaded in different orders depending on the random seed.  So, sometimes `something_test.rb` is loaded first and the tests fail, and sometimes it's loaded second and the tests pass.
+
+This problem is made even more tricky to diagnose because on our CI platform we partition the tests into 8 runners to run them faster.  Each runner only loads ~1/8th of the test files, meaning the two files might not actually be loaded in the same runner.  While this means we're more likely to get tests that pass which is a good thing, it also means we're much less likely to have failing tests, and infrequent failing tests can be especially infuriating to diagnose because isolating the circumstances can take a lot of faff.
+
+I decided that the solution was to lean into the convention that a file called `another_thing_test.rb` should define a class called `AnotherThingTest`.  For our implementation code we have a tool that does this for us: [`zeitwerk`][zeitwerk] which has been part of rails for a while now.  We run [`zeitwerk:check`][zeitwerk-check] as part of our CI so I hoped to make it look at test code too.  However, after an afternoon poking at it, I couldn't quite make it work - perhaps our test code was too messy, but I was having to define lots of exceptions and custom config to get it to work and even then I only had partial success.
+
+Not to be defeated I turned to another tool we use already: [`rubocop`][].  It has a handy cop called [`Naming::FileName`][rubocop-naming-filename] which can be configured via its `ExpectMatchingDefinition` to require a class or module definition in the class that matches the file name.  To avoid the exceptions and custom config I had to apply with `zeitwerk` I turned off the `CheckDefinitionPathHierarchy` option so it doesn't check that the file path matches up to the namespace (e.g. `test/models/another_thing_test.rb` only needs to define `AnotherThingTest` not `Test::Models::AnotherThingTest`).  It's not perfect, it just checks the AST of the file (e.g. it doesn't understand dynamic class definitions or constructs like `Foo = Struct.new { ... }`).  This is unlike `zeitwerk` which actually loads the files and asserts on the changes to the globally defined constants afterward loading the file.  This does mean that `rubocop` and `zeitwerk` could end up disagreeing if we ran them both on the same files.
+
+Given these caveats, we actually only want `Naming::Filename` to work like this for our `./test` folder.  As `rubocop`s YAML config isn't particularly sophisticated I originally thought I would have to run a separate `.rubocop_test.yml` that only ran this one cop and only over the `./test` folder.  But then I worked out I could [use directory specific `.rubocop.yml` files][rubocop-config-locations]<% fnrf 1 %> to configure `Naming::Filename` to work like this in our `./test` folder, but leave it as the simple `snake_case_file_names.rb` checker for the rest of the app.
+
+Anyway, the PR diff was for +693 lines and −664 lines (of that it's +15 for config and the rest is me fixing the errors we found in the test suite) changed, had a commit message of 385 words, and a PR description of 326 words.  This writeup here is 709 words (I guess I have to explain some context that was "free" for our team).  I figure I can probably write a 10,000 word pamphlet on it next.
+
+## Going out
+
+Now that COVID is over<% fnrf 2 %> I met up with some NCT dads in a local pub for a rare-even-in-the-before-times Saturday evening out.  I'm not going to lie, it was definitely fun going to a pub and chatting all evening.  So much fun that a week or so later I got on the train after work to go into town for a work leaving drinks party.
+
+There was much to be contrasted between these two nights out.  For one, throughout the pandemic years I've continued to see the NCT dads in the flesh at parks and even inside playdates as the rules allowed, whereas for work this was the first time I'd physically met a whole bunch of people.  Now we're not just talking heads in a grid we all had to swallow comments on how tall or short we all were and internalise our horror at seeing past the sternum.
+
+With the dads we'd stayed until closing-time so I'd assumed I'd probably have a late one with the work drinks.  However, I left by about 21:45 as it all felt a bit much.  The evening had proceeded to the standing on chairs singing along to Shakira part of the night and the back of my head was saying "shouting to be heard while people sing drunkenly in a poorly ventilated bar feels like a COIVD certainty", so I left.  There wasn't a local outbreak at work the next few days, and I my own tests came up negative, so I guess I worried for nothing.  It's nice to have an excuse other than "I just felt a bit old / tired / introverted" for pulling a french exit, at least for the next year or so.
+
+All that said though, as the year progresses, assuming COVID remains over<% fnrf 3 %>, I'm going to try to fit in more regular quite pub chat with some friends as I really enjoyed that.
+
+## TV catch up
+
+The "street-level" Marvel TV shows announced that they'd be dropping off Netflix this month.  While there's a clear hierarchy of quality on them, I did enjoy them, and I've watched enough other MCU crap that I'd always intended to watch the rest of them.  The announcement was unclear when, or indeed _if_, these shows would resurface, presumably on Disney+, so I decided I'd have to watch _some_ of them if I could.  Realising I didn't have time to actually watch all of the series I hadn't watched, I ummed and ahhed about which to pick, before deciding I'd just watch the one I thought would be good (Daredevil series 3) and if time permitted, watch the other one I thought would be good (Jessica Jones series 3) rather than the ones I assumed would be, at best, ok (series 2 of Luke Cage, Iron Fist, & Punisher).  I only had time to watch one series in the end, and I'm glad I did.  Daredevil is far from perfect, but the prison set piece alone was pretty spectacular - if they ever make a series 4 it'll be interesting to see how they up the ante again for these "single take sprawling fight scene" shots.
+
+Of course, it seems they will be coming to Disney+ sooner rather than later, and so the timing of these announcements was almost certainly an agreed deal between Netflix and Disney to maximise eyeballs on Netflix while people thought the shows would disappear forever.  Worked on me at least.
+
+## Moderate language
+
+R showed me a picture she'd done that I was so impressed by I nearly blurted:
+
+> Oh, R, that's fucking amazing!
+
+luckily I was able to stop myself in time, and didn't even have to bowdlerise myself with "flipping"<% fnrf 4 %>.
+
+It did make me thinking about my use of swearwords.  I swear a lot, not often in an aggressive way, but for emphasis and/or exaggeration.  I take _some_ small comfort that there is [research to suggest that frequent swearing is not a sign of a limited vocabulary][swearing-research], but I obviously won't be looking for any research to the contrary.  Clearly, if R runs into the playground and starts f-ing and c-ing and g-ing then, there'll be words for T and I, but at the same time, she is going to hear swears and tiptoe around using them.  I guess I want to make sure she knows how to swear properly and effectively.  Maybe not while she's 4 though.
+
+## A bruiser
+
+In other language adventures, after a particularly poor shave one weekend where I'd cut myself in several places, R looked at my face and called me "a bruiser".  Wondering where she'd picked up this phrase I asked her what she meant by it.
+
+> You're covered in bruises and hurties ... like me Daddy, you're a bruiser
+
+Which, yeah, her legs _are_ covered in bruises.  We've no idea where she gets them, but neither nursery nor school seem to have worried about it, so we assume it's a sign of general knock-about play rather than anything worse.
+
+Neither her, nor I, could really be described as traditional "bruisers", but it makes perfect sense in her world.  It's really great to see her experimenting with language and come up with words and phrases that make sense even if, as in this case, they end up shadowing words and phrases with very different meanings.
+
+## A heartbreaking work of staggering genius
+
+We had painters in to freshen up our hall and stairway.  Something we'd normally do ourselves, but finding a spare weekend to actually crack on with it and get it done is nigh on impossible with a tiny human running around.  Throwing money at the problem however?  Yeah, we can do that<% fnrf 5 %>.
+
+As we discussed details with them R came over and handed me a note:
+
+{: .inline-img-list}
+* <%= notes_inline_img src: 'http://assets.h-lame.com/images/notes/february-2022-sad-note.jpeg', alt: "A note drawn by R; a sad girl and the title 'R is sad'. Heartbreaking." %>
+
+It's exciting to see R learning how to read and write and express herself, but someone needed to warn me that it'd be so fucking heartbreaking.  The reason for the sadness was that we were talking to the painters and ignoring her.  We had some words about sadness vs. feeling ignored or bored, but also praised her for her self-expression and not just disrupting the conversation with screams.
+
+## Running
+
+8 times!
+
+Looking back at my stats for when I thought of myself as properly fit (e.g. 2016 when I ran two half-marathons and broke a PB in both, or 2019 pre-pandemic when I ran 3 times a week) - it turns out, 8 times is a pretty high number of runs for me.  I've even started to go for longer runs at the weekend, and for the first time in what felt like ages I did the full parkland walk from Finsbury Park up to Highgate Wood, and back to Alexandra Palace.  This is a long (~15k) route I really enjoy because it's a good distance but other than the start when I run down the haringey ladder following (on road) the new river, it's mostly free from traffic worries.  It also has plenty of opportunity to extend with loops round the parks you visit, but as it turns out, I couldn't do the loop round Highgate Wood that would have formed part of the old railway line that the rest of the parkland walk follows, because the whole wood was closed after Storm Eunice.
+
+## Books
+
+3 books.
+
+One of which was a collection of short stories by [Daphne du Maurier][daphne-du-maurier], "The birds and other stories" which surprised me by how modern it all felt.  In my head she had been a 19th century writer updated to the 20th century for filming by Alfred Hitchcock, but she was nothing of the sort.  She died in 1989!  This is like the time I decided that Margaret Atwood wasn't for me, unread, because of mis-interpreting something I read about [the long pen][long-pen] for signing books.  In both cases when I eventually did start to read their work I realised what a fool I'd been, they were _exactly_ for me.
+
+Another of the books was one given to me by a nursery dad.  It's a page-turning drugs'n'violence'n'dancing multi-character-POV story about a single day in Ibiza.  I know he worked out there for a while, and I suspect several of the POV characters are semi-autobiographical, and others probably amalgams of folk he knew out there.  He wrote it a while back and I'm trying to work out what to say about it when we next meet up.  Thinking back to my own dabblings in writing ([NaNoWriMo][] 2002) I think I would shrivel up and die if someone read it now, and especially if they offered me notes on it.
+
+<% footnotes do %>
+  <% fndf 1 do %>The docs aren't, I don't think, particularly clear that this is a thing you can do so it took me a while to work out this is the intended way to configure `rubocop` cops differently for different files, not really to use `Include` and `Exclude` directives.<% end %>
+
+  <% fndf 2 do %>it's not<% end %>
+
+  <% fndf 3 do %>as I type this there's worry that there's a new wave starting even before the last one has fully subsided<% end %>
+
+  <% fndf 4 do %>It is a source of much annoyance to me when I see a brand use "f\*ck" or "sh\*t" instead of just going for it.  I firmly believe it is better to actually swear, than to hedge your bets and hide behind  asterisked vowels with a wink.  It feels childish: "oh, look at us we're not swearing, but we _are_ swearing, but we're _not_ swearing.  Aren't we naughty?" -- you're fooling no-one.<% end %>
+
+  <% fndf 5 do %>humblebrag<% end %>
+<% end %>
+
+*[PR]: Pull Request
+*[AST]: Abstract Syntax Tree
+*[YAML]: YAML Ain't Markup Language
+*[CI]: Continuous Integration
+*[NCT]: National Childbirth Trust
+*[MCU]: Marvel Cinematic Universe
+*[PB]: Personal Best
+*[POV]: Point of View
+
+[minitest-sure-is-friendly]: https://www.rubydoc.info/gems/minitest/Minitest%2FTest.i_suck_and_my_tests_are_order_dependent!
+[zeitwerk]: https://github.com/fxn/zeitwerk
+[zeitwerk-check]: https://guides.rubyonrails.org/autoloading_and_reloading_constants.html#manual-testing
+[rubocop]: https://rubocop.org
+[rubocop-naming-filename]: https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Naming/FileName
+[rubocop-config-locations]: https://docs.rubocop.org/rubocop/configuration.html#config-file-locations
+[swearing-research]: https://www.scientificamerican.com/article/is-swearing-a-sign-of-a-limited-vocabulary/
+[daphne-du-maurier]: https://en.wikipedia.org/wiki/Daphne_du_Maurier
+[long-pen]: https://en.wikipedia.org/wiki/LongPen
+[NaNoWriMo]: https://nanowrimo.org

@@ -1,0 +1,10 @@
+source 'https://www.rubygems.org'
+ruby '~> 2.7'
+
+gem 'middleman'
+gem 'middleman-autoprefixer', '~> 2.7'
+gem 'middleman-syntax'
+gem 'nokogiri'
+gem 'git'
+gem 'builder'
+gem 'image_processing'

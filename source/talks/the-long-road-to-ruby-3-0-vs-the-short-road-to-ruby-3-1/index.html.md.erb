@@ -1,0 +1,25 @@
+---
+title: The long road to ruby 3.0 vs. the short road to ruby 3.1
+description: Slides and transcript of a talk called ‘The long road to ruby 3.0 vs. the short road to ruby 3.1’ that I presented at the London Ruby User Group (LRUG) on Monday, 10th October, 2022
+prepend_toc_items:
+  - id: video
+    title: Video
+---
+<% content_for(:title) { 'The long road to ruby 3.0 vs. the short road to ruby 3.1' } %>
+<% footnotes do %>
+  <% fndf 1 do %>At least, that's what I recall, but can't find any reference to it online at time of writing.  The closest is this [compatibility table](https://www.fastruby.io/blog/ruby/rails/versions/compatibility-table.html) which is published by someone else, not an official rails document.  It suggests ruby 3.1 will be a requirement for rails 7.0.x though and that's not even really true at the moment as 7.0.4 doesn't require ruby 3.1.  So who knows 🤷.<% end %>
+
+  <% fndf 2 do %>At this point in the video, someone asked a question about how we deployed ruby 3.0. I've ignored that for the purpose of the transcript as it was a bit out of the narrative flow.<% end %>
+
+  <% fndf 3 do %>Ultimately this ended up with us deciding we did like value-less hash syntax, but we found it weird if a given hash (or set of keyword arguments) _mixed_ value-less and value-provided syntax.  Rubobop only had modes to force everything to be value-less where possible, or to force everything to be value-provided, or to do nothing at all.  I ended up flexing my ruby skills and raising [a PR to add a new config option](https://github.com/rubocop/rubocop/pull/10776) that allowed for the consistent approach we were looking for.  It took a while though and I'm pretty sure that at time of writing, we haven't adopted it.<% end %>
+<% end %>
+<% content_for(:video) do %>
+  A [video of this talk](https://lrug.org/meetings/2022/october/#the-long-road-to-ruby-3-vs-the-short-road-to-ruby-31) is available on [LRUG.org](https://lrug.org/):
+
+  [<img class="video-poster" src="http://assets.h-lame.com/images/talks/the-long-road-to-ruby-3-0-vs-the-short-road-to-ruby-3-1/video-poster.jpg" title="Video of the talk" alt="a photo taken by @harrywood of me giving the talk in the Cleo offices on the night of the meeting">](https://lrug.org/meetings/2022/october/#the-long-road-to-ruby-3-vs-the-short-road-to-ruby-31)
+
+  It's just the audio and slides though, we didn't capture speaker footage so you don't get the benefit of my gurning face and expansive hand gestures.  Probably for the best TBH.
+<% end %>
+I gave this talk at the [October 2022 meeting of the London Ruby User Group](https://lrug.org/meetings/2022/october/).
+
+This transcript was generated from the audio of the talk using an audio-to-text tool called [`hear`](https://github.com/sveinbjornt/hear) and then tidied up because the extract wasn't great.  I had some presenter notes, but this is actually what I said on the night, warts and all.
