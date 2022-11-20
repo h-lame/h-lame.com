@@ -1,12 +1,9 @@
 name: Build and Deploy
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-18.04
 
     steps:
@@ -38,11 +35,13 @@ jobs:
           bundle exec middleman build -e production --verbose
 
       - name: Prepare Release Asset
+        if: ${{ success() && github.ref == 'refs/heads/main' }}
         run: |
           tar -cf h-lame.com.tar public
           bzip2 h-lame.com.tar
 
       - name: Delete old release assets
+        if: ${{ success() && github.ref_name == 'main' }}
         uses: mknejp/delete-release-assets@v1
         with:
           token: ${{ github.token }}
@@ -51,6 +50,7 @@ jobs:
           assets: h-lame.com.tar.bz2
 
       - name: Upload Release Asset
+        if: ${{ success() && github.ref_name == 'main' }}
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
         env:
@@ -62,6 +62,7 @@ jobs:
           asset_content_type: application/x-tar
 
       - name: Trigger deploy
+        if: ${{ success() && github.ref_name == 'main' }}
         run: >
           curl http://webhooks.h-lame.com/deploy.cgi \
             -X POST \
