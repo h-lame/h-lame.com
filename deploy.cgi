@@ -14,9 +14,9 @@ begin
   raise "Failed to parse payload:\n\n#{cgi.params.inspect}" if params.nil?
 
   passed = params['state'] == 'success'
-  on_master = params['ref'] == 'refs/heads/dynamic'
+  on_deployable_branch = params['ref'] == 'refs/heads/main'
 
-  if passed && on_master
+  if passed && on_deployable_branch
     TAR_URL = "https://github.com/h-lame/h-lame.com/releases/download/deploy/h-lame.com.tar.bz2"
     BASE_DIR = "/home/hlame/sites/h-lame.com/www.deploy/"
     TMP_FILE = "/tmp/h-lame.com.tar.bz2"
