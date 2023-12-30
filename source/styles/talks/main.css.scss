@@ -10,6 +10,7 @@ $scale: 1.2;
 @import "../header";
 
 html {
+  background-color: #fff;
   color: #222;
 }
 
@@ -140,6 +141,7 @@ main {
   }
   figcaption {
     margin-top: 1em;
+    white-space: normal;
   }
 }
 
@@ -153,6 +155,17 @@ main {
     object-fit: contain;
     width: 90%;
     display: block;
+  }
+  blockquote {
+    position: relative;
+
+    &::before {
+      content: "“";
+      font-size: 3rem;
+      position: absolute;
+      top: 0.6rem;
+      left: -1.4rem;
+    }
   }
 }
 
