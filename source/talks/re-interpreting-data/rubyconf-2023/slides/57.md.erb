@@ -1,0 +1,22 @@
+---
+title: 'Demo time: BMP (pt. 3)'
+id: slide-057
+terminal_output: |-
+  <p class="terminal">irb(main):011:0&gt; Stegosaurus.open_bump b.make_from RbConfig.ruby
+  <span class="command-result">=&gt; ""</span></p>
+---
+For completeness though, let’s see what Ruby looks like as a BMP and if we can learn anything about the structure of the interpreter from the visuals.<% fnrf 12 %>
+
+<% img_figure src: "http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/output/ruby-3.2.2.bmp.png" do %>
+  The ruby 3.2.2 interpreter as a BMP, albeit scaled down somewhat<% fnrf 13 %>.
+
+  *[BMP]: Bitmap
+<% end %>
+
+Here’s ruby the BMP – what can we learn from this?
+
+Well, um, parts of it are a pinkish hue, which is cool because it’s ruby, so that’s good.  A surprising amount of it is this iridescent green which, as we all know there was some Perl influence on Ruby as [Matz shared this morning](https://www.youtube.com/watch?v=4MM5b2F9zrM), so that’s probably what that is.  Then there’s this sort of scary dark bit in the top third, and I guess that’s maybe where the exceptions live.
+
+I mean, okay, I can’t interpret this, but we can look at this and we can make up stories to explain what we don’t understand, just like our ancestors!  That’s fun!
+
+*[BMP]: Bitmap

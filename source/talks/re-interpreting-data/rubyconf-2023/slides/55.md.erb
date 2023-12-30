@@ -1,0 +1,27 @@
+---
+title: 'Demo time: BMP (pt. 1)'
+id: slide-055
+terminal_output: |-
+  <p class="terminal">irb(main):007:0&gt; b = Stegosaurus.bumps
+  <span class="command-result">=&gt; #&lt;Stegosaurus::Bumps:0x0000000106443de0 @colour_depth=8&gt;</span>
+  irb(main):008:0&gt; f = b.make_from './README'
+  <span class="command-result">=&gt; "artefacts/README.bmp"</span>
+  irb(main):009:0&gt; Stegosaurus.open_bump f
+  <span class="command-result">=&gt; ""</span></p>
+---
+So, as before, we going to grab a generator object, this time called `bumps`.
+
+We will do the same thing again and generate something from the README, and I’ll open that in [an image editing app](https://flyingmeat.com/acorn/) with [another convenience method](https://github.com/h-lame/stegosaurus/blob/24ec34dff57062ac9edd075163d1c9b8c2c26d08/lib/stegosaurus.rb#L24-L26).
+
+<% img_figure src: "http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/output/README.bmp.png" do %>
+  The [stegosaurus README](https://github.com/h-lame/stegosaurus/blob/24ec34dff57062ac9edd075163d1c9b8c2c26d08/README) as a BMP, albeit scaled up somewhat.<% fnrf 9 %>
+
+  *[BMP]: Bitmap
+<% end %>
+
+It’s tiny, but let’s look inside.  The interesting thing you can see here is at the top, the colour stops halfway through.  Those are our null bytes, they’re all at the top because… BMP files are upside down?  That’s wild!  Thanks BMP people!<% fnrf 10 %>
+
+But, like WAV, you don’t get much from a short README file.  Or do you?
+
+*[WAV]: Waveform Audio File Format
+*[BMP]: Bitmap

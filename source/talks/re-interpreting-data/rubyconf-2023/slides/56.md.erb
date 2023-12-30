@@ -1,0 +1,16 @@
+---
+title: 'Demo time: BMP (pt. 2)'
+id: slide-056
+terminal_output: |-
+  <p class="terminal">irb(main):010:0&gt; Stegosaurus.open_bump Stegosaurus.bumps(1).make_from ‘./README’
+  <span class="command-result">=&gt; ""</span></p>
+---
+One of the arbitrary choices we can make is the bit count for the colour depth.  Why don’t we generate a 1-bit version?  That is maybe more interesting:
+
+<% img_figure src: "http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/output/README-1bit.bmp" do %>
+  The [stegosaurus README](https://github.com/h-lame/stegosaurus/blob/24ec34dff57062ac9edd075163d1c9b8c2c26d08/README) as a 1-bit BMP.<% fnrf 11 %>
+
+  *[BMP]: Bitmap
+<% end %>
+
+If we zoom in on it you can see there’s a bit more structure here.  You could probably learn to read this, just like that person in the first Matrix movie and then this could be how you operate computers.  That would be fun!

@@ -1,0 +1,20 @@
+---
+title: "Using `Array#pack`"
+id: slide-016
+slide:
+  :image_url: http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/slides/012.png
+  :image_alt: 'Snippet of code needed to create a WAV header in
+      ruby, highlighting the calls to the `pack` method.  source: https://github.com/h-lame/stegosaurus/blob/24ec34dff57062ac9edd075163d1c9b8c2c26d08/lib/stegosaurus/waves.rb#L82 & https://github.com/h-lame/stegosaurus/blob/24ec34dff57062ac9edd075163d1c9b8c2c26d08/lib/stegosaurus/waves.rb#L92 & https://github.com/h-lame/stegosaurus/blob/24ec34dff57062ac9edd075163d1c9b8c2c26d08/lib/stegosaurus/waves.rb#L96'
+  :image_title: 'Slide 16: Snippet of code needed to create a WAV header in
+      ruby, highlighting the calls to the `pack` method.'
+  :caption: "Source for highlighted code in slide: [1](https://github.com/h-lame/stegosaurus/blob/24ec34dff57062ac9edd075163d1c9b8c2c26d08/lib/stegosaurus/waves.rb#L82), [2](https://github.com/h-lame/stegosaurus/blob/24ec34dff57062ac9edd075163d1c9b8c2c26d08/lib/stegosaurus/waves.rb#L92), [3](https://github.com/h-lame/stegosaurus/blob/24ec34dff57062ac9edd075163d1c9b8c2c26d08/lib/stegosaurus/waves.rb#L96)<% fnrf '‡', 5 %>\n"
+---
+All that’s really interesting about this code is the [`pack`](https://docs.ruby-lang.org/en/3.2/Array.html#method-i-pack) method. I don’t know about you, but in my day-to-day coding life I’d never encountered it before, so here’s what it does:
+
+Called on an array of numbers, and passed [a format string](https://docs.ruby-lang.org/en/3.2/packed_data_rdoc.html), `pack` will convert those numbers into bytes.  Why’s that interesting?  Aren’t numbers bytes anyway?  Well, as it turns out, there’s lots of different ways to represent a number in bytes and `pack` lets you control that.  So you can say: represent this number as a 4 byte number, or a 2 byte big endian number, or a 2 byte signed integer.  You don’t need to know what those words mean but trust me it’s important when you’re thinking about bytes.
+
+What a WAV file cares about is that some of the header is a 4 byte number, some is a 2 byte number, etc…. That’s what the `pack` statements are doing.  It’s [a `V` for 4 byte little-endian](https://docs.ruby-lang.org/en/3.2/packed_data_rdoc.html#label-32-Bit+Integer+Directives) and it’s [a `v` for 2 byte little-endian](https://docs.ruby-lang.org/en/3.2/packed_data_rdoc.html#label-16-Bit+Integer+Directives)<% fnrf 3 %>.
+
+And, that’s basically all there is to it.
+
+*[WAV]: Waveform Audio File Format

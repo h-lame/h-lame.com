@@ -1,0 +1,21 @@
+---
+title: "All the BMP generator code"
+id: slide-053
+slide:
+  :image_url: http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/slides/035.mp4
+  :image_alt: 'All the code from the BMP generator, it scrolls past quite quickly, but enough to make it clear there is a lot of it, it is not intended to be read; source: https://github.com/h-lame/stegosaurus/blob/24ec34dff57062ac9edd075163d1c9b8c2c26d08/lib/stegosaurus/bumps.rb'
+  :image_title: 'Slide 53: All the BMP generator code'
+  :caption: "[Source for code in slide](https://github.com/h-lame/stegosaurus/blob/24ec34dff57062ac9edd075163d1c9b8c2c26d08/lib/stegosaurus/bumps.rb)<% fnrf '‡', 8 %> not that you were really meant to read all that code\n"
+---
+So, there’s _lots_ more code in this one – but mostly it’s uninteresting.
+
+As you can imagine, the code for dealing with all the other padding we calculated is a lot of maths, but you can _probably_ imagine it.  There’s also code to generate a colour table as 4-byte rgb(a) tuples<% fnrf 8 %>.
+
+Although, a critical reading of this code _would_ be interesting:
+
+* Why have I used so many while loops?
+* Why isn’t `bytes_from` more idiomatic and iterator based?
+
+I don’t know… _sigh_ …and we’re _not_ going to find out.
+
+*[rgb(a)]: Red, Green, Blue (Alpha)

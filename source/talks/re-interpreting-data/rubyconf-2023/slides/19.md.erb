@@ -1,0 +1,36 @@
+---
+title: 'Demo time: WAV (pt. 1)'
+id: slide-019
+terminal_output: |-
+  <p class="terminal">irb(main):001:0&gt; require './lib/stegosaurus'
+  <span class="command-result">=&gt; true</span>
+  irb(main):002:0&gt; w = Stegosaurus.waves
+  <span class="command-result">=&gt; #&lt;Stegosaurus::Waves:0x000000010a2d1788 @bps=8, @buffer_size=128, @channels=:mono, @sample_rate=22050&gt;</span>
+  irb(main):003:0&gt; f = w.make_from './README'
+  <span class="command-result">=&gt; "artefacts/README.wav"</span>
+  irb(main):004:0&gt; Stegosaurus.open_wave f
+  <span class="command-result">=&gt; ""</span></p>
+---
+First we require the library,
+
+It’s called `stegosaurus` because I thought this code might be a [steganography](https://en.wikipedia.org/wiki/Steganography) tool (for hiding data in other data) and, also, dinosaurs are cool!
+
+We’ve got a library called `stegosaurus` and we can grab an object from it.  It’s a `waves` object because we’re building WAV files.
+
+Then we call `make_from` to make a WAV from a file…
+
+Oh, we’ll need a file.  I have a README in the repo that’s 1,000 bytes or so and that should give us something interesting.  Let’s use that.
+
+That gives us the filename for our [new WAV file](http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/output/README.wav) which I’ll open in [VLC](https://www.videolan.org) with [a convenient little helper method](https://github.com/h-lame/stegosaurus/blob/24ec34dff57062ac9edd075163d1c9b8c2c26d08/lib/stegosaurus.rb#L20-L22).
+
+<% audio_figure src: "http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/output/README.wav.m4a" do %>
+  The [stegosaurus README](https://github.com/h-lame/stegosaurus/blob/24ec34dff57062ac9edd075163d1c9b8c2c26d08/README) as a WAV file.<% fnrf 5 %>
+
+  *[WAV]: Waveform Audio File Format
+  *[M4A]: Moving Picture Experts Group 4 Audio
+<% end %>
+
+Okay, it’s very short.  As I said the WAV format needs a lot of data to let you hear something, so we’re going to need a bigger file.
+
+*[VLC]: Video Lan Client
+*[WAV]: Waveform Audio File Format

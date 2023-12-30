@@ -189,6 +189,38 @@ code {
   }
 }
 
+.shouting {
+  font-variant: small-caps;
+}
+
+@keyframes ruby {
+  0% {
+    background-color: #fff;
+    color: #222;
+  }
+  50% {
+    background-color: #DF4134;
+    color: #0f0f0f;
+  }
+  100% {
+    background-color: #fff;
+    color: #222;
+  }
+}
+
+.r-tos {
+  font-style: normal;
+  padding: 3px;
+  border-radius: 4px;
+  animation: ruby 3s linear infinite;
+
+  &::before {
+    content: '🎶';
+  }
+  &::after {
+    content: '🎶';
+  }
+}
 
 #menu nav {
   position: relative;

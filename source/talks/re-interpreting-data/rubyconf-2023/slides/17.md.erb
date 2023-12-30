@@ -1,0 +1,14 @@
+---
+title: "An aside on `rubocop-magic_numbers`"
+id: slide-017
+slide:
+  :image_url: http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/slides/013.png
+  :image_alt: 'text: Aside: https://github.com/meetcleo/rubocop-magic_numbers'
+  :image_title: 'Slide 17: https://github.com/meetcleo/rubocop-magic_numbers'
+  :caption: "[https://github.com/meetcleo/rubocop-magic_numbers](https://github.com/meetcleo/rubocop-magic_numbers)\n"
+---
+As an aside: that code had a _lot_ of magic numbers in it.  At work, we’ve got [a custom rubocop rule (published as a gem)](https://github.com/meetcleo/rubocop-magic_numbers) that shouts at us if we have any magic numbers in our code and says to define named constants for them.  But this code is personal and for fun, so best practices be damn’d, right?
+
+That said… coming back to this code I did wonder what that 16 was for.  Is the 16 special because we’re talking about bytes and it’s a multiple of 8, or is it something about the WAV file format?  I do not remember, sorry!  If only I’d given it a name maybe I would.  So, _maybe_, best practices are good, actually?<% fnrf 4 %>
+
+*[WAV]: Waveform Audio File Format

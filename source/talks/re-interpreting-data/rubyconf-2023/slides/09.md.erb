@@ -1,0 +1,19 @@
+---
+id: slide-009
+title: "Exploring the WAV file format: The header part"
+slide:
+  :image_url: http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/slides/007-stage-03.png
+  :image_alt: 'A box representing a WAV file called "screaming.wav". It has been split into two – the header part at the top, and the data part at the bottom.  The header part has also been split into two: WAV identifier & length part at the top, and the data format details part at the bottom. text: screaming.wav; WAV Identifier & length; Data format details; Data part'
+  :image_title: 'Slide 9: Exploring the WAV file format for "screaming.wav" – the header part'
+---
+The header part is split in two.
+
+1. the first part tells the world “Hi, I’m a WAV file and I’m this long,” – it’s very short and it’s there basically, to tell other software “if you don’t know what a WAV file is, you can stop now”<% fnrf 2 %>
+2. the second part tells the audio software how to interpret the data that follows.  It describes things like:
+   * how many channels the sound has (is it mono or stereo, etc),
+   * how many samples there are per second for the sound,
+   * how many bits there are per sample
+
+How detailed this data is: more channels, more samples per second and more bits per sample means the sound is more accurate, but also means you need much more data to represent the same length of sound.
+
+*[WAV]: Waveform Audio File Format

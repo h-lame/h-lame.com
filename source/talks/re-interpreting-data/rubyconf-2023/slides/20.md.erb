@@ -1,0 +1,29 @@
+---
+title: 'Demo time: WAV (pt. 2)'
+id: slide-020
+terminal_output: |-
+  <p class="terminal">irb(main):005:0&gt; f = w.make_from RbConfig.ruby
+  <span class="command-result">=&gt; "artefacts/ruby.wav"</span>
+  irb(main):006:0&gt; Stegosaurus.open_wave f
+  <span class="command-result">=&gt; ""</span></p>
+---
+There are probably bigger files lying around, but the big file I know that I definitely have is the ruby interpreter itself.
+
+Ruby comes with a nice little module called [`RbConfig`](https://idiosyncratic-ruby.com/42-ruby-config.html) that gives us lots of details about how ruby was built.  The important method that I care about is [`RbConfig.ruby`](https://docs.ruby-lang.org/en/3.2/RbConfig.html#method-c-ruby) which gives you _the path to the currently running ruby interpreter_{:.shouting}!<% fnrf 6 %>
+
+If we stick that into our library we’ll be able to [hear the ruby interpreter itself as a WAV file](http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/output/ruby-3.2.2.wav).
+
+I hope you’re ready for this!
+
+<% audio_figure src: "http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/output/ruby-3.2.2.wav.m4a" do %>
+  The ruby 3.2.2 interpreter as a WAV file.<% fnrf 7 %>
+
+  *[WAV]: Waveform Audio File Format
+<% end %>
+
+It’s basically unlistenable white noise, right?  Fair, I mean, what did we expect?  Although… if you’re old and Dusty like me, you can thank me later for the nostalgia trip you just had about loading software from tapes or connecting to the internet over dialup.
+
+What is kind of interesting is that as we skip through it there’s some _structure_: different parts of the file sound different.  You definitely don’t want to listen to it, but it’s interesting that there is some structure to it.
+
+*[WAV]: Waveform Audio File Format
+*[M4A]: Moving Picture Experts Group 4 Audio

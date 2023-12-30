@@ -1,0 +1,14 @@
+---
+title: "Writing bit-scale MIDI events from source data bytes: converting bytes to bits"
+id: slide-084
+slide:
+  :image_url: http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/slides/050-stage-03.png
+  :image_alt: 'Snippet of code needed to read bytes from the source file and turn them into the bits needed for MIDI events, highlighting the code to convert source data bytes into bits prior to manipulation; source: https://github.com/h-lame/stegosaurus/blob/fc41db8be711b5649b01834c3254ca07bb73626e/lib/stegosaurus/midriffs.rb#L131'
+  :image_title: 'Slide 84: Snippet of code needed to convert source data bytes into bits before turning them into MIDI events'
+  :caption: "[Source for code in slide](https://github.com/h-lame/stegosaurus/blob/fc41db8be711b5649b01834c3254ca07bb73626e/lib/stegosaurus/midriffs.rb#L131)<% fnrf '‡', 11 %>\n"
+---
+We turn those bytes into a string of their binary representation using [`sprintf`](https://docs.ruby-lang.org/en/3.2/Kernel.html#method-i-sprintf)<% fnrf 14 %>.  The [“%08b” format string](https://docs.ruby-lang.org/en/3.2/format_specifications_rdoc.html) says:
+
+> turn a number into a `0` padded binary number of at 8 characters long
+
+We use `sprintf` because although we can get the binary representation with [`to_s(2)`](https://docs.ruby-lang.org/en/3.2/Integer.html#method-i-to_s), it won’t give us the leading `0`s we need to make sure the string is eight chars long.  Then we join them all together as one long 216 character string of `1`s and `0`s.  Finally, we turn that into an array.

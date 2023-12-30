@@ -7,15 +7,73 @@ prepend_toc_items:
 ---
 <% content_for(:title) { '<a href="/talks/re-interpreting-data/">Re-interpreting data</a> ∋ RubyConf 2023' }%>
 <% content_for(:video) do %>
-  A [video of this talk](#) is available from [Ruby Central](https://rubycentral.org/):
+  A [video of this talk](https://www.youtube.com/watch?v=FEChN63H__A&list=PLbHJudTY1K0f09Rtt5E8FsOow6wGPkk3y&index=10) is available from [Ruby Central](https://rubycentral.org/):
 
-  [<img class="video-poster" src="http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/video-poster.jpg" title="Video of the talk" alt="a screenshot of the youtube video of the talk filmed by Ruby Central">](#)
-<% end %>
-<% footnotes do %>
-  <% fndf 1 do %>...<% end %>
+  [<img class="video-poster" src="http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/video-poster.png" title="Video of the talk" alt="a screenshot of the youtube video of the talk filmed by Ruby Central">](https://www.youtube.com/watch?v=FEChN63H__A&list=PLbHJudTY1K0f09Rtt5E8FsOow6wGPkk3y&index=10)
 <% end %>
 I gave this talk at [RubyConf ’23 held in San Diego in November 2023](https://rubyconf-2023.sessionize.com/session/531240).
 
-I was proud of the version of this I gave at [LRUG in January 2020](/talks/re-interpreting-data/lrug-jan-2020), but I knew I had rushed the slides and was convinced there was a better version lurking in it.  I decided to submit it for [RubyConf 2023](https://rubyconf.org) and I was surprised and delighted to be selected.  That gave me the opportunity to work on that better version by expanding on some of the text heavy slides in the original by adding graphics to help explain the concepts, and to provide a slightly more coherent conclusion focussing on encouraging curiosity and fun while coding.
+I was proud of the version of this I gave at [LRUG in January 2020](/talks/re-interpreting-data/lrug-jan-2020), but I knew I had rushed the slides and was convinced there was a better version lurking in it.  I decided to submit it for [RubyConf 2023](https://rubyconf.org) and I was surprised and delighted to be selected.  This was the push I needed to work on that better version.  The major differences are that I expanded on the text heavy slides in the original by adding graphics to help explain the concepts, and I provided a slightly more coherent conclusion focussing on encouraging curiosity and fun while coding.
 
-There is a video of this talk and while this transcript is mostly from my presenter notes, I have added some of the “off script” moment from the recording.  This transcript is therefore considered the “author’s preferred text”.
+There is [a video of this talk](https://www.youtube.com/watch?v=FEChN63H__A&list=PLbHJudTY1K0f09Rtt5E8FsOow6wGPkk3y&index=10) and as you can see from the video I was mostly reading from my presenter notes, but I did go “off script” occasionally. In this write-up I’ve combined the precision of my notes with the least egregious of my ad libs from the transcript.
+
+*[LRUG]: London Ruby User Group
+<% footnotes do %>
+  <% fndf 1 do %>The example files in this screenshot are dated to early 2020, both in reference to the disappointing Game of Thrones finale, and a 2019 tax return file.  I’d intended to rework this slide to use more current references before giving the talk again in late 2023, but I never did. Priorities 🤷<% end %>
+
+  <% fndf 2 do %>Unable to stop myself, in the talk I put on a silly voice for these parts and commented "That’s definitely the voice of a wave file".  I don’t know why I’m like this.<% end %>
+
+  <% fndf 3 do %>In the talk I mistakenly said these were for "big-endian" numbers, but they’re for "little-endian".  The code works so I’m assuming I just wrote down my script wrong.<% end %>
+
+  <% fndf 4 do %>This slide, like all the other “aside” slides, have a page flip transition which is why the background is the reverse of the previous slide.  I was going for a "breaking the 4th wall" effect of doing these asides slides, we’re coming out of the narrative flow of the rest of the slides and "seeing behind" them to explore something not entirely relevant.  Kinda like these footnotes!
+
+  I did it to amuse myself, but happily, someone stopped me in the hotel lift to ask about it and say how much they enjoyed it.  Validation!<% end %>
+
+  <% fndf 5 do %>Actually it’s an M4A version of the WAV to respect your download speeds, but you can [click to download the WAV file](http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/output/README.wav) if you really want it.<% end %>
+
+  <% fndf 6 do %>Smoke and mirrors alert!  Once I got to San Diego and tried my laptop with the AV set up it didn’t want to play ball, so I had to borrow a laptop from [Daniel Magliola](https://danielmagliola.com/) in order to give my talk.  His laptop was Apple Silicon and it turns out the ruby binary on that architecture is completely different.  It’s much smaller for a start.  This didn’t really affect the WAV section, but it did affect the BMP and MIDI sections.  I didn’t really have the time to re-write my talk to account for it, so I simply copied an the ruby-3.2.2 binary from my intel laptop onto Daniel’s laptop and redefined `RbConfig.ruby` to return the path to that instead of the actually running ruby interpreter.
+
+  I say in [the BMP section](#slide-057) that I can’t interpret the BMP to learn anything, but I think comparing the intel and apple silicon versions would teach you _something_ about how the two architectures compile binaries.  I _think_ one major difference is that the Intel ruby-3.2.2 is statically compiled (e.g. pulls in dependencies) whereas the Apple Silicon ruby-3.2.2 is dynamically compiled (e.g. links out to dependencies), that would account for the file size difference.  I’m not sure if that’s Apple Silicon vs. Intel though.<% end %>
+
+  <% fndf 7 do %>Again, it’s an M4A version instead of the WAV for download brevity.  The [raw WAV is here though](http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/output/ruby-3.2.2.wav) if you prefer the *warmth* of the original.<% end %>
+
+  <% fndf 8 do %>They’re not actually rgb(a) tuples, as although they _are_ 4 byte values (e.g. 1 bytes for red, 1 byte for green, 1 bytes for blue and 1 byte for alpha) the 4th byte isn’t actually used for alpha.  It’s just not used.  Perhaps some future extension, or custom renderer could support alpha.<% end %>
+
+  <% fndf 9 do %>Actually, the one you’re looking at here is a PNG version to reduce the file size and respect your download speeds.  If you want to see it at actual size you can [click through for the actual BMP version](http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/output/README.bmp).<% end %>
+
+  <% fndf 10 do %>Here’s an extra aside I couldn’t fit into the talk, `BMP` files are "upside down", meaning that the 1st row of pixels in the file is the bottom row of pixels in the image and the last row of pixels in the file (where all our null bytes are) is the top row of pixels in the image [because of compatibility with the mathematically correct co-ordinate systems of OS/2](https://devblogs.microsoft.com/oldnewthing/20210525-00/?p=105250).  The advantage to this is that you have a co-ordinate system with the origin in the bottom left and x co-ordinates that advance upwards, like in standard mathematics, rather than an origin in the top left and x co-ordinates that advance downwards which is unusual and requires the occasional minus sign in any standard co-ordinate based formulas.<% end %>
+
+  <% fndf 11 do %>Again, this is scaled, but this time it’s not a `PNG` you’re looking at, because the PNG ended up being bigger than the BMP for 1-bit images.  [Click through for actual size](http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/output/README-1bit.bmp).<% end %>
+
+  <% fndf 12 do %>At this point in the rubyconf talk, I made a live demo mistake.  Instead of typing the line I show in the slides: `Stegosaurus.open_bump b.make_from RbConfig.ruby` I instead pressed up, to edit the previously typed line `Stegosaurus.open_bump Stegosaurus.bumps(1).make_from './README'` and replaced the `'./README'` string with `RbConfig.ruby`.  That _would_ have been fine, except this meant I was trying to generate a 1-bit version of the ruby `BMP`.  The 1-bit version of the code was _fairly_ new and I hadn’t yet tried it on a large file, so, _of course_, it broke 😬.
+
+  Rather than attempt to muddle through, I just loaded up a previously generated `BMP` and moved on.  Later on that week I looked at the code and [fixed the problem](https://github.com/h-lame/stegosaurus/commit/34927ef3adf59ab13e35170471581a7c40836849) which was that we never flushed the `row` of spare bits we were collecting if we ever collected enough to write out a complete row without fetching more bits from the source file.
+
+  Lesson learned: slides only, fake the live demos.<% end %>
+
+  <% fndf 13 do %>Just like [the first README example above](#slide-055) what you’re looking at here is a PNG because it’s got a smaller file size.  It is [available as an actual BMP and at 1:1 size if you click through](http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/output/ruby-3.2.2.bmp).<% end %>
+
+  <% fndf 14 do %>This is _somewhat_ imprecise, I’m not actually calling [`Kernel#sprintf`](https://docs.ruby-lang.org/en/3.2/Kernel.html#method-i-sprintf) here, but [`String#%`](https://docs.ruby-lang.org/en/3.2/String.html#method-i-25).  It uses the same [formatting specifications](https://docs.ruby-lang.org/en/3.2/format_specifications_rdoc.html) though and probably _is_ implemented the in terms of `sprintf` though.<% end %>
+
+  <% fndf 15 do %>The transcript here is my off-script ad lib which includes me chastising myself for claiming binary numbers aren’t real.  Obviously all numbers are “real”, but there are a class of numbers that are considered real to separate them from imaginary numbers, so it was a poor choice of words for several reasons.  It’s not like my original presentation notes are any better:
+
+  > The `to_i(2)` says interpret this string as a binary number and convert it to a `FixNum` again
+
+  [`FixNum` is an out-dated reference](), it’s [`Integer`] or [`Number`] these days.  It doesn’t quite cover what I’m really trying to say which is that the `to_i(2)` call converts between a base 2 string representation and a base 10 integer representation.<% end %>
+
+  <% fndf 16 do %>Browsers no longer know how to play MIDI directly, so this is an M4A copy.  [The actual MIDI file](http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/output/README.mid) is available if you want it though.<% end %>
+
+  <% fndf 17 do %>Again, because browsers can’t play MIDI directly, this is an M4A copy, but you can get [the actual MIDI file](http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/output/ruby-3.2.2.mid) if you so desire.<% end %>
+
+  <% fndf 18 do %>Honestly, lost to the mists of time who said this.  Might have been [James](https://abscond.org), [Ben](https://mastodon.social/@beng), [Paul](https://mudge.name) or [Tom](https://tomstu.art).<% end %>
+
+  <% fndf 19 do %>I guess I mean reading.<% end %>
+
+  <% fndf '‡', 14 do %>The links to source code don’t go to _exactly_ the same code as shown in the slides.  Partly, because I removed comments in the code for the slides, partly because the code evolved some extra complexity that I didn’t want to talk about in the slides.  The links do all go to the right place in the current (at time of writing) version of the code though.<% end %>
+
+  *[OS/2]: Operating System 2
+  *[BMP]: Bitmap
+  *[rgb(a)]: Red, Green, Blue, (Alpha)
+  *[M4A]: Moving Picture Experts Group 4 Audio
+  *[PNG]: Portable Network Graphics
+<% end %>

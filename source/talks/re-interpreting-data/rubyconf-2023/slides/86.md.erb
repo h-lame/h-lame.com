@@ -1,0 +1,14 @@
+---
+title: "Writing bit-scale MIDI events from source data bytes: converting bits back into bytes"
+id: slide-086
+slide:
+  :image_url: http://assets.h-lame.com/images/talks/re-interpreting-data/rubyconf-2023/slides/050-stage-05.png
+  :image_alt: 'Snippet of code needed to read bytes from the source file and turn them into the bits needed for MIDI events, highlighting the code for converting the bits back into the structured bytes our events need; source: https://github.com/h-lame/stegosaurus/blob/fc41db8be711b5649b01834c3254ca07bb73626e/lib/stegosaurus/midriffs.rb#L140-L143'
+  :image_title: 'Slide 86: Snippet of code needed to convert the bits back into the structured bytes we need to create a MIDI event'
+  :caption: "[Source for code in slide](https://github.com/h-lame/stegosaurus/blob/fc41db8be711b5649b01834c3254ca07bb73626e/lib/stegosaurus/midriffs.rb#L140-L143)<% fnrf '‡', 13 %>\n"
+---
+Then, we turn all those bits into the valid bytes we need with VLQ encoding for the time, and adding the static `100`s and `0`s at the front for the event type and data bytes.  The [`to_i(2)`](https://docs.ruby-lang.org/en/3.2/String.html#method-i-to_i) says interpret this string as a binary number and convert it into a “real” number again, (binary numbers are real, Murray, what are you talking about?)<% fnrf 15 %>.
+
+We put all these numbers into an array…
+
+*[VLQ]: Variable Length Quantity
