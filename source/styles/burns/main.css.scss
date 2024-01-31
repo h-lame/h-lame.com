@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+@import "../vendor/normalize";
+$baseFontSize: 18;
+$scale: 1.2;
+@import "../vendor/typebase";
+@import "../utils";
+
+@import "../footer";
+@import "../header";
+
+main, body > footer, body > header {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  padding: 10px;
+}
+
+.burns {
+  font-family: "Helvetica";
+
+  p {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 140pt;
+    line-height: 0.5;
+    padding-top: 35px;
+    margin: 0;
+    &:nth-child(3) {
+      &::first-letter {
+        letter-spacing: -17pt;
+      }
+      letter-spacing: -5pt;
+      padding-left: 10px;
+    }
+    &:nth-child(4) {
+      &::first-letter {
+        letter-spacing: -9pt;
+      }
+      letter-spacing: -5pt;
+    }
+  }
+}
+main footer {
+  margin-top: 5em;
+}
+
+body > footer, body > header {
+  background-color: #bababacc;
+}
+
+$minThreadPx: 4px;
+$athollBlack: #10101066;
+$athollBlue: #2C2C80FF;
+$athollRed: #C8000099;
+$athollGreen: #0068187f;
+
+body {
+  // Colours & thread counts from https://tartanify.com/tartan/murray-of-atholl-3
+  // Initial inspiration from https://projects.verou.me/css3patterns/#tartan
+  background-color: $athollBlue;
+  background-image: \
+    repeating-linear-gradient(to bottom,
+      transparent 0px $minThreadPx * 12,
+      $athollBlack $minThreadPx * 12 $minThreadPx * 14,
+      transparent $minThreadPx * 14 $minThreadPx * 16,
+      $athollBlack $minThreadPx * 16 $minThreadPx * 18,
+      transparent $minThreadPx * 18 $minThreadPx * 20,
+      $athollBlack $minThreadPx * 20 $minThreadPx * 32,
+      $athollGreen $minThreadPx * 32 $minThreadPx * 44,
+      $athollRed $minThreadPx * 44 $minThreadPx * 47,
+      $athollGreen $minThreadPx * 47 $minThreadPx * 59,
+      $athollBlack $minThreadPx * 59 $minThreadPx * 71,
+      transparent $minThreadPx * 71 $minThreadPx * 83,
+      $athollBlack $minThreadPx * 83 $minThreadPx * 84,
+      $athollRed $minThreadPx * 84 $minThreadPx * 87,
+      $athollBlack $minThreadPx * 87 $minThreadPx * 88,
+      transparent $minThreadPx * 88 $minThreadPx * 100,
+      $athollBlack $minThreadPx * 100 $minThreadPx * 112,
+      $athollGreen $minThreadPx * 112 $minThreadPx * 124,
+      $athollRed $minThreadPx * 124 $minThreadPx * 127,
+      $athollGreen $minThreadPx * 127 $minThreadPx * 139,
+      $athollBlack $minThreadPx * 139 $minThreadPx * 151,
+      transparent $minThreadPx * 151 $minThreadPx * 153,
+      $athollBlack $minThreadPx * 153 $minThreadPx * 155,
+      transparent $minThreadPx * 155 $minThreadPx * 157,
+      $athollBlack $minThreadPx * 157 $minThreadPx * 159
+    ),
+    repeating-linear-gradient(to left,
+      transparent 0px $minThreadPx * 12,
+      $athollBlack $minThreadPx * 12 $minThreadPx * 14,
+      transparent $minThreadPx * 14 $minThreadPx * 16,
+      $athollBlack $minThreadPx * 16 $minThreadPx * 18,
+      transparent $minThreadPx * 18 $minThreadPx * 20,
+      $athollBlack $minThreadPx * 20 $minThreadPx * 32,
+      $athollGreen $minThreadPx * 32 $minThreadPx * 44,
+      $athollRed $minThreadPx * 44 $minThreadPx * 47,
+      $athollGreen $minThreadPx * 47 $minThreadPx * 59,
+      $athollBlack $minThreadPx * 59 $minThreadPx * 71,
+      transparent $minThreadPx * 71 $minThreadPx * 83,
+      $athollBlack $minThreadPx * 83 $minThreadPx * 84,
+      $athollRed $minThreadPx * 84 $minThreadPx * 87,
+      $athollBlack $minThreadPx * 87 $minThreadPx * 88,
+      transparent $minThreadPx * 88 $minThreadPx * 100,
+      $athollBlack $minThreadPx * 100 $minThreadPx * 112,
+      $athollGreen $minThreadPx * 112 $minThreadPx * 124,
+      $athollRed $minThreadPx * 124 $minThreadPx * 127,
+      $athollGreen $minThreadPx * 127 $minThreadPx * 139,
+      $athollBlack $minThreadPx * 139 $minThreadPx * 151,
+      transparent $minThreadPx * 151 $minThreadPx * 153,
+      $athollBlack $minThreadPx * 153 $minThreadPx * 155,
+      transparent $minThreadPx * 155 $minThreadPx * 157,
+      $athollBlack $minThreadPx * 157 $minThreadPx * 159
+    ),
+    repeating-linear-gradient(135deg,
+      transparent 0px 2px,
+      $athollBlack 2px 3px,
+      transparent 3px 5px,
+      $athollBlack 5px 6px
+    )
+  ;
+}

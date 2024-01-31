@@ -19,44 +19,11 @@
   <link rel="apple-touch-icon" href="icon.png">
 
   <meta name="theme-color" content="#fafafa">
-
-  <style>
-    main {
-      width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .burns {
-      font-family: "Helvetica";
-    }
-    .burns p {
-      display: inline-block;
-      font-weight: bold;
-      font-size: 140pt;
-      line-height: 0.5;
-      padding-top: 35px;
-      margin: 0;
-    }
-    .burns p:nth-child(3)::first-letter {
-      letter-spacing: -17pt;
-    }
-    .burns p:nth-child(3) {
-      letter-spacing: -5pt;
-      padding-left: 10px;
-    }
-    .burns p:nth-child(4)::first-letter {
-      letter-spacing: -9pt;
-    }
-    .burns p:nth-child(4) {
-      letter-spacing: -5pt;
-    }
-    footer {
-      margin-top: 5em;
-    }
-  </style>
+  <%= stylesheet_link_tag "burns/main" %>
 </head>
 
 <body>
+  <%= partial 'header' %>
   <main>
     <article class="burns">
       <p>Haggis&</p>
@@ -65,9 +32,10 @@
       <p>Poyums.</p>
     </article>
     <footer>
-      <p>If ye dinnae ken <a href="https://en.wikipedia.org/wiki/Burns_supper">read yon</a>.  Inspired by <a href="https://www.jetset.nl/archive/john-paul-ringo-george">Experimental Jetset</a>.</p>
+      <p>If ye dinnae ken <a href="https://en.wikipedia.org/wiki/Burns_supper">read yon</a>.  Inspired by <a href="https://www.jetset.nl/archive/john-paul-ringo-george">Experimental Jetset</a>.  The bonny background is <a href="https://www.tartanregister.gov.uk/tartanDetails?ref=3063">Murray of Atholl</a> via <a href="https://tartanify.com/tartan/murray-of-atholl-3">Tartanify</a> and <a href="https://projects.verou.me/css3patterns/#tartan">CSS cannyness</a>.</p>
     </footer>
   </main>
+  <%= partial 'footer' %>
 </body>
 
 </html>
