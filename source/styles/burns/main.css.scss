@@ -9,8 +9,18 @@ $scale: 1.2;
 @import "../footer";
 @import "../header";
 
+body > header {
+  div {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+body > footer nav > ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 main, body > footer, body > header {
-  width: 800px;
+  width: 300px;
   margin-left: auto;
   margin-right: auto;
   background-color: white;
@@ -23,32 +33,70 @@ main, body > footer, body > header {
   p {
     display: inline-block;
     font-weight: bold;
-    font-size: 140pt;
+    font-size: 55pt;
     line-height: 0.5;
-    padding-top: 35px;
+    padding-top: 12px;
     margin: 0;
     &:nth-child(3) {
       &::first-letter {
-        letter-spacing: -17pt;
+        letter-spacing: -8pt;
       }
-      letter-spacing: -5pt;
-      padding-left: 10px;
+      letter-spacing: -1.8pt;
+      padding-left: 4px;
     }
     &:nth-child(4) {
       &::first-letter {
-        letter-spacing: -9pt;
+        letter-spacing: -4pt;
       }
-      letter-spacing: -5pt;
+      letter-spacing: -3pt;
     }
   }
 }
 main footer {
-  margin-top: 5em;
+  margin-top: 2em;
 }
 
 body > footer, body > header {
   background-color: #bababacc;
 }
+
+@media only screen and (min-width: 800px) {
+  main, body > footer, body > header {
+    width: 800px;
+    padding: 10px;
+  }
+  .burns {
+    p {
+      font-size: 140pt;
+      padding-top: 35px;
+      &:nth-child(3) {
+        &::first-letter {
+          letter-spacing: -17pt;
+        }
+        letter-spacing: -5pt;
+        padding-left: 10px;
+      }
+      &:nth-child(4) {
+        &::first-letter {
+          letter-spacing: -9pt;
+        }
+        letter-spacing: -5pt;
+      }
+    }
+  }
+
+  main footer {
+    margin-top: 5em;
+  }
+
+  body > header {
+    div {
+      margin-top: $leading;
+      margin-bottom: $leading;
+    }
+  }
+}
+
 
 $minThreadPx: 4px;
 $athollBlack: #10101066;
