@@ -7,9 +7,11 @@ module FigureHelpers
 }
   end
 
-  def img_figure(src:, &block)
+  def img_figure(src:, url: nil, img_class: 'example-graphic', &block)
+    img = %{<img class="#{img_class}" src="#{src}">}
+    img = %{<a href="#{url}">#{img}</a>} unless url.nil?
     concat_content %{<figure>
-  <img class="example-graphic" src="#{src}">
+  #{img}
   <figcaption>#{markdown_render(capture_html(&block))}</figcaption>
 </figure>
 }
