@@ -1,0 +1,34 @@
+---
+title: Do you want a flake with that? - slides and transcript
+description: Slides and transcript of a talk called ‘Do you want a flake with that?’ that I gave internally at work in January 2023 and publicly at LRUG in April 2024
+prepend_toc_items:
+  - id: video
+    title: Video
+---
+<% content_for(:title) { 'Do you want a flake with that?' }%>
+<% footnotes do %>
+  <% fndf 1 do %>Not explained during the talk, but the problem here is that the `setup` method that "wins" is the one defined last.  So if `my_test.rb` runs before `your_test.rb` it's probably been _required_ before it, and thus `your_test.rb`'s `setup` is defined second.  Which means `my_test.rb` runs _first_ but fails because the version of `setup` that's defined is the one from `your_test.rb`.  As `your_test.rb` doesn't care about what's in the user's name if it was run first nothing breaks because `my_test.rb` is required second and gets the `setup` that it expects.
+
+  At least, I _think_ that's it.  Needless to say, it's painful to think about and best to just avoid the heck out of it if you can.<% end %>
+
+  <% fndf 2 do %>I didn't say this in the talk at LRUG, but I think I did when I gave it internally, but in my experience, when tests fail on the 3rd Wednesday of the month, it's not usually because the _system_ breaks on the 3rd Wednesday of the month, it's almost always the case that the _test_ implementation is too naive.
+
+  I think I could count on one hand the number of times a test flakily failing for time or date related reasons actually revealed a production bug to me.<% end %>
+
+  <% fndf 3 do %>_Technically_ I think ruby time objects are as precise as the system clock, which for everything I've ever run ruby on has been nanosecond precise, but maybe you're lucky and your system is microsecond, the same as your db.<% end %>
+
+  <% fndf 4 do %>[Jon Rowe](https://jonrowe.co.uk), one of the maintainers of RSpec is a regular attendee of LRUG and was in the audience, so I was looking to him to confirm what I was talking about.  It's been ~5yrs since I used RSpec day-to-day.<% end %>
+
+  *[LRUG]: London Ruby User Group
+  *[UK]: United Kingdom
+<% end %>
+<% content_for(:video) do %>
+  A [video of this talk](https://lrug.org/meetings/2024/april/#do-you-want-a-flake-with-that) is available on [LRUG.org](https://lrug.org/):
+
+  <% img_figure src: "http://assets.h-lame.com/images/talks/do-you-want-a-flake-with-that/video-poster.jpeg", url: 'https://lrug.org/meetings/2024/april/#do-you-want-a-flake-with-that', img_class: 'video-poster' do %>
+  A [photo taken by @JonRowe](https://fosstodon.org/@JonRowe/112237065202068302) of me giving the talk in the Canva offices on the night of the meeting
+  <% end %>
+<% end %>
+I gave this talk at the [April 2024 meeting of the London Ruby User Group](https://lrug.org/meetings/2024/april/).
+
+This transcript was generated from the transcript from the zoom call we used to record the meeting.  I had some presenter notes, but I wasn't really looking at them as much, so, for better or worse, this is pretty close to what I said on the night.

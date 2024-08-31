@@ -1,0 +1,16 @@
+---
+title: Horrifying combinations (part 1)
+id: slide-025
+slide:
+  :image_url: http://assets.h-lame.com/images/talks/do-you-want-a-flake-with-that/slides/025.png
+  :image_alt: "text: 😱 Horrifying combinations 😱; Difference of opinion between ruby and the db in how they represent time: Ruby time objects are nanosecond precise; Postgres time fields are microsecond precise; Good luck comparing those"
+  :image_title: 'Slide 25: Horrifying combinations (part 1)'
+---
+And, again, sometimes all of this stuff combines in truly horrifying and annoying ways.
+
+Like a difference of opinion between how ruby and databases represent time.  Our database is postgres and [postgres is _microsecond_ precise](https://www.postgresql.org/docs/current/datatype-datetime.html#DATATYPE-DATETIME-TABLE) when you store data in it.  [Ruby time objects are _nanosecond_ precise](https://ruby-doc.org/3.3.0/Time.html#method-i-nsec) when you find out what the time is<% fnrf 3 %>.
+
+Sometimes when you compare them, Ruby's going to be like. "I expected
+'quarter to 8 on Monday, the 8th of April', but I _got_ 'quarter to 8 on Monday, the 8th of April'", and what has happened is it's .001th of a second out, but it's not gonna tell you that.  But your test _is_ going to fail.
+
+The problem here is that you've extracted a time from Ruby, you've pushed it through a database roundtrip, and then you've compared them, and they're not the same precision any more.

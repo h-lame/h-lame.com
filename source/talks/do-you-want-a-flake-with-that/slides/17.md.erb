@@ -1,0 +1,15 @@
+---
+title: Other tests - incorrectly shared setup (part 1)
+id: slide-017
+slide:
+  :image_url: http://assets.h-lame.com/images/talks/do-you-want-a-flake-with-that/slides/017.png
+  :image_alt: "There's a code snipped here of the contents of two files: my_test.rb and your_test.rb - by mistake they have the same class name - but slightly different contents in the setup method.  The differences are highlighted to draw your attention.  text: 1. Other tests - incorrectly shared setup; my_test.rb; class MyTest; def setup; @user = User.create(name: 'Alice'); ...; end; your_test.rb; class MyTest; def setup; @user = User.create(name: 'Bob')"
+  :image_title: 'Slide 17: Other tests - incorrectly shared setup (part 1)'
+---
+This one might not apply if you are using RSpec.
+
+But basically as dev, sometimes we're kinda lazy.  I think there's a quote that says lazy devs are good devs. So this is fine.
+
+Sometimes when we're writing a new feature we copy and paste the test from another feature and then tweak it.  The thing that we forget to do is: we forget to change the name of the test class.  It might live in a file called `your_test.rb`, but we copy and pasted it from `my_test.rb` and their `setup` methods are very unlikely to be exactly the same and work for both of them.
+
+Depending on the order that these tests get run, `my_test.rb` might fail because it's expecting "Alice" in the user's name, but it got "Bob", or `your_test.rb` may fail because it's expecting "Bob" and got "Alice".  Or maybe `your_test.rb` doesn't care what the value of the user's name is, so only when `your_test.rb` runs after `my_test.rb` does it actually cause a problem.<% fnrf 1 %>

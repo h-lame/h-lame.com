@@ -1,0 +1,16 @@
+---
+title: Horrifying combinations (part 2)
+id: slide-026
+slide:
+  :image_url: http://assets.h-lame.com/images/talks/do-you-want-a-flake-with-that/slides/026.png
+  :image_alt: "There are some snippets of code and in particular the `change(usec: 0)` parts have been highlighted to draw attention; text: 😱 Horrifying combinations 😱; Fixed with: comparing time such that we don't care about the sub-second precision: `assert_in_delta Time.current, time_from_the_db, 0.01` or `assert_equal Time.current.change(usec: 0), time_from_the_db.change(usec: 0)`; or freezing time so we don't send values to the db that can be truncated: `Timecop. freeze Time.current.change(usec: 0) do; # exercise time code that will compare time; end"
+  :image_title: 'Slide 26: Horrifying combinations (part 2)'
+---
+We can fix this by using [`assert_in_delta`, which is a method that you get from minitest](https://www.rubydoc.info/gems/minitest/Minitest/Assertions#assert_in_delta-instance_method).  Pretty sure that RSpec has something similar, probably called.
+[`expect(time).to be_within(some).seconds_of(actual)`](https://www.rubydoc.info/github/rspec/rspec-expectations/RSpec%2FMatchers%3Abe_within).
+
+Pretty sure, [Jon](https://jonrowe.co.uk)'s nodding<% fnrf 4 %>, so I think that's right.
+
+Or we can just ignore the microsecond precision.  I'll just say assert that _this time_ and I don't care how precise it is, is the same as _this time_ and I don't care how precise it is either.
+
+Or we can freeze the time, so that when we've frozen the time, we freeze it to a time that is _not_ microsecond precise, and then everything is not microsecond precise, and we don't need to care about it.

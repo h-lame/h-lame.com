@@ -1,0 +1,26 @@
+---
+title: Real world - Avoiding Time (part 2)
+id: slide-021
+slide:
+  :image_url: http://assets.h-lame.com/images/talks/do-you-want-a-flake-with-that/slides/021.png
+  :image_alt: "text: Real world - Avoiding Time; Time is weird - leap seconds, month durations, working days, daylight savings time, etc...; Fixed with: Freezing time again, but to a specific date + time; e.g. a Wednesday in the middle of a 31 day month in the middle of a year that's not a leap year; Or...; test each weird combo now rather than waiting for it to occur"
+  :image_title: 'Slide 21: Real world - Avoiding Time (part 2)'
+---
+Another reason to try and avoid time is because, like I said, it's _weird_: leap seconds, month durations, working days, daylight savings time.  All of that stuff is super annoying.
+
+You might want to run a test that is fine 200 days of the year, but if you run it on, say:
+
+* the 1st of the month -- it breaks,
+* or if you run it on the 31st of the month -- it breaks
+* or if you run it on a Friday -- it breaks because the test assumes the next business day is tomorrow,
+* or if you assume that when you add 30 days to today you'll always be in the same month
+* or any of the weird stuff that might happen, because you forgot about how awful time is
+
+So again, we might want to freeze time, but to a specific date and time that means you're not going to have these problems when you run your test.
+
+Now, we're all nerds, we're all pedantic, we're think: "yeah, but now you haven't tested all of the conditions". And, yeah, well... go and write specific conditions for your time functions so you can say:
+
+* "I've got a test for what happens on the first of the month."
+* "I've got a test for what happens on the third Friday of a February that has a 29th in it."
+
+Write specific test cases for those weird edge cases, because that's what tests are _for_!  It's not running it on third Friday of February that is when you want to find out that your system doesn't work on the third Friday of February, etc.<% fnrf 2 %>
