@@ -267,7 +267,8 @@ code {
 }
 
 img.video-poster,
-img.slide {
+img.slide,
+video.slide {
   display: block;
   box-shadow: 0 0 0 1px #eee, 0 0 0 5px #fff, 0 0 5px 5px #aaa;
   vertical-align: middle;
