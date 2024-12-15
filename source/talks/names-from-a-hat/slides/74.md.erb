@@ -1,0 +1,18 @@
+---
+title: Rendering the world - part 1 - tile sets
+id: slide-074
+slide:
+  :image_url: http://assets.h-lame.com/images/talks/names-from-a-hat/slides/074.png
+  :image_alt: "A snippet of code for showing how we render the world, highlighting the `TileSet#render!` method; source: https://github.com/h-lame/lruggery/blob/4e02855d64a111c8ee72e1a736da7a868384a1f8/names_from_a_hat/rogue/lib/rogue/tileset.rb#L83-L91"
+  :image_title: "Slide 74: Rendering the world - part 1 - tile sets"
+  :caption: "[Source for code in slide](https://github.com/h-lame/lruggery/blob/4e02855d64a111c8ee72e1a736da7a868384a1f8/names_from_a_hat/rogue/lib/rogue/tileset.rb#L83-L91)"
+---
+The first thing I want to show is how we render the “graphics” for the game.  As I said, it’s a terminal game, so we’re talking `puts` and `String`s, but, don’t worry, I _have_ over-engineered that.
+
+First up, to draw the world I have a `TileSet` object which has a `render!` method.  This doesn’t cause mutation or potentially raise exceptions, it’s just exciting, so I gave it a bang method name.  Sorry [rubocop](https://rubystyle.guide/#dangerous-method-bang)<% fnrf 10 %>.
+
+The `TileSet` contains an `x` by `y` grid of `Tile` objects.  Where each `Tile` represents a single spot in the world, and another part of the system tells these tiles what they contain - floor, wall, corridor.  Or occasionally a wizard or El Rogue itself as it wanders the dungeon.
+
+Rendering is just [joining each array](https://ruby-doc.org/3.3.6/Array.html#method-i-join) (e.g. asking each `Tile` in a row to `to_s` itself) and then adding a newline between each row.
+
+Simple.

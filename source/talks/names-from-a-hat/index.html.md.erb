@@ -1,11 +1,89 @@
 ---
 title: Names from a hat - slides and transcript
 description: Slides and transcript of a talk called ‘Names from a hat’ that I gave at in November 2024 at RubyConf in Chicago
-#prepend_toc_items:
-#  - id: video
-#    title: Video
+prepend_toc_items:
+  - id: video
+    title: Video
+append_toc_items:
+  - id: links
+    title: Links
 ---
-<% content_for(:title) { 'Names from a hat' }%>
+<% content_for(:title) { 'Names from a hat' } %>
+<% footnotes do %>
+  <% fndf 1 do %>[Sarah Mei](https://ruby.social/@sarahmei/) & [Jenny Shih](https://jenny.sh/about) were the hosts for the "Weird Ruby" track, so I thought I'd mention them in my talk.  Having done that I decided to use the names of the other speakers in the track as the names I need to randomise in the examples I share throughout.<% end %>
+
+  <% fndf 2 do %>This was me calling back to a university lecturer showing us some C networking code that had an array of pointers to functions, after describing the functionality of it to us, he took a deep breath and said "beautiful" in a reverent tone.  I've used this particular lecture as inspiration for a [short talk at a developer event before](https://www.unboxed.co/blog/faster-than-lightning-mays-monthly-developer-event/) and I can't promise I won't use it again, even though the callback is relevant to approximately 30 people, maybe one or two of whom will read this and recognise it.<% end %>
+
+  <% fndf 3 do %>In the rehearsals of this talk I had the following line:
+
+  > And no, we didn't pivot from legal tech, you're thinking of Clio with an i.
+
+  Everyone I spoke to at the 2023 RubyConf about my job thought I was talking about a legal tech called Clio who also use Ruby and had previously sponsored RubyConf so I thought leaning into that with this line would be funny.  In the end I had to explain the line in each rehearsal though as everyone there had heard of Cleo but not Clio, and that ruined the joke, so I cut it.  Probably for the best.<% end %>
+
+  <% fndf 4 do %>In rehearsals this slide spoke about waiting for the videos to go up and took a while to explain the situation.  Luckily the videos came out the week before the conference, so I got to make this slide go faster.  I was desperate to shave seconds from the talk to get it in around the 30 minute mark, so this release was perfect.  Thanks for the timing serendipity [Andy](https://andycroll.com)!<% end %>
+
+  <% fndf 5 do %>My rehearsal drafts had a version of [slide 18](#slide-018) with a ruby that bounced around the code the various [`Fiber.yield`](https://ruby-doc.org/3.3.6/Fiber.html#method-c-yield) and [`Fiber#resume`](https://ruby-doc.org/3.3.6/Fiber.html#method-i-resume) calls to simulate the control flow and execution.  The feedback I got was that it was confusing, but that maybe fibers just _were_ confusing and so that was ok.  I didn't _really_ like that so I rewrote it to the version presented here that explains different concurrency models very quickly.  I think it's better.  This is why you do rehearsals!<% end %>
+
+  <% fndf 6 do %>This description of how fibers work is almost entirely based on what [I learned and presented in 2010](/talks/some-rough-fibrous-material/), and I'm not really sure if this description is correct for _current_ versions of ruby, where we have things like [non-blocking fibers](https://ruby-doc.org/3.3.6/Fiber.html#class-Fiber-label-Non-blocking+Fibers) and the [`Fiber.scheduler`](https://ruby-doc.org/3.3.6/Fiber.html#method-c-scheduler).  I haven't dug into those features so this description will have to stand. <% end %>
+
+  <% fndf 7 do %>In my rehearsal drafts I pointed people at [the lightning talk](/talks/some-rough-fibrous-material/) referenced in the intro to this section, but I didn't like the self-promotion.  Luckily there was [a session explicitly about fibers](https://www.youtube.com/watch?v=mWEjGXLYcaE&list=PLbHJudTY1K0fFsGc9a2tBFR-iUulnMJM7&index=19) in the schedule that I could point people at instead.
+
+  As it turns out, there were _lots_ of talks about concurrency in ruby at this conference and had I paid more attention to the schedule I probably could have pointed people at a couple of others too:
+
+  * "Ractor on Ruby 3.4" by Koichi Sasada - [slides](https://atdot.net/~ko1/activities/2024_rubyconf.pdf) & [video](https://www.youtube.com/watch?v=8fdTpQdGU70&list=PLbHJudTY1K0fFsGc9a2tBFR-iUulnMJM7&index=3)
+  * "In-Depth Ruby Concurrency: Navigating the Ruby concurrency landscape" by JP Camara - [video](https://www.youtube.com/watch?v=rewiLd2w0kE&list=PLbHJudTY1K0fFsGc9a2tBFR-iUulnMJM7&index=22)
+
+  People love talking about concurrency!<% end %>
+
+  <% fndf 8 do %>Not shown in these static slides, but the live version has a little bounce of the shoes logo when I say this.  This was my one attempt to make the opening slide for this section different to the one for the previous section.  It annoys me that they're basically the same, but I couldn't think of a better alternative at the time.  Still can't.<% end %>
+
+  <% fndf 9 do %>While the code in the actual script is correct, the code on the slides is lightly edited for clarity and I have made the `top` and `left` vs. `x` and `y` mistake in those edits. 🤦
+
+  The `move_steps` method returns `[change_in_x, change_in_y, change_in_size]`, but the `move_towards_the_hat` method splats that into `step_top`, `step_left`, `step_size`.  Meaning we put the `x` change into the `top` step when it should be in the `left` step, and the `y` change into the `left` step when it should be in the `top`.  I'd like to say I left this in as an intentional easter-egg joke for the viewer / reader.  But no, I just make this mistake all the time, and I don't know why I didn't just settle on `x` & `y` _or_ `top` & `left` instead of mixing them.<% end %>
+
+  <% fndf 10 do %>Not sorry.<% end %>
+
+  <% fndf 11 do %>At the conference, by the time I got to this slide, we could hear applause from the other rooms giving a fairly strong hint that we should be wrapping up.  It bothers me slightly that some of the audience in the room, might have thought I actually cut some content here in the interest of timing, but this "fakeout" was the plan all along.<% end %>
+
+  <% fndf 12 do %>I guess I mean reading.<% end %>
+<% end %>
+<% content_for(:video) do %>
+  A [video of this talk](https://www.youtube.com/watch?v=LsqgWIB5dDU&list=PLbHJudTY1K0fFsGc9a2tBFR-iUulnMJM7&index=6) is available from [Ruby Central](https://rubycentral.org/):
+
+  [<img class="video-poster" src="http://assets.h-lame.com/images/talks/names-from-a-hat/video-poster.jpeg" title="Video of the talk" alt="a screenshot of the youtube video of the talk filmed by Ruby Central">](https://www.youtube.com/watch?v=LsqgWIB5dDU&list=PLbHJudTY1K0fFsGc9a2tBFR-iUulnMJM7&index=6)
+<% end %>
+<% content_for(:links) do %>
+  Before I published the full transcript I shared a placeholder with the links and keywords mentioned in the talk.  This is what that looked like:
+
+  * **General links**
+    * [“Pursuing Pointlessness” by Chris Howlett](https://brightonruby.com/2024/pursuing-pointlessness/) - a talk I suggest you watch on building fun things
+  * **Fibers**
+    * Keywords to use to find out more:
+      * Co-routines
+      * Co-operative multitasking
+    * [“Flattening Recursion with Fibers” by Jamis Buck & Adviti Mishra](https://www.youtube.com/watch?v=mWEjGXLYcaE&list=PLbHJudTY1K0fFsGc9a2tBFR-iUulnMJM7&index=19) - a session later in the Conf that I suggest you watch
+  * **Shoes**
+    * Keywords to use to find out more about shoes:
+      * shoesrb
+      * You can’t just search “shoes” or even “shoes ruby”
+    * [shoesrb.com](http://shoesrb.com)
+    * Keywords to use to find out more about art in shoes:
+      * nodebox
+      * processing
+      * shoesrb art
+    * [The shoes manual on art](http://shoesrb.com/manual/Art.html)
+  * **Rougelikes**
+    * Keywords to use to find out more about building roguelikes:
+      * dungeon generation
+      * rougelike wiki
+    * [Description of the dungeon generation technique I used](https://roguebasin.com/index.php/Basic_BSP_Dungeon_generation)
+    * [Blogpost about building your own roguelike in ruby by Dmitry Tsepelev](https://dmitrytsepelev.dev/terminal-game)
+  * **Source Code**
+    * [Fibers version](https://github.com/h-lame/lruggery/blob/4e02855d64a111c8ee72e1a736da7a868384a1f8/names_from_a_hat/randomize_speakers.rb)
+    * [Grid of names version](https://github.com/h-lame/lruggery/blob/4e02855d64a111c8ee72e1a736da7a868384a1f8/names_from_a_hat/haphazard2.rb)
+    * [Magic Hat version](https://github.com/h-lame/lruggery/blob/4e02855d64a111c8ee72e1a736da7a868384a1f8/names_from_a_hat/hat.rb)
+    * [El Rogue](https://github.com/h-lame/lruggery/tree/4e02855d64a111c8ee72e1a736da7a868384a1f8/names_from_a_hat/rogue)
+<% end %>
 I gave this talk [in November 2024 at RubyConf in Chicago](https://rubyconf.org/schedule/).
 
-A write up of the talk, with all the slides and a full transcript, along with a link to the recording will eventually appear here, but for now, it's the links and "keywords to search for later" I mentioned in the talk.
+This write-up is pulled from the presenter notes in my keynote file.  I didn't rehearse as much as I would have liked for this talk, so I stuck strictly to the script when I gave it.  You can see this in the video as it's _pretty_ obvious I am mostly reading, although I think I'm doing a decent job of doing a somewhat _dramatic_ reading.  There were definitely some ad-hoc riffs on the day, but I haven't included them here so you'll just have to watch that and read this to decide which is better: scripted Murray or off-the-cuff Murray.

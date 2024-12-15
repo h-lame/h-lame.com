@@ -1,0 +1,13 @@
+---
+title: Concurrency control flow - part 3 - fibers
+id: slide-017
+slide:
+  :image_url: http://assets.h-lame.com/images/talks/names-from-a-hat/slides/017.mp4
+  :image_alt: "A ruby appears at one end of the upper of the two lines underneath the heading 'fibers', the ruby moves towards the other end of the line, but when a `Fiber.yield` appears, it jumps to the bottom line and proceeds along it.  When a `Fiber#resume` appears it flips to the top line again, only to return to the bottom again when another `Fiber.yield` appears; text: Concurrency control flow, Fibers"
+  :image_title: "Slide 17: Concurrency control flow - part 4 - fibers"
+---
+In fibers there’s _still_ really only one thing running at any one time, but you are in control as you explicitly tell the CPU when to run code in one fiber and when it should stop.
+
+That’s what these [`Fiber.yield`](https://ruby-doc.org/3.3.6/Fiber.html#method-c-yield) and [`Fiber#resume`](https://ruby-doc.org/3.3.6/Fiber.html#method-i-resume) calls are doing - passing control back and forth between two fibers programatically<% fnrf 6 %>.
+
+*[CPU]: Central Processing Unit

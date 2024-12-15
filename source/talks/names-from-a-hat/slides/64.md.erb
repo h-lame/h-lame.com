@@ -1,0 +1,14 @@
+---
+title: Animating putting names in a hat - part 12 - it's fiddly, but tweakable, and fun!
+id: slide-064
+slide:
+  :image_url: http://assets.h-lame.com/images/talks/names-from-a-hat/slides/064.png
+  :image_alt: "A snippet of code for running the animation is shown, the code for actually calculating the changes needed to position & size of the name is highlighted; sources: animate: https://github.com/h-lame/lruggery/blob/4e02855d64a111c8ee72e1a736da7a868384a1f8/names_from_a_hat/hat.rb#L236-L238 / main_loop: https://github.com/h-lame/lruggery/blob/4e02855d64a111c8ee72e1a736da7a868384a1f8/names_from_a_hat/hat.rb#L200-L223 / move_towards_the_hat https://github.com/h-lame/lruggery/blob/4e02855d64a111c8ee72e1a736da7a868384a1f8/names_from_a_hat/hat.rb#L66-L87 / move_steps: https://github.com/h-lame/lruggery/blob/4e02855d64a111c8ee72e1a736da7a868384a1f8/names_from_a_hat/hat.rb#L58-L64"
+  :image_title: "Slide 64: Animating putting names in a hat - part 12 - it's fiddly, but tweakable, and fun!"
+  :caption: "Source for code in slide: [animate](https://github.com/h-lame/lruggery/blob/4e02855d64a111c8ee72e1a736da7a868384a1f8/names_from_a_hat/hat.rb#L236-L238), [main_loop](https://github.com/h-lame/lruggery/blob/4e02855d64a111c8ee72e1a736da7a868384a1f8/names_from_a_hat/hat.rb#L200-L223), [move_steps](https://github.com/h-lame/lruggery/blob/4e02855d64a111c8ee72e1a736da7a868384a1f8/names_from_a_hat/hat.rb#L58-L64)"
+---
+The calculations are interesting because we can change that one number to speed up or slow down the animation.  Right now it’s set to `24` which means roughly, it should take a second to move each name into the hat based on the frame rate.  If I change that to `48` it’ll take two seconds, change it to `12` and it’ll take half a second.
+
+These calculations are sort of annoying and fiddly (ask me later how many times I mixed up `x` and `y` vs. `top` and `left`<% fnrf 9 %>), and you do just need to run it and eyeball it to see if it looks nice or not, which can be frustrating, but it’s a real joy when you do get it right!
+
+Again, I’ve only had to focus on what I need to do for a single frame, and yes it’s more complex than the star jitter, but not really by much.  It’s endlessly tweakable and just … fun?
