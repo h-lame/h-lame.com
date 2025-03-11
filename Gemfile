@@ -1,8 +1,8 @@
 source 'https://www.rubygems.org'
-ruby '~> 2.7'
+ruby file: '.ruby-version'
 
 gem 'middleman'
-gem 'middleman-autoprefixer', '~> 2.7'
+gem 'middleman-autoprefixer'
 gem 'middleman-syntax'
 gem 'nokogiri'
 gem 'git'
