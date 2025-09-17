@@ -120,7 +120,7 @@ GEM
     rb-inotify (0.11.1)
       ffi (~> 1.0)
     rchardet (1.8.0)
-    rexml (3.4.1)
+    rexml (3.4.2)
     rouge (3.30.0)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
